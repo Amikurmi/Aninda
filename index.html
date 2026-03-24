@@ -1,0 +1,949 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Doctor Portfolio</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-blue-50 text-gray-800">
+    <!-- ================= NAVBAR ================= -->
+    <header
+      class="sticky top-0 z-50 bg-white/70 backdrop-blur-xl border-b border-gray-200"
+    >
+      <div
+        class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4"
+      >
+        <!-- LOGO -->
+        <div class="flex flex-col leading-tight">
+          <a href="/index.html">
+            <h1 class="text-xl md:text-2xl font-bold text-blue-600">
+              Dr. Aninda Sidhana
+            </h1>
+            <span class="text-xs text-gray-500"> Psychiatrist & Advocate </span>
+          </a>
+        </div>
+
+        <!-- MENU -->
+        <ul class="hidden md:flex items-center gap-8 font-medium text-gray-700">
+          <li>
+            <a
+              href="/index.html"
+              class="relative text-blue-600 after:absolute after:-bottom-1 after:left-0 after:w-full after:h-[2px] after:bg-blue-600"
+            >
+              Home
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="/contributions.html"
+              class="hover:text-blue-600 transition"
+            >
+              Contributions
+            </a>
+          </li>
+
+          <li>
+            <a href="/services.html" class="hover:text-blue-600 transition">
+              Services
+            </a>
+          </li>
+
+          <li>
+            <a href="/contact.html" class="hover:text-blue-600 transition">
+              Contact
+            </a>
+          </li>
+
+          <!-- CTA BUTTON -->
+          <!-- <li>
+                <button class="bg-blue-600 text-white px-5 py-2 rounded-lg shadow hover:shadow-lg hover:-translate-y-0.5 transition">
+                    Book Now
+                </button>
+            </li> -->
+        </ul>
+
+        <!-- MOBILE BUTTON -->
+        <button onclick="toggleMenu()" class="md:hidden text-2xl">☰</button>
+      </div>
+
+      <!-- MOBILE MENU -->
+      <div
+        id="mobileMenu"
+        class="hidden flex-col bg-white border-t px-6 py-4 md:hidden space-y-3 text-gray-700"
+      >
+        <a href="/index.html" class="block hover:text-blue-600">Home</a>
+        <a href="/contributions.html" class="block hover:text-blue-600"
+          >Contributions</a
+        >
+        <a href="/services.html" class="block hover:text-blue-600">Services</a>
+        <a href="/contact.html" class="block hover:text-blue-600">Contact</a>
+
+        <!-- MOBILE CTA -->
+        <!-- <button class="bg-blue-600 text-white px-5 py-2 rounded-lg mt-3">
+            Book Now
+        </button> -->
+      </div>
+    </header>
+
+    <!-- ================= HERO ================= -->
+    <section
+      class="relative bg-gradient-to-br from-blue-50 via-white to-blue-100 overflow-hidden"
+    >
+      <!-- Glow Effects -->
+      <div
+        class="absolute -top-32 -left-32 w-[450px] h-[450px] bg-blue-400 opacity-20 rounded-full blur-3xl"
+      ></div>
+      <div
+        class="absolute bottom-0 right-0 w-[300px] h-[300px] bg-indigo-400 opacity-20 rounded-full blur-3xl"
+      ></div>
+
+      <div
+        class="max-w-7xl mx-auto flex flex-col md:flex-row items-center px-6 py-24 gap-16 relative z-10"
+      >
+        <!-- TEXT -->
+        <div class="max-w-xl">
+          <!-- Badge -->
+          <span
+            class="inline-block mb-4 px-4 py-1 text-sm bg-blue-100 text-blue-700 rounded-full font-medium"
+          >
+            Gold Award Nominee • Mental Health & Gender Justice Advocate
+          </span>
+
+          <h1 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
+            Dr. Aninda Sidhana <br />
+            <span class="text-blue-600">Healing with Dignity & Impact</span>
+          </h1>
+
+          <p class="mb-8 text-gray-600 text-lg leading-relaxed">
+            Psychiatrist, Psychosexual Medicine Specialist, and
+            Survivor-Advocate transforming mental health, gender justice, and
+            trauma care through survivor-led innovation, clinical excellence,
+            and social impact.
+          </p>
+
+          <!-- BUTTONS -->
+          <div class="flex gap-4 mb-10">
+            <a href="/contact.html"
+              ><button class="bg-blue-600 text-white px-7 py-3 rounded-xl">
+                Conatct
+              </button></a
+            >
+
+            <a href="/contributions.html"
+              ><button class="border-2 border-blue-600 px-7 py-3 rounded-xl">
+                Contributions
+              </button>
+            </a>
+          </div>
+
+          <!-- PREMIUM STATS -->
+          <div
+            class="backdrop-blur-xl bg-white/70 border border-white/40 p-6 rounded-2xl shadow-lg flex gap-10 w-fit"
+          >
+            <div>
+              <h2 class="text-blue-600 text-2xl font-bold">10+</h2>
+              <p class="text-sm text-gray-500">Years Clinical Experience</p>
+            </div>
+
+            <div>
+              <h2 class="text-blue-600 text-2xl font-bold">500+</h2>
+              <p class="text-sm text-gray-500">Survivors Supported</p>
+            </div>
+
+            <div>
+              <h2 class="text-blue-600 text-2xl font-bold">50K+</h2>
+              <p class="text-sm text-gray-500">Lives Impacted</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- IMAGE SECTION -->
+        <div class="relative group">
+          <!-- Main Image -->
+          <img
+            src="images/Aninda.png"
+            class="w-[380px] rounded-3xl shadow-2xl transition duration-500 group-hover:scale-105"
+          />
+
+          <!-- Floating Info Card -->
+          <div
+            class="absolute -bottom-8 -left-8 bg-white/90 backdrop-blur-md p-4 rounded-xl shadow-xl flex items-center gap-3"
+          >
+            <img
+              src="images/Aninda.jpg"
+              class="w-12 h-12 rounded-full object-cover"
+            />
+            <div>
+              <h4 class="font-semibold text-sm">Dr. Aninda Sidhana</h4>
+              <p class="text-xs text-gray-500">Psychiatrist & Advocate</p>
+            </div>
+          </div>
+
+          <!-- Achievement Badge -->
+          <div
+            class="absolute -top-6 -right-6 bg-blue-600 text-white px-4 py-2 rounded-xl shadow-lg text-xs font-semibold"
+          >
+            Women of Substance Award 2025
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section class="bg-white py-24 px-6 relative overflow-hidden">
+      <!-- Background Glow -->
+      <div
+        class="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-100 rounded-full blur-3xl opacity-40"
+      ></div>
+
+      <div class="max-w-6xl mx-auto relative z-10">
+        <!-- SECTION TITLE -->
+        <div class="mb-16 text-center">
+          <h2 class="text-4xl md:text-5xl font-bold mb-4">
+            About Dr. Aninda Sidhana
+          </h2>
+          <p class="text-gray-500 text-lg max-w-3xl mx-auto">
+            A transformative leader in mental health, gender justice, and
+            survivor-led healing systems in India.
+          </p>
+        </div>
+
+        <!-- BIO -->
+        <div class="mb-16">
+          <h3 class="text-2xl font-semibold mb-4 text-blue-600">
+            Professional Biography
+          </h3>
+
+          <p class="text-gray-700 leading-relaxed mb-4">
+            Dr. Aninda Sidhana is a distinguished psychiatrist, psychosexual
+            medicine specialist, educator, and survivor-advocate whose work
+            bridges clinical excellence with deep social impact. With over a
+            decade of experience, she has redefined how mental health and gender
+            justice intersect, creating survivor-centered systems of care rooted
+            in dignity, empathy, and innovation.
+          </p>
+
+          <p class="text-gray-700 leading-relaxed mb-4">
+            Born into a family of psychiatrists, she developed an early
+            understanding of psychological well-being and care systems. She
+            completed her MBBS from Padmashree Dr. D.Y. Patil Medical College,
+            followed by an MD in Psychiatry from Sri Balaji Vidyapeeth,
+            Puducherry, and further specialized in psychosexual medicine through
+            a fellowship at JSS Medical College, Mysore.
+          </p>
+
+          <p class="text-gray-700 leading-relaxed">
+            Her career spans clinical psychiatry, academic leadership, and
+            advocacy, with key roles in institutions such as IHBAS Delhi,
+            Santosh University, and Dr. S.S. Tantia M.C.H. & Research Centre.
+            Through her work, she has consistently focused on women's mental
+            health, trauma recovery, and breaking societal taboos around sexual
+            wellness.
+          </p>
+        </div>
+
+        <!-- CONTRIBUTIONS GRID -->
+        <div class="grid md:grid-cols-2 gap-10">
+          <!-- CARD 1 -->
+          <div
+            class="bg-blue-50 p-6 rounded-2xl shadow-sm hover:shadow-lg transition"
+          >
+            <h4 class="text-xl font-semibold mb-3 text-blue-700">
+              The Dignity Dialogues
+            </h4>
+            <p class="text-gray-600">
+              A pioneering survivor-led initiative founded in 2025, reimagining
+              mental health and gender justice through storytelling, listening
+              circles, and trauma-integrated care systems. It has directly
+              supported 500+ survivors and trained 200+ professionals.
+            </p>
+          </div>
+
+          <!-- CARD 2 -->
+          <div
+            class="bg-blue-50 p-6 rounded-2xl shadow-sm hover:shadow-lg transition"
+          >
+            <h4 class="text-xl font-semibold mb-3 text-blue-700">
+              Aawaz Initiative
+            </h4>
+            <p class="text-gray-600">
+              A safe haven for survivors of gender-based violence, designed to
+              provide counseling, support systems, and advocacy platforms that
+              empower individuals to reclaim their voice and identity.
+            </p>
+          </div>
+
+          <!-- CARD 3 -->
+          <div
+            class="bg-blue-50 p-6 rounded-2xl shadow-sm hover:shadow-lg transition"
+          >
+            <h4 class="text-xl font-semibold mb-3 text-blue-700">
+              Clinical Expertise
+            </h4>
+            <p class="text-gray-600">
+              Specializing in psychosexual medicine, trauma care, addictions,
+              and marital therapy, Dr. Sidhana addresses complex emotional and
+              sexual health challenges with an integrated, stigma-free approach.
+            </p>
+          </div>
+
+          <!-- CARD 4 -->
+          <div
+            class="bg-blue-50 p-6 rounded-2xl shadow-sm hover:shadow-lg transition"
+          >
+            <h4 class="text-xl font-semibold mb-3 text-blue-700">
+              Academic Leadership
+            </h4>
+            <p class="text-gray-600">
+              As Assistant Professor and Guest Faculty, she mentors future
+              mental health professionals, integrating trauma-informed care,
+              empathy, and real-world application into education systems.
+            </p>
+          </div>
+
+          <!-- CARD 5 -->
+          <div
+            class="bg-blue-50 p-6 rounded-2xl shadow-sm hover:shadow-lg transition"
+          >
+            <h4 class="text-xl font-semibold mb-3 text-blue-700">
+              Advocacy & Media
+            </h4>
+            <p class="text-gray-600">
+              Through podcasts, media features, and public platforms, she drives
+              conversations on trauma, gender justice, and emotional well-being,
+              reaching over 50,000 individuals globally.
+            </p>
+          </div>
+
+          <!-- CARD 6 -->
+          <div
+            class="bg-blue-50 p-6 rounded-2xl shadow-sm hover:shadow-lg transition"
+          >
+            <h4 class="text-xl font-semibold mb-3 text-blue-700">
+              Policy & Social Impact
+            </h4>
+            <p class="text-gray-600">
+              Contributing to national and global mental health policies, she
+              advocates for survivor-led frameworks, influencing institutional
+              protocols and gender justice systems.
+            </p>
+          </div>
+        </div>
+
+        <!-- LONG IMPACT TEXT -->
+        <div class="mt-16">
+          <h3 class="text-2xl font-semibold mb-4 text-blue-600">
+            Impact & Vision
+          </h3>
+
+          <p class="text-gray-700 leading-relaxed mb-4">
+            Dr. Sidhana’s work has impacted thousands of lives through direct
+            clinical care, survivor support programs, and large-scale digital
+            outreach. Her initiatives emphasize measurable outcomes such as
+            improved well-being, reduced trauma distress, and strengthened
+            community support systems.
+          </p>
+
+          <p class="text-gray-700 leading-relaxed mb-4">
+            Her approach combines evidence-based clinical practice with lived
+            experience, making her work both deeply empathetic and structurally
+            transformative. She believes that healing is not just individual,
+            but collective—requiring systemic change, policy reform, and
+            inclusive dialogue.
+          </p>
+
+          <p class="text-gray-700 leading-relaxed">
+            With a vision to build sustainable, survivor-centered ecosystems,
+            Dr. Aninda Sidhana continues to lead innovations that redefine
+            mental health care, empower marginalized voices, and shape the
+            future of gender justice in India and beyond.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- ================= METRICS SECTION ================= -->
+    <section
+      class="bg-gradient-to-br from-blue-600 to-indigo-700 text-white py-24 px-6 relative overflow-hidden"
+    >
+      <!-- Glow Effects -->
+      <div
+        class="absolute top-0 left-0 w-[400px] h-[400px] bg-white opacity-10 rounded-full blur-3xl"
+      ></div>
+      <div
+        class="absolute bottom-0 right-0 w-[300px] h-[300px] bg-white opacity-10 rounded-full blur-3xl"
+      ></div>
+
+      <div class="max-w-7xl mx-auto relative z-10">
+        <!-- TITLE -->
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold mb-4">Measurable Impact</h2>
+          <p class="text-blue-100 text-lg max-w-3xl mx-auto">
+            Driving meaningful change through clinical excellence, survivor-led
+            innovation, and large-scale advocacy.
+          </p>
+        </div>
+
+        <!-- MAIN STATS GRID -->
+        <div class="grid md:grid-cols-4 gap-8 mb-16">
+          <!-- CARD -->
+          <div
+            class="bg-white/10 backdrop-blur-lg p-8 rounded-2xl text-center shadow-lg hover:scale-105 transition"
+          >
+            <h3 class="text-4xl font-bold mb-2">500+</h3>
+            <p class="text-blue-100">Survivors Supported</p>
+          </div>
+
+          <div
+            class="bg-white/10 backdrop-blur-lg p-8 rounded-2xl text-center shadow-lg hover:scale-105 transition"
+          >
+            <h3 class="text-4xl font-bold mb-2">200+</h3>
+            <p class="text-blue-100">Professionals Trained</p>
+          </div>
+
+          <div
+            class="bg-white/10 backdrop-blur-lg p-8 rounded-2xl text-center shadow-lg hover:scale-105 transition"
+          >
+            <h3 class="text-4xl font-bold mb-2">50K+</h3>
+            <p class="text-blue-100">People Reached</p>
+          </div>
+
+          <div
+            class="bg-white/10 backdrop-blur-lg p-8 rounded-2xl text-center shadow-lg hover:scale-105 transition"
+          >
+            <h3 class="text-4xl font-bold mb-2">10+</h3>
+            <p class="text-blue-100">Years Experience</p>
+          </div>
+        </div>
+
+        <!-- DETAILED IMPACT -->
+        <div class="grid md:grid-cols-2 gap-10">
+          <!-- LEFT SIDE -->
+          <div class="bg-white/10 backdrop-blur-lg p-8 rounded-2xl shadow-lg">
+            <h3 class="text-2xl font-semibold mb-4">Program Impact</h3>
+
+            <ul class="space-y-3 text-blue-100">
+              <li>✔ 500+ survivors supported through The Dignity Dialogues</li>
+              <li>✔ 200+ professionals trained in trauma-informed care</li>
+              <li>
+                ✔ 1,000+ individuals engaged through workshops & listening
+                circles
+              </li>
+              <li>✔ Healing Justice Toolkit developed for systemic change</li>
+            </ul>
+          </div>
+
+          <!-- RIGHT SIDE -->
+          <div class="bg-white/10 backdrop-blur-lg p-8 rounded-2xl shadow-lg">
+            <h3 class="text-2xl font-semibold mb-4">
+              Clinical & Academic Reach
+            </h3>
+
+            <ul class="space-y-3 text-blue-100">
+              <li>✔ 300+ patients treated annually</li>
+              <li>✔ 100+ students mentored in psychosexual medicine</li>
+              <li>✔ 20+ workshops & webinars conducted</li>
+              <li>✔ 2,000+ participants trained in mental health programs</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- MEDIA + POLICY -->
+        <div class="grid md:grid-cols-2 gap-10 mt-10">
+          <div class="bg-white/10 backdrop-blur-lg p-8 rounded-2xl shadow-lg">
+            <h3 class="text-2xl font-semibold mb-4">Media & Advocacy Reach</h3>
+
+            <ul class="space-y-3 text-blue-100">
+              <li>✔ 50,000+ audience reached via podcasts & media</li>
+              <li>✔ Featured in 10+ major platforms & interviews</li>
+              <li>✔ Digital campaigns with high engagement</li>
+            </ul>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur-lg p-8 rounded-2xl shadow-lg">
+            <h3 class="text-2xl font-semibold mb-4">
+              Policy & Leadership Impact
+            </h3>
+
+            <ul class="space-y-3 text-blue-100">
+              <li>✔ Active contributor to GBV policy workshops</li>
+              <li>✔ Leadership roles in national psychiatric bodies</li>
+              <li>✔ Advocate for survivor-led policy frameworks</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- BOTTOM STATEMENT -->
+        <div class="mt-16 text-center max-w-3xl mx-auto">
+          <p class="text-blue-100 text-lg leading-relaxed">
+            Dr. Aninda Sidhana’s impact extends beyond numbers—her work has
+            transformed lives, influenced systems, and reshaped how mental
+            health and gender justice are approached across communities and
+            institutions.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= AWARDS ================= -->
+    <section class="bg-white py-24 px-6 relative overflow-hidden">
+      <!-- Glow -->
+      <div
+        class="absolute top-0 left-0 w-[400px] h-[400px] bg-yellow-100 opacity-40 rounded-full blur-3xl"
+      ></div>
+
+      <div class="max-w-6xl mx-auto relative z-10">
+        <!-- TITLE -->
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold mb-4">
+            Awards & Recognitions
+          </h2>
+          <p class="text-gray-500 text-lg max-w-3xl mx-auto">
+            Honoring a journey defined by resilience, leadership, and
+            transformative impact in mental health and gender justice.
+          </p>
+        </div>
+
+        <!-- AWARDS GRID -->
+        <div class="grid md:grid-cols-2 gap-10">
+          <!-- CARD 1 -->
+          <div
+            class="bg-gradient-to-br from-yellow-50 to-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition border border-yellow-100"
+          >
+            <div class="flex items-center gap-4 mb-4">
+              <div class="bg-yellow-400 text-white p-3 rounded-xl text-xl">
+                🏆
+              </div>
+              <h3 class="text-xl font-semibold">
+                Women of Substance Award (2025)
+              </h3>
+            </div>
+            <p class="text-gray-600">
+              Recognized for championing gender equality, mental health
+              awareness, and empowering women through survivor-led initiatives.
+            </p>
+          </div>
+
+          <!-- CARD 2 -->
+          <div
+            class="bg-gradient-to-br from-yellow-50 to-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition border border-yellow-100"
+          >
+            <div class="flex items-center gap-4 mb-4">
+              <div class="bg-yellow-400 text-white p-3 rounded-xl text-xl">
+                🏆
+              </div>
+              <h3 class="text-xl font-semibold">
+                Women Resilience Award (2024)
+              </h3>
+            </div>
+            <p class="text-gray-600">
+              Awarded by the Indian Psychiatric Society for outstanding
+              leadership in mental health advocacy and survivor empowerment.
+            </p>
+          </div>
+
+          <!-- CARD 3 -->
+          <div
+            class="bg-gradient-to-br from-yellow-50 to-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition border border-yellow-100"
+          >
+            <div class="flex items-center gap-4 mb-4">
+              <div class="bg-yellow-400 text-white p-3 rounded-xl text-xl">
+                🏆
+              </div>
+              <h3 class="text-xl font-semibold">
+                Women Superachiever Award (2025)
+              </h3>
+            </div>
+            <p class="text-gray-600">
+              Honored for innovation and impactful contributions in mental
+              health care, advocacy, and social transformation.
+            </p>
+          </div>
+
+          <!-- CARD 4 -->
+          <div
+            class="bg-gradient-to-br from-yellow-50 to-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition border border-yellow-100"
+          >
+            <div class="flex items-center gap-4 mb-4">
+              <div class="bg-yellow-400 text-white p-3 rounded-xl text-xl">
+                🏆
+              </div>
+              <h3 class="text-xl font-semibold">
+                Dr. N.N. Wig Oration Award (2025)
+              </h3>
+            </div>
+            <p class="text-gray-600">
+              Recognized for advancing holistic mental health care and
+              challenging stigma through research, advocacy, and public
+              engagement.
+            </p>
+          </div>
+        </div>
+
+        <!-- TESTIMONIAL STYLE QUOTE -->
+        <div
+          class="mt-20 bg-gradient-to-r from-blue-600 to-indigo-700 text-white p-10 rounded-3xl shadow-xl text-center"
+        >
+          <p class="text-xl italic mb-4">
+            “Dr. Sidhana is redefining mental health advocacy by combining
+            clinical expertise with lived experience and an unwavering
+            commitment to justice.”
+          </p>
+
+          <h4 class="font-semibold text-lg">— Media & Public Recognition</h4>
+        </div>
+
+        <!-- IMPACT STATEMENT -->
+        <div class="mt-12 text-center max-w-3xl mx-auto">
+          <p class="text-gray-600 text-lg leading-relaxed">
+            These recognitions reflect not only professional excellence but also
+            the profound societal impact of Dr. Aninda Sidhana’s
+            work—transforming lives, influencing systems, and redefining the
+            future of mental health and gender justice.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TESTIMONIAL ================= -->
+    <section
+      class="bg-gradient-to-br from-gray-50 to-white py-24 px-6 relative overflow-hidden"
+    >
+      <!-- Glow -->
+      <div
+        class="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-100 opacity-40 rounded-full blur-3xl"
+      ></div>
+
+      <div class="max-w-6xl mx-auto relative z-10">
+        <!-- TITLE -->
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold mb-4">Voices of Impact</h2>
+          <p class="text-gray-500 text-lg max-w-3xl mx-auto">
+            Reflections from professionals, survivors, and global platforms
+            highlighting the transformative impact of Dr. Aninda Sidhana’s work.
+          </p>
+        </div>
+
+        <!-- TESTIMONIAL GRID -->
+        <div class="grid md:grid-cols-2 gap-10">
+          <!-- PROFESSIONAL TESTIMONIAL -->
+          <div
+            class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-2xl transition"
+          >
+            <p class="text-gray-700 italic mb-6 leading-relaxed">
+              “Dr. Sidhana’s work is a masterclass in integrating clinical
+              excellence with human empathy. Her approach to trauma-informed
+              care is reshaping psychiatric practice across India.”
+            </p>
+
+            <div>
+              <h4 class="font-semibold text-lg">Dr. Roop Sidana</h4>
+              <p class="text-sm text-gray-500">
+                Clinical Director & Mental Health Advocate
+              </p>
+            </div>
+          </div>
+
+          <!-- PROFESSIONAL BODY -->
+          <div
+            class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-2xl transition"
+          >
+            <p class="text-gray-700 italic mb-6 leading-relaxed">
+              “Her leadership in advancing psychosexual medicine and training
+              professionals has elevated the standards of mental health
+              education and advocacy.”
+            </p>
+
+            <div>
+              <h4 class="font-semibold text-lg">
+                Indian Association of Private Psychiatry
+              </h4>
+              <p class="text-sm text-gray-500">Professional Body</p>
+            </div>
+          </div>
+
+          <!-- SURVIVOR TESTIMONIAL -->
+          <div
+            class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-2xl transition"
+          >
+            <p class="text-gray-700 italic mb-6 leading-relaxed">
+              “The Dignity Dialogues gave me a voice when I felt invisible.
+              Through her listening circles, I found strength, dignity, and the
+              courage to rebuild my life.”
+            </p>
+
+            <div>
+              <h4 class="font-semibold text-lg">Survivor Participant</h4>
+              <p class="text-sm text-gray-500">Rajasthan Listening Circle</p>
+            </div>
+          </div>
+
+          <!-- WORKSHOP PARTICIPANT -->
+          <div
+            class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-2xl transition"
+          >
+            <p class="text-gray-700 italic mb-6 leading-relaxed">
+              “Her workshops taught me that healing goes beyond therapy—it lies
+              in storytelling, community, and self-acceptance.”
+            </p>
+
+            <div>
+              <h4 class="font-semibold text-lg">Workshop Participant</h4>
+              <p class="text-sm text-gray-500">Mental Health Program</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- MEDIA TESTIMONIALS -->
+        <div class="mt-16 grid md:grid-cols-2 gap-10">
+          <div
+            class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white p-8 rounded-2xl shadow-xl"
+          >
+            <p class="text-lg italic mb-4">
+              “Her journey is not just about survival—it is about building
+              systems where every individual can heal, thrive, and reclaim
+              dignity.”
+            </p>
+            <h4 class="font-semibold">— The Better India</h4>
+          </div>
+
+          <div
+            class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white p-8 rounded-2xl shadow-xl"
+          >
+            <p class="text-lg italic mb-4">
+              “She is redefining mental health advocacy by merging lived
+              experience with professional excellence and a deep commitment to
+              justice.”
+            </p>
+            <h4 class="font-semibold">— AboutHer Show</h4>
+          </div>
+        </div>
+
+        <!-- FINAL IMPACT STATEMENT -->
+        <div class="mt-20 text-center max-w-3xl mx-auto">
+          <p class="text-gray-600 text-lg leading-relaxed">
+            These voices reflect the profound and lasting impact of Dr. Aninda
+            Sidhana’s work—empowering survivors, inspiring professionals, and
+            influencing global conversations around mental health, dignity, and
+            gender justice.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONCLUSION / CTA SECTION ================= -->
+    <section
+      class="bg-gradient-to-br from-blue-700 via-indigo-800 to-blue-900 text-white py-28 px-6 relative overflow-hidden"
+    >
+      <!-- Glow Effects -->
+      <div
+        class="absolute top-0 left-0 w-[400px] h-[400px] bg-white opacity-10 rounded-full blur-3xl"
+      ></div>
+      <div
+        class="absolute bottom-0 right-0 w-[300px] h-[300px] bg-white opacity-10 rounded-full blur-3xl"
+      ></div>
+
+      <div class="max-w-5xl mx-auto text-center relative z-10">
+        <!-- TITLE -->
+        <h2 class="text-4xl md:text-5xl font-bold mb-8 leading-tight">
+          A Legacy of Healing, Dignity & Transformation
+        </h2>
+
+        <!-- MAIN CONTENT -->
+        <p class="text-lg md:text-xl text-blue-100 leading-relaxed mb-6">
+          Dr. Aninda Sidhana’s life work represents a rare convergence of
+          clinical excellence, lived experience, and transformative social
+          impact. Her journey—from psychiatrist to survivor-advocate—has
+          redefined how mental health, gender justice, and trauma care are
+          understood and practiced across India.
+        </p>
+
+        <p class="text-lg md:text-xl text-blue-100 leading-relaxed mb-6">
+          Through initiatives such as The Dignity Dialogues and her continued
+          contributions to clinical care, education, and policy advocacy, she
+          has empowered hundreds of survivors, trained professionals, and
+          influenced systems that shape the future of mental health.
+        </p>
+
+        <p class="text-lg md:text-xl text-blue-100 leading-relaxed mb-10">
+          Her work goes beyond impact metrics—it restores dignity, amplifies
+          unheard voices, and builds sustainable ecosystems of healing. She is
+          not only addressing gaps in mental health care but redefining its very
+          foundation through empathy, inclusion, and survivor-led innovation.
+        </p>
+
+        <!-- HIGHLIGHT BOX -->
+        <div
+          class="bg-white/10 backdrop-blur-lg p-8 rounded-2xl shadow-xl mb-10"
+        >
+          <h3 class="text-2xl font-semibold mb-4 text-white">
+            Why She Stands Out
+          </h3>
+
+          <ul class="space-y-3 text-blue-100 text-left max-w-2xl mx-auto">
+            <li>
+              <span class="text-white font-bold mr-2">✔</span>
+              Pioneer of survivor-led, trauma-informed care systems
+            </li>
+
+            <li>
+              <span class="text-white font-bold mr-2">✔</span>
+              Strong measurable impact across clinical, social, and digital
+              platforms
+            </li>
+
+            <li>
+              <span class="text-white font-bold mr-2">✔</span>
+              Recognized leader in mental health and gender justice advocacy
+            </li>
+
+            <li>
+              <span class="text-white font-bold mr-2">✔</span>
+              Influencing policy, education, and public discourse
+            </li>
+
+            <li>
+              <span class="text-white font-bold mr-2">✔</span>
+              Building sustainable and scalable models for future generations
+            </li>
+          </ul>
+        </div>
+
+        <!-- FINAL STRONG STATEMENT -->
+        <p class="text-xl md:text-2xl font-semibold mb-10 leading-relaxed">
+          Dr. Aninda Sidhana is not just a practitioner—she is a movement
+          driving change, healing communities, and shaping a more compassionate
+          and equitable future.
+        </p>
+
+        <!-- CTA BUTTON -->
+        <div>
+          <button
+            class="bg-white text-blue-700 px-10 py-4 rounded-xl font-semibold shadow-lg hover:shadow-2xl hover:-translate-y-1 transition duration-300"
+          >
+            Recognize Her Impact
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-gray-900 text-gray-300 pt-16 pb-8 px-6">
+      <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-10">
+        <!-- BRAND -->
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-4">Dr. Aninda Sidhana</h3>
+          <p class="text-gray-400 leading-relaxed">
+            Psychiatrist, Psychosexual Medicine Specialist, and
+            Survivor-Advocate dedicated to transforming mental health, gender
+            justice, and trauma care through dignity, empathy, and innovation.
+          </p>
+        </div>
+
+        <!-- QUICK LINKS -->
+        <div>
+          <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-white transition">About</a></li>
+            <li><a href="#" class="hover:text-white transition">Impact</a></li>
+            <li><a href="#" class="hover:text-white transition">Awards</a></li>
+            <li>
+              <a href="#" class="hover:text-white transition">Testimonials</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- CONTRIBUTIONS -->
+        <div>
+          <h4 class="text-white font-semibold mb-4">Key Contributions</h4>
+          <ul class="space-y-2 text-gray-400">
+            <li>The Dignity Dialogues</li>
+            <li>Aawaz Initiative</li>
+            <li>Psychosexual Medicine</li>
+            <li>Trauma-Informed Care</li>
+          </ul>
+        </div>
+
+        <!-- CONTACT / SOCIAL -->
+        <div>
+          <h4 class="text-white font-semibold mb-4">Connect</h4>
+
+          <p class="text-gray-400 mb-4">
+            For collaborations, speaking engagements, or professional inquiries.
+          </p>
+
+          <!-- SOCIAL ICONS -->
+          <div class="flex gap-4">
+            <a
+              href="#"
+              class="bg-gray-800 p-3 rounded-lg hover:bg-blue-600 transition"
+            >
+              <!-- LinkedIn -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5 fill-current text-white"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M4.98 3.5C4.98 4.88 3.87 6 2.49 6 1.12 6 0 4.88 0 3.5 0 2.12 1.12 1 2.49 1c1.38 0 2.49 1.12 2.49 2.5zM0 8h5v16H0V8zm7.5 0H12v2.5h.06c.63-1.2 2.18-2.5 4.49-2.5 4.8 0 5.69 3.16 5.69 7.27V24h-5v-7.5c0-1.79-.03-4.09-2.5-4.09-2.5 0-2.88 1.95-2.88 3.97V24h-5V8z"
+                />
+              </svg>
+            </a>
+
+            <a
+              href="#"
+              class="bg-gray-800 p-3 rounded-lg hover:bg-pink-600 transition"
+            >
+              <!-- Instagram -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5 fill-current text-white"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M7.75 2h8.5C19.99 2 22 4.01 22 6.75v8.5C22 19.99 19.99 22 16.25 22h-8.5C4.01 22 2 19.99 2 16.25v-8.5C2 4.01 4.01 2 7.75 2zm0 2C5.68 4 4 5.68 4 7.75v8.5C4 18.32 5.68 20 7.75 20h8.5c2.07 0 3.75-1.68 3.75-3.75v-8.5C20 5.68 18.32 4 16.25 4h-8.5zm4.25 3a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6zm5.25-.88a1.12 1.12 0 110 2.25 1.12 1.12 0 010-2.25z"
+                />
+              </svg>
+            </a>
+
+            <a
+              href="#"
+              class="bg-gray-800 p-3 rounded-lg hover:bg-blue-400 transition"
+            >
+              <!-- Twitter -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5 fill-current text-white"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M24 4.56c-.88.39-1.83.65-2.82.77a4.93 4.93 0 002.16-2.72 9.86 9.86 0 01-3.13 1.2 4.92 4.92 0 00-8.38 4.48A13.94 13.94 0 011.67 3.15a4.92 4.92 0 001.52 6.57 4.9 4.9 0 01-2.23-.62v.06a4.93 4.93 0 003.95 4.83 4.93 4.93 0 01-2.22.08 4.93 4.93 0 004.6 3.42A9.87 9.87 0 010 19.54a13.94 13.94 0 007.55 2.21c9.06 0 14.01-7.5 14.01-14.01 0-.21 0-.42-.02-.63A10.03 10.03 0 0024 4.56z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- DIVIDER -->
+      <div class="border-t border-gray-700 mt-12 pt-6 text-center">
+        <p class="text-gray-500 text-sm">
+          © 2026 Dr. Aninda Sidhana. All rights reserved. | Designed with
+          purpose & impact.
+        </p>
+      </div>
+    </footer>
+
+    <!-- ================= JS ================= -->
+    <script>
+      function toggleMenu() {
+        document.getElementById("mobileMenu").classList.toggle("hidden");
+      }
+    </script>
+  </body>
+</html>

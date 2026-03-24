@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-blue-50 text-gray-800">
+
+<!-- ================= NAVBAR ================= -->
+<!-- ================= NAVBAR ================= -->
+<header class="sticky top-0 z-50 bg-white/70 backdrop-blur-xl border-b border-gray-200">
+
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+
+        <!-- LOGO -->
+        <div class="flex flex-col leading-tight">
+            <a href="/index.html">
+                <h1 class="text-xl md:text-2xl font-bold text-blue-600">
+                Dr. Aninda Sidhana
+            </h1>
+            <span class="text-xs text-gray-500">
+                Psychiatrist & Advocate
+            </span>
+            </a>
+        </div>
+
+        <!-- MENU -->
+        <ul class="hidden md:flex items-center gap-8 font-medium text-gray-700">
+
+            <li>
+                <a href="/index.html" class="hover:text-blue-600 transition">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="/contributions.html" class="hover:text-blue-600 transition">
+                    Contributions
+                </a>
+            </li>
+
+            <li>
+                <a href="/services.html" class="relative text-blue-600 after:absolute after:-bottom-1 after:left-0 after:w-full after:h-[2px] after:bg-blue-600">
+                    Services
+                </a>
+            </li>
+
+
+            <li>
+                <a href="/contact.html" class="hover:text-blue-600 transition">
+                    Contact
+                </a>
+            </li>
+
+            <!-- CTA BUTTON -->
+            <!-- <li>
+                <button class="bg-blue-600 text-white px-5 py-2 rounded-lg shadow hover:shadow-lg hover:-translate-y-0.5 transition">
+                    Book Now
+                </button>
+            </li> -->
+
+        </ul>
+
+        <!-- MOBILE BUTTON -->
+        <button onclick="toggleMenu()" class="md:hidden text-2xl">
+            ☰
+        </button>
+
+    </div>
+
+    <!-- MOBILE MENU -->
+    <div id="mobileMenu" class="hidden flex-col bg-white border-t px-6 py-4 md:hidden space-y-3 text-gray-700">
+
+        <a href="/index.html" class="block hover:text-blue-600">Home</a>
+        <a href="/contributions.html" class="block hover:text-blue-600">Contributions</a>
+        <a href="/services.html" class="block hover:text-blue-600">Services</a>
+        <a href="/contact.html" class="block hover:text-blue-600">Contact</a>
+
+        <!-- MOBILE CTA -->
+        <!-- <button class="bg-blue-600 text-white px-5 py-2 rounded-lg mt-3">
+            Book Now
+        </button> -->
+
+    </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="relative bg-gradient-to-br from-blue-50 via-white to-blue-100 py-32 overflow-hidden">
+
+    <!-- Glow -->
+    <div class="absolute -top-32 -left-32 w-[450px] h-[450px] bg-blue-400 opacity-20 blur-3xl rounded-full"></div>
+    <div class="absolute bottom-0 right-0 w-[350px] h-[350px] bg-blue-300 opacity-20 blur-3xl rounded-full"></div>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+
+        <!-- GRID -->
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+
+            <!-- LEFT TEXT -->
+            <div>
+
+                <h1 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight tracking-tight">
+                    Specialized <span class="text-blue-600">Mental Health Services</span>
+                </h1>
+
+                <p class="text-gray-600 text-lg leading-relaxed mb-10">
+                    Dr. Aninda Sidhana offers a comprehensive range of mental health
+                    and psychosexual services, combining clinical expertise,
+                    trauma-informed care, and a survivor-centered approach to healing.
+                </p>
+
+                <!-- BUTTONS -->
+                <div class="flex gap-4 mb-12">
+                    <a href="/contact.html"><button class="bg-blue-600 text-white px-8 py-3 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-1 transition">
+                        Contact
+                    </button>
+                    </a>
+
+                    <a href="/contributions.html"><button class="border-2 border-blue-600 px-8 py-3 rounded-xl hover:bg-blue-600 hover:text-white transition">
+                        Contributions
+                    </button>
+                    </a>
+                </div>
+
+                <!-- STATS -->
+                <div class="bg-white/70 backdrop-blur p-6 rounded-2xl shadow-lg flex gap-10 w-fit">
+                    <div>
+                        <h3 class="text-blue-600 font-bold text-2xl">500+</h3>
+                        <p class="text-sm text-gray-500">Lives Impacted</p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-blue-600 font-bold text-2xl">200+</h3>
+                        <p class="text-sm text-gray-500">Professionals Trained</p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-blue-600 font-bold text-2xl">10+</h3>
+                        <p class="text-sm text-gray-500">Years Experience</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- RIGHT SERVICES LIST -->
+            <div class="bg-white/80 backdrop-blur-xl p-8 rounded-3xl shadow-2xl border border-blue-100">
+
+                <h3 class="text-2xl font-semibold mb-6 text-blue-600">
+                    Core Services
+                </h3>
+
+                <div class="space-y-5">
+
+                    <div class="flex gap-3 items-start">
+                        <span class="text-blue-600 text-lg">✔</span>
+                        <p class="text-gray-700 text-sm">
+                            Psychosexual Medicine & Sexual Wellness Therapy
+                        </p>
+                    </div>
+
+                    <div class="flex gap-3 items-start">
+                        <span class="text-blue-600 text-lg">✔</span>
+                        <p class="text-gray-700 text-sm">
+                            Trauma-Informed Care & Survivor-Centered Healing
+                        </p>
+                    </div>
+
+                    <div class="flex gap-3 items-start">
+                        <span class="text-blue-600 text-lg">✔</span>
+                        <p class="text-gray-700 text-sm">
+                            Women’s Mental Health & Gender-Based Violence Support
+                        </p>
+                    </div>
+
+                    <div class="flex gap-3 items-start">
+                        <span class="text-blue-600 text-lg">✔</span>
+                        <p class="text-gray-700 text-sm">
+                            Stress Management, Anxiety & Depression Treatment
+                        </p>
+                    </div>
+
+                    <div class="flex gap-3 items-start">
+                        <span class="text-blue-600 text-lg">✔</span>
+                        <p class="text-gray-700 text-sm">
+                            Addiction & Behavioral Health Counseling
+                        </p>
+                    </div>
+
+                    <div class="flex gap-3 items-start">
+                        <span class="text-blue-600 text-lg">✔</span>
+                        <p class="text-gray-700 text-sm">
+                            Marital Therapy & Relationship Counseling
+                        </p>
+                    </div>
+
+                    <div class="flex gap-3 items-start">
+                        <span class="text-blue-600 text-lg">✔</span>
+                        <p class="text-gray-700 text-sm">
+                            Workshops & Training for Professionals in Mental Health
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- ================= SERVICES SECTION ================= -->
+<section class="relative bg-white py-12 md:py6 overflow-hidden">
+
+    <!-- Glow -->
+    <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-100 opacity-30 blur-3xl rounded-full"></div>
+
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+
+        <!-- TITLE -->
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-20 tracking-tight">
+            Detailed <span class="text-blue-600">Services</span>
+        </h2>
+
+        <!-- SERVICE LIST -->
+        <div class="space-y-16">
+
+            <!-- SERVICE 1 -->
+            <div class="border-l-4 border-blue-600 pl-6">
+                <h3 class="text-2xl font-semibold mb-3">Psychosexual Medicine & Sexual Wellness</h3>
+
+                <p class="text-gray-600 leading-relaxed mb-4">
+                    Specialized care addressing sexual dissatisfaction, trauma, and emotional well-being,
+                    particularly among women. This service integrates both physical and psychological aspects
+                    of sexual health, breaking stigma and promoting awareness.
+                </p>
+
+                <ul class="list-disc pl-5 text-gray-600 space-y-1 text-sm">
+                    <li>Addressing intimacy issues and sexual dissatisfaction</li>
+                    <li>Healing trauma and shame related to sexuality</li>
+                    <li>Promoting comprehensive sexual education</li>
+                </ul>
+            </div>
+
+            <!-- SERVICE 2 -->
+            <div class="border-l-4 border-blue-600 pl-6">
+                <h3 class="text-2xl font-semibold mb-3">Trauma-Informed Care & Survivor Support</h3>
+
+                <p class="text-gray-600 leading-relaxed mb-4">
+                    A survivor-centered approach designed to support individuals affected by trauma,
+                    particularly gender-based violence (GBV). The focus is on restoring dignity,
+                    emotional safety, and long-term healing.
+                </p>
+
+                <ul class="list-disc pl-5 text-gray-600 space-y-1 text-sm">
+                    <li>Safe, confidential, and empathetic care</li>
+                    <li>Listening circles and guided healing processes</li>
+                    <li>Long-term trauma recovery frameworks</li>
+                </ul>
+            </div>
+
+            <!-- SERVICE 3 -->
+            <div class="border-l-4 border-blue-600 pl-6">
+                <h3 class="text-2xl font-semibold mb-3">Women’s Mental Health & GBV Support</h3>
+
+                <p class="text-gray-600 leading-relaxed mb-4">
+                    Focused mental health services tailored to women, addressing emotional,
+                    psychological, and societal challenges, including gender-based violence,
+                    stigma, and systemic barriers.
+                </p>
+
+                <ul class="list-disc pl-5 text-gray-600 space-y-1 text-sm">
+                    <li>Support for survivors of abuse and violence</li>
+                    <li>Emotional resilience and recovery programs</li>
+                    <li>Breaking stigma around women’s mental health</li>
+                </ul>
+            </div>
+
+            <!-- SERVICE 4 -->
+            <div class="border-l-4 border-blue-600 pl-6">
+                <h3 class="text-2xl font-semibold mb-3">Stress, Anxiety & Depression Management</h3>
+
+                <p class="text-gray-600 leading-relaxed mb-4">
+                    Evidence-based treatment for common mental health conditions, focusing on improving
+                    emotional regulation, coping mechanisms, and overall well-being.
+                </p>
+
+                <ul class="list-disc pl-5 text-gray-600 space-y-1 text-sm">
+                    <li>Personalized therapy and treatment plans</li>
+                    <li>Cognitive-behavioral techniques</li>
+                    <li>Stress and emotional management strategies</li>
+                </ul>
+            </div>
+
+            <!-- SERVICE 5 -->
+            <div class="border-l-4 border-blue-600 pl-6">
+                <h3 class="text-2xl font-semibold mb-3">Addiction & Behavioral Health Counseling</h3>
+
+                <p class="text-gray-600 leading-relaxed mb-4">
+                    Comprehensive support for individuals dealing with substance use and behavioral
+                    challenges, focusing on recovery, relapse prevention, and long-term stability.
+                </p>
+
+                <ul class="list-disc pl-5 text-gray-600 space-y-1 text-sm">
+                    <li>Substance use recovery programs</li>
+                    <li>Behavioral therapy and habit change</li>
+                    <li>Long-term relapse prevention strategies</li>
+                </ul>
+            </div>
+
+            <!-- SERVICE 6 -->
+            <div class="border-l-4 border-blue-600 pl-6">
+                <h3 class="text-2xl font-semibold mb-3">Marital & Relationship Counseling</h3>
+
+                <p class="text-gray-600 leading-relaxed mb-4">
+                    Therapy designed to support couples in navigating emotional, psychological,
+                    and relational challenges, improving communication and connection.
+                </p>
+
+                <ul class="list-disc pl-5 text-gray-600 space-y-1 text-sm">
+                    <li>Conflict resolution and communication skills</li>
+                    <li>Emotional connection rebuilding</li>
+                    <li>Guidance for long-term relationship health</li>
+                </ul>
+            </div>
+
+            <!-- SERVICE 7 -->
+            <div class="border-l-4 border-blue-600 pl-6">
+                <h3 class="text-2xl font-semibold mb-3">Workshops & Professional Training</h3>
+
+                <p class="text-gray-600 leading-relaxed mb-4">
+                    Training programs designed for mental health professionals, educators,
+                    and organizations, focusing on trauma-informed care, psychosexual medicine,
+                    and survivor-centered approaches.
+                </p>
+
+                <ul class="list-disc pl-5 text-gray-600 space-y-1 text-sm">
+                    <li>200+ professionals trained</li>
+                    <li>Workshops on trauma-informed care</li>
+                    <li>Policy and awareness programs</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- ================= WHO THIS IS FOR ================= -->
+<section class="relative bg-gradient-to-br from-blue-50 to-white py-12 md:py6 overflow-hidden">
+
+    <!-- Glow -->
+    <div class="absolute top-0 left-0 w-[400px] h-[400px] bg-blue-200 opacity-20 blur-3xl rounded-full"></div>
+
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+
+        <!-- TITLE -->
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 tracking-tight">
+            Who This <span class="text-blue-600">Is For</span>
+        </h2>
+
+        <!-- SUBTEXT -->
+        <p class="text-center text-gray-600 max-w-3xl mx-auto mb-16 text-lg leading-relaxed">
+            These services are designed for individuals, couples, and professionals seeking
+            meaningful, compassionate, and expert-led mental health support.
+        </p>
+
+        <!-- GRID -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+            <!-- ITEM -->
+            <div class="bg-white/80 backdrop-blur p-6 rounded-2xl shadow-lg hover:shadow-2xl transition border border-transparent hover:border-blue-200">
+                <h3 class="font-semibold text-lg mb-3 text-blue-600">
+                    Individuals Facing Anxiety or Stress
+                </h3>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    Those experiencing overwhelming stress, anxiety, or emotional challenges
+                    and seeking structured guidance and support.
+                </p>
+            </div>
+
+            <!-- ITEM -->
+            <div class="bg-white/80 backdrop-blur p-6 rounded-2xl shadow-lg hover:shadow-2xl transition border border-transparent hover:border-blue-200">
+                <h3 class="font-semibold text-lg mb-3 text-blue-600">
+                    Survivors of Trauma & Abuse
+                </h3>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    Individuals navigating the impact of trauma or gender-based violence,
+                    seeking safe and survivor-centered healing.
+                </p>
+            </div>
+
+            <!-- ITEM -->
+            <div class="bg-white/80 backdrop-blur p-6 rounded-2xl shadow-lg hover:shadow-2xl transition border border-transparent hover:border-blue-200">
+                <h3 class="font-semibold text-lg mb-3 text-blue-600">
+                    Women Seeking Mental Health Support
+                </h3>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    Women facing emotional, societal, or psychological challenges,
+                    including stigma, trauma, or sexual health concerns.
+                </p>
+            </div>
+
+            <!-- ITEM -->
+            <div class="bg-white/80 backdrop-blur p-6 rounded-2xl shadow-lg hover:shadow-2xl transition border border-transparent hover:border-blue-200">
+                <h3 class="font-semibold text-lg mb-3 text-blue-600">
+                    Couples & Relationship Challenges
+                </h3>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    Partners seeking to improve communication, rebuild emotional connection,
+                    or resolve conflicts in a safe therapeutic environment.
+                </p>
+            </div>
+
+            <!-- ITEM -->
+            <div class="bg-white/80 backdrop-blur p-6 rounded-2xl shadow-lg hover:shadow-2xl transition border border-transparent hover:border-blue-200">
+                <h3 class="font-semibold text-lg mb-3 text-blue-600">
+                    Individuals Facing Sexual Health Concerns
+                </h3>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    Those dealing with issues related to intimacy, sexual dissatisfaction,
+                    or trauma, seeking confidential and professional care.
+                </p>
+            </div>
+
+            <!-- ITEM -->
+            <div class="bg-white/80 backdrop-blur p-6 rounded-2xl shadow-lg hover:shadow-2xl transition border border-transparent hover:border-blue-200">
+                <h3 class="font-semibold text-lg mb-3 text-blue-600">
+                    Professionals & Educators
+                </h3>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    Mental health professionals, educators, and organizations seeking
+                    training in trauma-informed and survivor-centered approaches.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- ================= TREATMENT / APPROACH SECTION ================= -->
+<section class="relative bg-gradient-to-br from-white to-blue-50 py-12 md:py6 overflow-hidden">
+
+    <!-- Glow -->
+    <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-200 opacity-20 blur-3xl rounded-full"></div>
+
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+
+        <!-- TITLE -->
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 tracking-tight">
+            Treatment <span class="text-blue-600">Approach</span>
+        </h2>
+
+        <!-- INTRO -->
+        <p class="text-center text-gray-600 max-w-3xl mx-auto mb-20 text-lg leading-relaxed">
+            Dr. Aninda Sidhana’s approach integrates clinical expertise with trauma-informed,
+            survivor-centered care. Every individual’s journey is treated with empathy,
+            dignity, and personalized attention to ensure long-term healing and transformation.
+        </p>
+
+        <!-- STEPS -->
+        <div class="grid md:grid-cols-2 gap-12">
+
+            <!-- STEP 1 -->
+            <div class="flex gap-5">
+                <div class="text-blue-600 text-3xl font-bold">01</div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">Initial Consultation</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Understanding the individual’s concerns, history, and emotional state
+                        in a safe and confidential environment.
+                    </p>
+                </div>
+            </div>
+
+            <!-- STEP 2 -->
+            <div class="flex gap-5">
+                <div class="text-blue-600 text-3xl font-bold">02</div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">Assessment & Diagnosis</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        A structured and compassionate evaluation to identify psychological,
+                        emotional, and behavioral factors affecting well-being.
+                    </p>
+                </div>
+            </div>
+
+            <!-- STEP 3 -->
+            <div class="flex gap-5">
+                <div class="text-blue-600 text-3xl font-bold">03</div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">Personalized Treatment Plan</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Tailored therapy combining psychosexual medicine, trauma-informed care,
+                        and evidence-based practices suited to individual needs.
+                    </p>
+                </div>
+            </div>
+
+            <!-- STEP 4 -->
+            <div class="flex gap-5">
+                <div class="text-blue-600 text-3xl font-bold">04</div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">Therapy & Healing Process</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Continuous support through therapy sessions focused on emotional healing,
+                        resilience building, and restoring self-worth.
+                    </p>
+                </div>
+            </div>
+
+            <!-- STEP 5 -->
+            <div class="flex gap-5">
+                <div class="text-blue-600 text-3xl font-bold">05</div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">Ongoing Support & Growth</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Long-term guidance, relapse prevention, and empowerment strategies
+                        to ensure sustainable mental well-being.
+                    </p>
+                </div>
+            </div>
+
+            <!-- STEP 6 -->
+            <div class="flex gap-5">
+                <div class="text-blue-600 text-3xl font-bold">06</div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">Holistic & Integrated Care</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Addressing both mental and sexual health together, ensuring complete,
+                        stigma-free and inclusive healing.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- ================= METRICS ================= -->
+<section class="relative bg-gradient-to-br from-blue-50 via-white to-blue-100 py-12 md:py6 overflow-hidden">
+
+    <!-- Glow -->
+    <div class="absolute top-0 left-0 w-[400px] h-[400px] bg-blue-300 opacity-20 blur-3xl rounded-full"></div>
+
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+
+        <!-- TITLE -->
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 tracking-tight">
+            Impact <span class="text-blue-600">Metrics</span>
+        </h2>
+
+        <!-- INTRO -->
+        <p class="text-center text-gray-600 max-w-3xl mx-auto mb-20 text-lg leading-relaxed">
+            A measurable reflection of clinical excellence, survivor support,
+            professional training, and large-scale advocacy efforts across India and beyond.
+        </p>
+
+        <!-- MAIN STATS -->
+        <div class="grid md:grid-cols-4 gap-8 mb-20 text-center">
+
+            <div class="bg-white/80 backdrop-blur p-8 rounded-2xl shadow-lg">
+                <h3 class="text-4xl font-bold text-blue-600 mb-2">500+</h3>
+                <p class="text-gray-600 text-sm">Survivors Supported</p>
+            </div>
+
+            <div class="bg-white/80 backdrop-blur p-8 rounded-2xl shadow-lg">
+                <h3 class="text-4xl font-bold text-blue-600 mb-2">200+</h3>
+                <p class="text-gray-600 text-sm">Professionals Trained</p>
+            </div>
+
+            <div class="bg-white/80 backdrop-blur p-8 rounded-2xl shadow-lg">
+                <h3 class="text-4xl font-bold text-blue-600 mb-2">50,000+</h3>
+                <p class="text-gray-600 text-sm">Media & Digital Reach</p>
+            </div>
+
+            <div class="bg-white/80 backdrop-blur p-8 rounded-2xl shadow-lg">
+                <h3 class="text-4xl font-bold text-blue-600 mb-2">20+</h3>
+                <p class="text-gray-600 text-sm">Workshops & Programs</p>
+            </div>
+
+        </div>
+
+        <!-- DETAILED METRICS -->
+        <div class="bg-white/90 backdrop-blur-xl p-8 rounded-3xl shadow-xl border border-blue-100">
+
+            <h3 class="text-2xl font-semibold mb-6 text-blue-600">
+                Detailed Impact Overview
+            </h3>
+
+            <div class="grid md:grid-cols-2 gap-8">
+
+                <!-- LEFT -->
+                <div class="space-y-4 text-gray-600 text-sm leading-relaxed">
+
+                    <p><strong>Direct Impact:</strong> Over 500 survivors engaged through listening circles, toolkit access, and structured healing initiatives.</p>
+
+                    <p><strong>Professional Training:</strong> More than 200 mental health professionals and educators trained in trauma-informed and psychosexual care.</p>
+
+                    <p><strong>Clinical Practice:</strong> Hundreds of patients treated annually with a focus on women’s mental and sexual health.</p>
+
+                </div>
+
+                <!-- RIGHT -->
+                <div class="space-y-4 text-gray-600 text-sm leading-relaxed">
+
+                    <p><strong>Workshops & Webinars:</strong> 20+ sessions conducted with over 2,000 participants.</p>
+
+                    <p><strong>Media & Advocacy Reach:</strong> Featured across podcasts, platforms, and digital campaigns reaching 50,000+ individuals.</p>
+
+                    <p><strong>Policy & Institutional Influence:</strong> Active contribution to mental health policy, GBV frameworks, and professional bodies.</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- QUALITATIVE IMPACT -->
+        <div class="mt-16">
+
+            <h3 class="text-2xl font-semibold text-center mb-10 text-blue-600">
+                Beyond Numbers: Transformational Impact
+            </h3>
+
+            <div class="grid md:grid-cols-2 gap-8">
+
+                <div class="bg-white/80 p-6 rounded-2xl shadow-md">
+                    <h4 class="font-semibold mb-2">Survivor Empowerment</h4>
+                    <p class="text-gray-600 text-sm">
+                        Building dignity, agency, and collective healing through storytelling and safe spaces.
+                    </p>
+                </div>
+
+                <div class="bg-white/80 p-6 rounded-2xl shadow-md">
+                    <h4 class="font-semibold mb-2">Professional Transformation</h4>
+                    <p class="text-gray-600 text-sm">
+                        Equipping practitioners with trauma-informed, empathetic, and inclusive care frameworks.
+                    </p>
+                </div>
+
+                <div class="bg-white/80 p-6 rounded-2xl shadow-md">
+                    <h4 class="font-semibold mb-2">Policy Innovation</h4>
+                    <p class="text-gray-600 text-sm">
+                        Influencing mental health and GBV policies with survivor-centered models.
+                    </p>
+                </div>
+
+                <div class="bg-white/80 p-6 rounded-2xl shadow-md">
+                    <h4 class="font-semibold mb-2">Cultural Shift</h4>
+                    <p class="text-gray-600 text-sm">
+                        Breaking stigma around mental health and sexual wellness through media and dialogue.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<section class="relative bg-gradient-to-br from-white to-blue-50 py-12 md:py6 overflow-hidden">
+
+    <!-- Glow -->
+    <div class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-blue-200 opacity-20 blur-3xl rounded-full"></div>
+
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+
+        <!-- TITLE -->
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 tracking-tight">
+            Workshops & <span class="text-blue-600">Programs</span>
+        </h2>
+
+        <!-- INTRO -->
+        <p class="text-center text-gray-600 max-w-3xl mx-auto mb-20 text-lg leading-relaxed">
+            Dr. Aninda Sidhana designs and leads impactful programs that bridge clinical
+            expertise with community healing, professional training, and policy advocacy.
+        </p>
+
+        <!-- GRID -->
+        <div class="grid md:grid-cols-2 gap-10">
+
+            <!-- PROGRAM 1 -->
+            <div class="bg-white/80 backdrop-blur p-8 rounded-2xl shadow-lg hover:shadow-2xl transition border border-transparent hover:border-blue-200">
+                <h3 class="text-xl font-semibold mb-3 text-blue-600">
+                    Listening Circles
+                </h3>
+                <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                    Safe, guided spaces for survivors to share experiences, build trust,
+                    and contribute to collective healing and systemic change.
+                </p>
+                <ul class="text-gray-600 text-sm space-y-1 list-disc pl-5">
+                    <li>500+ survivors engaged</li>
+                    <li>Community-driven healing</li>
+                    <li>Trauma-informed facilitation</li>
+                </ul>
+            </div>
+
+            <!-- PROGRAM 2 -->
+            <div class="bg-white/80 backdrop-blur p-8 rounded-2xl shadow-lg hover:shadow-2xl transition border border-transparent hover:border-blue-200">
+                <h3 class="text-xl font-semibold mb-3 text-blue-600">
+                    Professional Training Workshops
+                </h3>
+                <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                    Specialized training programs for mental health professionals,
+                    educators, and organizations focusing on advanced care practices.
+                </p>
+                <ul class="text-gray-600 text-sm space-y-1 list-disc pl-5">
+                    <li>200+ professionals trained</li>
+                    <li>Trauma-informed care techniques</li>
+                    <li>Psychosexual medicine integration</li>
+                </ul>
+            </div>
+
+            <!-- PROGRAM 3 -->
+            <div class="bg-white/80 backdrop-blur p-8 rounded-2xl shadow-lg hover:shadow-2xl transition border border-transparent hover:border-blue-200">
+                <h3 class="text-xl font-semibold mb-3 text-blue-600">
+                    Public Webinars & Awareness Sessions
+                </h3>
+                <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                    Digital sessions addressing mental health awareness, emotional intelligence,
+                    and self-care practices for individuals and communities.
+                </p>
+                <ul class="text-gray-600 text-sm space-y-1 list-disc pl-5">
+                    <li>2,000+ participants reached</li>
+                    <li>Suicide prevention & emotional health</li>
+                    <li>Accessible digital education</li>
+                </ul>
+            </div>
+
+            <!-- PROGRAM 4 -->
+            <div class="bg-white/80 backdrop-blur p-8 rounded-2xl shadow-lg hover:shadow-2xl transition border border-transparent hover:border-blue-200">
+                <h3 class="text-xl font-semibold mb-3 text-blue-600">
+                    Policy Advocacy Workshops
+                </h3>
+                <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                    Engaging policymakers, institutions, and stakeholders to integrate
+                    mental health into public systems and GBV frameworks.
+                </p>
+                <ul class="text-gray-600 text-sm space-y-1 list-disc pl-5">
+                    <li>Policy-level discussions</li>
+                    <li>GBV framework integration</li>
+                    <li>Systemic impact and reform</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- FEATURE STRIP -->
+        <div class="mt-20 bg-blue-600 text-white p-8 rounded-2xl shadow-xl text-center">
+
+            <h3 class="text-2xl font-semibold mb-3">
+                Designed for Real Impact
+            </h3>
+
+            <p class="text-blue-100 max-w-3xl mx-auto text-sm leading-relaxed">
+                Each program is built on participatory design, cultural sensitivity,
+                and measurable outcomes—ensuring that learning translates into real-world
+                transformation for individuals, professionals, and communities.
+            </p>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-gray-900 text-gray-300 pt-16 pb-8 px-6">
+      <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-10">
+        <!-- BRAND -->
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-4">Dr. Aninda Sidhana</h3>
+          <p class="text-gray-400 leading-relaxed">
+            Psychiatrist, Psychosexual Medicine Specialist, and
+            Survivor-Advocate dedicated to transforming mental health, gender
+            justice, and trauma care through dignity, empathy, and innovation.
+          </p>
+        </div>
+
+        <!-- QUICK LINKS -->
+        <div>
+          <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-white transition">About</a></li>
+            <li><a href="#" class="hover:text-white transition">Impact</a></li>
+            <li><a href="#" class="hover:text-white transition">Awards</a></li>
+            <li>
+              <a href="#" class="hover:text-white transition">Testimonials</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- CONTRIBUTIONS -->
+        <div>
+          <h4 class="text-white font-semibold mb-4">Key Contributions</h4>
+          <ul class="space-y-2 text-gray-400">
+            <li>The Dignity Dialogues</li>
+            <li>Aawaz Initiative</li>
+            <li>Psychosexual Medicine</li>
+            <li>Trauma-Informed Care</li>
+          </ul>
+        </div>
+
+        <!-- CONTACT / SOCIAL -->
+        <div>
+          <h4 class="text-white font-semibold mb-4">Connect</h4>
+
+          <p class="text-gray-400 mb-4">
+            For collaborations, speaking engagements, or professional inquiries.
+          </p>
+
+          <!-- SOCIAL ICONS -->
+          <div class="flex gap-4">
+            <a
+              href="#"
+              class="bg-gray-800 p-3 rounded-lg hover:bg-blue-600 transition"
+            >
+              <!-- LinkedIn -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5 fill-current text-white"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M4.98 3.5C4.98 4.88 3.87 6 2.49 6 1.12 6 0 4.88 0 3.5 0 2.12 1.12 1 2.49 1c1.38 0 2.49 1.12 2.49 2.5zM0 8h5v16H0V8zm7.5 0H12v2.5h.06c.63-1.2 2.18-2.5 4.49-2.5 4.8 0 5.69 3.16 5.69 7.27V24h-5v-7.5c0-1.79-.03-4.09-2.5-4.09-2.5 0-2.88 1.95-2.88 3.97V24h-5V8z"
+                />
+              </svg>
+            </a>
+
+            <a
+              href="#"
+              class="bg-gray-800 p-3 rounded-lg hover:bg-pink-600 transition"
+            >
+              <!-- Instagram -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5 fill-current text-white"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M7.75 2h8.5C19.99 2 22 4.01 22 6.75v8.5C22 19.99 19.99 22 16.25 22h-8.5C4.01 22 2 19.99 2 16.25v-8.5C2 4.01 4.01 2 7.75 2zm0 2C5.68 4 4 5.68 4 7.75v8.5C4 18.32 5.68 20 7.75 20h8.5c2.07 0 3.75-1.68 3.75-3.75v-8.5C20 5.68 18.32 4 16.25 4h-8.5zm4.25 3a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6zm5.25-.88a1.12 1.12 0 110 2.25 1.12 1.12 0 010-2.25z"
+                />
+              </svg>
+            </a>
+
+            <a
+              href="#"
+              class="bg-gray-800 p-3 rounded-lg hover:bg-blue-400 transition"
+            >
+              <!-- Twitter -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5 fill-current text-white"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M24 4.56c-.88.39-1.83.65-2.82.77a4.93 4.93 0 002.16-2.72 9.86 9.86 0 01-3.13 1.2 4.92 4.92 0 00-8.38 4.48A13.94 13.94 0 011.67 3.15a4.92 4.92 0 001.52 6.57 4.9 4.9 0 01-2.23-.62v.06a4.93 4.93 0 003.95 4.83 4.93 4.93 0 01-2.22.08 4.93 4.93 0 004.6 3.42A9.87 9.87 0 010 19.54a13.94 13.94 0 007.55 2.21c9.06 0 14.01-7.5 14.01-14.01 0-.21 0-.42-.02-.63A10.03 10.03 0 0024 4.56z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- DIVIDER -->
+      <div class="border-t border-gray-700 mt-12 pt-6 text-center">
+        <p class="text-gray-500 text-sm">
+          © 2026 Dr. Aninda Sidhana. All rights reserved. | Designed with
+          purpose & impact.
+        </p>
+      </div>
+    </footer>
+
+<script>
+function toggleMenu() {
+    document.getElementById("mobileMenu").classList.toggle("hidden");
+}
+</script>
+
+</body>
+</html>
