@@ -12,84 +12,64 @@
 
   <body class="bg-blue-50 text-gray-800">
     <!-- ================= NAVBAR ================= -->
-    <header
-      class="sticky top-0 z-50 bg-white/70 backdrop-blur-xl border-b border-gray-200"
-    >
-      <div
-        class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4"
-      >
-        <!-- LOGO -->
-        <div class="flex flex-col leading-tight">
-          <a href="index.html">
-            <h1 class="text-xl md:text-2xl font-bold text-blue-600">
-              Dr. Aninda Sidhana
-            </h1>
-            <span class="text-xs text-gray-500"> Psychiatrist & Advocate </span>
-          </a>
-        </div>
+    <header class="sticky top-0 z-50 bg-white/70 backdrop-blur-xl border-b border-gray-200">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
 
-        <!-- MENU -->
-        <ul class="hidden md:flex items-center gap-8 font-medium text-gray-700">
-          <li>
-            <a
-              href="index.html"
-              class="relative text-blue-600 after:absolute after:-bottom-1 after:left-0 after:w-full after:h-[2px] after:bg-blue-600"
-            >
-              Home
-            </a>
-          </li>
+    <!-- LOGO -->
+    <div class="flex flex-col leading-tight">
+      <a href="./index.html">
+        <h1 class="text-xl md:text-2xl font-bold text-blue-600">
+          Dr. Aninda Sidhana
+        </h1>
+        <span class="text-xs text-gray-500">Psychiatrist & Advocate</span>
+      </a>
+    </div>
 
-          <li>
-            <a
-              href="contributions.html"
-              class="hover:text-blue-600 transition"
-            >
-              Contributions
-            </a>
-          </li>
+    <!-- MENU -->
+    <ul class="hidden md:flex items-center gap-8 font-medium text-gray-700">
 
-          <li>
-            <a href="services.html" class="hover:text-blue-600 transition">
-              Services
-            </a>
-          </li>
+      <li>
+        <a href="./index.html"
+           class="relative text-blue-600 after:absolute after:-bottom-1 after:left-0 after:w-full after:h-[2px] after:bg-blue-600">
+          Home
+        </a>
+      </li>
 
-          <li>
-            <a href="contact.html" class="hover:text-blue-600 transition">
-              Contact
-            </a>
-          </li>
+      <li>
+        <a href="./contributions.html" class="hover:text-blue-600 transition">
+          Contributions
+        </a>
+      </li>
 
-          <!-- CTA BUTTON -->
-          <!-- <li>
-                <button class="bg-blue-600 text-white px-5 py-2 rounded-lg shadow hover:shadow-lg hover:-translate-y-0.5 transition">
-                    Book Now
-                </button>
-            </li> -->
-        </ul>
+      <li>
+        <a href="./services.html" class="hover:text-blue-600 transition">
+          Services
+        </a>
+      </li>
 
-        <!-- MOBILE BUTTON -->
-        <button onclick="toggleMenu()" class="md:hidden text-2xl">☰</button>
-      </div>
+      <li>
+        <a href="./contact.html" class="hover:text-blue-600 transition">
+          Contact
+        </a>
+      </li>
 
-      <!-- MOBILE MENU -->
-      <div
-        id="mobileMenu"
-        class="hidden flex-col bg-white border-t px-6 py-4 md:hidden space-y-3 text-gray-700"
-      >
-        <a href="index.html" class="block hover:text-blue-600">Home</a>
-        <a href="contributions.html" class="block hover:text-blue-600"
-          >Contributions</a
-        >
-        <a href="services.html" class="block hover:text-blue-600">Services</a>
-        <a href="contact.html" class="block hover:text-blue-600">Contact</a>
+    </ul>
 
-        <!-- MOBILE CTA -->
-        <!-- <button class="bg-blue-600 text-white px-5 py-2 rounded-lg mt-3">
-            Book Now
-        </button> -->
-      </div>
-    </header>
+    <!-- MOBILE BUTTON -->
+    <button onclick="toggleMenu()" class="md:hidden text-2xl">☰</button>
+  </div>
+
+  <!-- MOBILE MENU -->
+  <div id="mobileMenu"
+       class="hidden flex-col bg-white border-t px-6 py-4 md:hidden space-y-3 text-gray-700">
+
+    <a href="./index.html" class="block hover:text-blue-600">Home</a>
+    <a href="./contributions.html" class="block hover:text-blue-600">Contributions</a>
+    <a href="./services.html" class="block hover:text-blue-600">Services</a>
+    <a href="./contact.html" class="block hover:text-blue-600">Contact</a>
+
+  </div>
+</header>
 
     <!-- ================= HERO ================= -->
     <section
@@ -833,7 +813,7 @@
     </section>
 
     <!-- ================= FOOTER ================= -->
-    <footer class="bg-gray-900 text-gray-300 pt-16 pb-8 px-6">
+<footer class="bg-gray-900 text-gray-300 pt-16 pb-8 px-6">
       <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-10">
         <!-- BRAND -->
         <div>
@@ -849,11 +829,11 @@
         <div>
           <h4 class="text-white font-semibold mb-4">Quick Links</h4>
           <ul class="space-y-2">
-            <li><a href="#" class="hover:text-white transition">About</a></li>
-            <li><a href="#" class="hover:text-white transition">Impact</a></li>
-            <li><a href="#" class="hover:text-white transition">Awards</a></li>
+            <li><a href="./contact.html" class="hover:text-white transition">Conatct</a></li>
+            <li><a href="./index.html" class="hover:text-white transition">Home</a></li>
+            <li><a href="./contributions.html" class="hover:text-white transition">Contributions</a></li>
             <li>
-              <a href="#" class="hover:text-white transition">Testimonials</a>
+              <a href="./services.html" class="hover:text-white transition">Services</a>
             </li>
           </ul>
         </div>
@@ -938,6 +918,7 @@
         </p>
       </div>
     </footer>
+
 
     <!-- ================= JS ================= -->
     <script>
