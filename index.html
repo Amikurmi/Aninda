@@ -1,930 +1,1509 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Aninda Sidhana | Psychiatrist & Advocate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    <title>Doctor Portfolio</title>
+    :root {
+      --cream: #FAFAF7;
+      --white: #FFFFFF;
+      --navy: #0F2040;
+      --blue: #1A4B8C;
+      --blue-mid: #2563EB;
+      --blue-light: #EEF3FB;
+      --blue-pale: #F5F8FF;
+      --gold: #C8922A;
+      --gold-light: #FDF6E8;
+      --text: #1A1A2E;
+      --text-muted: #5A6478;
+      --text-light: #8A95A8;
+      --border: #E5E9F2;
+      --shadow-sm: 0 2px 12px rgba(15,32,64,0.06);
+      --shadow-md: 0 8px 32px rgba(15,32,64,0.10);
+      --shadow-lg: 0 20px 60px rgba(15,32,64,0.14);
+      --radius: 16px;
+      --radius-lg: 24px;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
 
-    <!-- Tailwind CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
+    html { scroll-behavior: smooth; }
 
-  <body class="bg-blue-50 text-gray-800">
-    <!-- ================= NAVBAR ================= -->
-    <header class="sticky top-0 z-50 bg-white/70 backdrop-blur-xl border-b border-gray-200">
-  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+    body {
+      font-family: var(--font-body);
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
 
-    <!-- LOGO -->
-    <div class="flex flex-col leading-tight">
+    /* ─── NAVBAR ─── */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250,250,247,0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo a { text-decoration: none; }
+    .nav-logo h1 {
+      font-family: var(--font-display);
+      font-size: clamp(18px, 2vw, 22px);
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: -0.02em;
+    }
+    .nav-logo span {
+      display: block;
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 0; height: 2px;
+      background: var(--blue-mid);
+      transition: width 0.25s ease;
+      border-radius: 2px;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--navy); }
+    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+
+    .nav-cta {
+      background: var(--navy);
+      color: #fff !important;
+      padding: 9px 22px;
+      border-radius: 8px;
+      font-weight: 500 !important;
+    }
+    .nav-cta::after { display: none !important; }
+    .nav-cta:hover { background: var(--blue) !important; color: #fff !important; opacity: 0.9; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 6px;
+      background: none;
+      border: none;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--navy);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      padding: 16px 24px 24px;
+      gap: 4px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      display: block;
+      padding: 12px 0;
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 15px;
+      border-bottom: 1px solid var(--border);
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
+
+    /* ─── HERO ─── */
+    .hero {
+      background: linear-gradient(135deg, #F0F5FF 0%, var(--white) 50%, #FDF9F0 100%);
+      padding: clamp(60px, 8vw, 120px) 24px clamp(80px, 10vw, 140px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-blob-1 {
+      position: absolute;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(37,99,235,0.08) 0%, transparent 70%);
+      top: -200px; left: -150px;
+      pointer-events: none;
+    }
+    .hero-blob-2 {
+      position: absolute;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(200,146,42,0.07) 0%, transparent 70%);
+      bottom: -100px; right: -100px;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px 6px 6px;
+      background: var(--gold-light);
+      border: 1px solid rgba(200,146,42,0.2);
+      border-radius: 40px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--gold);
+      letter-spacing: 0.03em;
+      margin-bottom: 24px;
+    }
+    .hero-badge-dot {
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 4.5vw, 58px);
+      font-weight: 700;
+      line-height: 1.12;
+      color: var(--navy);
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--blue-mid);
+    }
+
+    .hero-desc {
+      font-size: clamp(15px, 1.4vw, 17px);
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 36px;
+      max-width: 480px;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+    .hero-badge-dot i {
+      color: #f59e0b; /* gold tone */
+      font-size: 14px;
+    }
+
+    .btn-primary {
+      background: var(--navy);
+      color: #fff;
+      padding: 13px 28px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: all 0.25s;
+      box-shadow: 0 4px 20px rgba(15,32,64,0.22);
+    }
+    .btn-primary:hover { background: var(--blue); transform: translateY(-1px); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--navy);
+      padding: 12px 28px;
+      border: 1.5px solid var(--navy);
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: all 0.25s;
+    }
+    .btn-outline:hover { background: var(--navy); color: #fff; transform: translateY(-1px); }
+
+    .hero-stats {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+    .stat-item { }
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 12px;
+      color: var(--text-light);
+      margin-top: 4px;
+      letter-spacing: 0.03em;
+    }
+    .stat-divider {
+      width: 1px;
+      background: var(--border);
+      height: 40px;
+      align-self: center;
+    }
+
+    /* Hero Image */
+    .hero-image-wrap {
+      position: relative;
+    }
+
+    .hero-img-frame {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      aspect-ratio: 4/5;
+    }
+    .hero-img-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+    .hero-img-frame:hover img { transform: scale(1.03); }
+
+    .hero-img-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 50%, rgba(15,32,64,0.3) 100%);
+    }
+
+    .hero-card-bottom {
+      position: absolute;
+      bottom: 20px; left: 20px;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(12px);
+      border-radius: 12px;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: var(--shadow-md);
+    }
+    .hero-card-avatar {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--white);
+    }
+    .hero-card-name { font-size: 13px; font-weight: 600; color: var(--navy); }
+    .hero-card-role { font-size: 11px; color: var(--text-muted); }
+
+    .hero-award-badge {
+      position: absolute;
+      top: 20px; right: 20px;
+      background: var(--gold);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: 8px;
+      letter-spacing: 0.03em;
+      box-shadow: 0 4px 16px rgba(200,146,42,0.35);
+    }
+
+    /* Decorative dots */
+    .hero-dots {
+      position: absolute;
+      right: -30px; top: 20%;
+      display: grid;
+      grid-template-columns: repeat(4, 8px);
+      gap: 10px;
+    }
+    .hero-dots span {
+      width: 5px; height: 5px;
+      background: var(--blue-mid);
+      border-radius: 50%;
+      opacity: 0.2;
+    }
+
+    /* ─── SECTION SHARED ─── */
+    .section-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue-mid);
+      background: var(--blue-light);
+      padding: 5px 14px;
+      border-radius: 40px;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 3.5vw, 44px);
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: -0.03em;
+      line-height: 1.18;
+      margin-bottom: 14px;
+    }
+
+    .section-desc {
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 560px;
+      line-height: 1.75;
+    }
+
+    /* ─── ABOUT ─── */
+    .about {
+      padding: clamp(60px, 8vw, 110px) 24px;
+      background: var(--white);
+    }
+    .about-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .about-header { text-align: center; margin-bottom: 64px; }
+    .about-header .section-desc { margin: 0 auto; }
+
+    .bio-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px 72px;
+      align-items: start;
+      margin-bottom: 64px;
+    }
+
+    .bio-text h3 {
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 18px;
+    }
+    .bio-text p {
+      color: var(--text-muted);
+      font-size: 15px;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .bio-highlights {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .bio-highlight-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 18px 20px;
+      background: var(--cream);
+      border-radius: 12px;
+      border-left: 3px solid var(--blue-mid);
+    }
+    .bio-highlight-icon {
+      
+      width: 36px; height: 36px;
+      background: var(--blue-light);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+    .bio-highlight-title { font-size: 14px; font-weight: 600; color: var(--navy); margin-bottom: 3px; }
+    .bio-highlight-desc { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+
+    .bio-highlight-icon i {
+    font-size: 22px;
+    color: #2563eb;
+  }
+
+    .contributions-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .contrib-card {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .contrib-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--blue-mid), var(--navy));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    .contrib-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .contrib-card:hover::before { transform: scaleX(1); }
+
+    .contrib-num {
+      font-family: var(--font-display);
+      font-size: 36px;
+      font-weight: 700;
+      color: #2563eb;
+      line-height: 1;
+      margin-bottom: 12px;
+      letter-spacing: -0.04em;
+    }
+    .contrib-title { font-size: 15px; font-weight: 600; color: var(--navy); margin-bottom: 10px; }
+    .contrib-desc { font-size: 13px; color: var(--text-muted); line-height: 1.65; }
+
+    /* ─── METRICS ─── */
+    .metrics {
+      padding: clamp(60px, 8vw, 110px) 24px;
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+    }
+    .metrics::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(37,99,235,0.15) 0%, transparent 60%);
+    }
+
+    .metrics-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .metrics-header { text-align: center; margin-bottom: 64px; }
+    .metrics-header .section-tag { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.8); }
+    .metrics-header .section-title { color: #fff; }
+    .metrics-header .section-desc { color: rgba(255,255,255,0.6); margin: 0 auto; }
+
+    .metrics-top {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-bottom: 32px;
+    }
+
+    .metric-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius);
+      padding: 32px 24px;
+      text-align: center;
+      transition: all 0.3s;
+      backdrop-filter: blur(10px);
+    }
+    .metric-card:hover { background: rgba(255,255,255,0.10); transform: translateY(-3px); }
+
+    .metric-num {
+      font-family: var(--font-display);
+      font-size: 44px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .metric-label { font-size: 13px; color: rgba(255,255,255,0.55); letter-spacing: 0.03em; }
+
+    .metrics-detail {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .metric-detail-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius);
+      padding: 28px 28px;
+    }
+    .metric-detail-card h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 18px;
+      letter-spacing: 0.01em;
+    }
+    .metric-detail-card ul { list-style: none; }
+    .metric-detail-card li {
+      font-size: 13.5px;
+      color: rgba(255,255,255,0.6);
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    .metric-detail-card li:last-child { border-bottom: none; }
+    .metric-detail-card li::before {
+      margin-top: 5px;
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: #2563eb;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 12px;
+    animation: pulse 1.5s infinite;
+  }
+
+  @keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.4); opacity: 0.6; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+    /* ─── AWARDS ─── */
+    .awards {
+      padding: clamp(60px, 8vw, 110px) 24px;
+      background: var(--cream);
+    }
+    .awards-inner { max-width: 1200px; margin: 0 auto; }
+    .awards-header { text-align: center; margin-bottom: 64px; }
+    .awards-header .section-desc { margin: 0 auto; }
+
+    .awards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-bottom: 48px;
+    }
+
+    .award-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .award-icon i {
+      font-size: 22px;
+      color: var(--gold);
+    }
+    .award-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s;
+    }
+    .award-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+    .award-card:hover::after { transform: scaleX(1); }
+
+    .award-icon {
+      width: 52px; height: 52px;
+      background: var(--gold-light);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      flex-shrink: 0;
+      border: 1px solid rgba(200,146,42,0.15);
+    }
+
+    .award-year {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+    .award-title { font-size: 16px; font-weight: 600; color: var(--navy); margin-bottom: 8px; }
+    .award-desc { font-size: 13.5px; color: var(--text-muted); line-height: 1.6; }
+
+    .award-quote {
+      background: linear-gradient(135deg, var(--navy) 0%, #1A3A6B 100%);
+      color: #fff;
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      text-align: center;
+    }
+    .award-quote p {
+      font-family: var(--font-display);
+      font-size: clamp(18px, 2vw, 24px);
+      font-style: italic;
+      line-height: 1.6;
+      margin-bottom: 16px;
+      color: rgba(255,255,255,0.9);
+    }
+    .award-quote cite { font-size: 13px; color: rgba(255,255,255,0.5); font-style: normal; letter-spacing: 0.05em; }
+
+    /* ─── TESTIMONIALS ─── */
+    .testimonials {
+      padding: clamp(60px, 8vw, 110px) 24px;
+      background: var(--white);
+    }
+    .testimonials-inner { max-width: 1200px; margin: 0 auto; }
+    .testimonials-header { text-align: center; margin-bottom: 64px; }
+    .testimonials-header .section-desc { margin: 0 auto; }
+
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .testi-card {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      transition: all 0.3s;
+      position: relative;
+    }
+    .testi-card::before {
+      font-family: var(--font-display);
+      font-size: 80px;
+      color: var(--blue-light);
+      position: absolute;
+      top: 12px; left: 24px;
+      line-height: 1;
+    }
+    .testi-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-sm); }
+
+    /* Quote Icon */
+    .quote-icon {
+      width: 36px;
+      height: 36px;
+      background: rgba(37,99,235,0.08);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+    }
+
+    .quote-icon i {
+      color: #2563eb;
+      font-size: 14px;
+    }
+
+
+    .testi-text {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 14px;
+      font-style: italic;
+    }
+
+    .testi-author-name { font-size: 14px; font-weight: 600; color: var(--navy); }
+    .testi-author-role { font-size: 12px; color: var(--text-light); margin-top: 3px; }
+
+    .testi-media {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .testi-media-card {
+      background: var(--navy);
+      border-radius: var(--radius);
+      padding: 28px 28px;
+    }
+    .testi-media-card p {
+      font-family: var(--font-display);
+      font-size: clamp(14px, 1.3vw, 17px);
+      font-style: italic;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.65;
+      margin-bottom: 14px;
+    }
+    .testi-media-card cite { font-size: 12px; color: rgba(255,255,255,0.4); font-style: normal; letter-spacing: 0.05em; }
+
+    /* ─── CTA ─── */
+    .cta {
+      padding: clamp(60px, 8vw, 110px) 24px;
+      background: linear-gradient(135deg, #EEF4FF 0%, #F5F0FF 50%, #FDF6E8 100%);
+    }
+    .cta-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .cta-inner .section-title { font-size: clamp(28px, 3.5vw, 48px); margin-bottom: 20px; }
+    .cta-inner .section-desc { margin: 0 auto 40px; max-width: 640px; font-size: 17px; }
+
+    .cta-highlights {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 36px 40px;
+      margin-bottom: 40px;
+      text-align: left;
+    }
+    .cta-highlights h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 18px;
+      letter-spacing: 0.01em;
+    }
+    .cta-highlights-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    .cta-hl-item {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      padding-top: 10px;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+    .cta-hl-item::before {
+      content: '';
+      width: 10px;
+      height: 10px;
+      background: linear-gradient(135deg, #2563eb, #6366f1);
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 10px;
+      position: relative;
+      margin-top: 7px;
+    }
+
+    .cta-hl-item::after {
+      content: '\2713';
+      position: absolute;
+      font-size: 11px;
+      color: #fff;
+      left: 4px;
+      top: 1px;
+    }
+
+    /* ─── FOOTER ─── */
+    .footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.6);
+      padding: 64px 24px 32px;
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.8fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+
+    .footer-brand h3 {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .footer-brand p { font-size: 13.5px; line-height: 1.7; }
+
+    .footer-col h4 {
+      font-size: 12px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.4);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 20px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 10px; }
+    .footer-col a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+    .footer-col a:hover { color: #fff; }
+    .footer-col .typo-fix { color: rgba(255,255,255,0.6); }
+
+    .footer-social { display: flex; gap: 10px; margin-top: 16px; }
+    .social-btn {
+      width: 38px; height: 38px;
+      background: rgba(255,255,255,0.07);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.25s;
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+    }
+    .social-btn:hover { background: var(--blue-mid); color: #fff; }
+    .social-btn svg { width: 16px; height: 16px; fill: currentColor; }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-bottom p { font-size: 12.5px; color: rgba(255,255,255,0.3); }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-up { animation: fadeUp 0.7s ease forwards; }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1024px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 48px; text-align: center; }
+      .hero-desc { margin: 0 auto 36px; }
+      .hero-btns { justify-content: center; }
+      .hero-stats { justify-content: center; }
+      .hero-image-wrap { max-width: 480px; margin: 0 auto; }
+      .bio-grid { grid-template-columns: 1fr; gap: 40px; }
+      .contributions-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .footer-brand { grid-column: 1 / -1; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .metrics-top { grid-template-columns: repeat(2, 1fr); }
+      .metrics-detail { grid-template-columns: 1fr; }
+      .awards-grid { grid-template-columns: 1fr; }
+      .testi-grid { grid-template-columns: 1fr; }
+      .testi-media { grid-template-columns: 1fr; }
+      .contributions-grid { grid-template-columns: 1fr; }
+      .cta-highlights-list { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+
+    @media (max-width: 480px) {
+      .metrics-top { grid-template-columns: 1fr 1fr; }
+      .hero-stats { gap: 16px; }
+      .stat-divider { height: 30px; }
+      .award-card { flex-direction: column; gap: 12px; }
+      .cta-highlights { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════ NAVBAR ═══════════════════ -->
+<header class="navbar">
+  <div class="nav-inner">
+    <div class="nav-logo">
       <a href="./index.html">
-        <h1 class="text-xl md:text-2xl font-bold text-blue-600">
-          Dr. Aninda Sidhana
-        </h1>
-        <span class="text-xs text-gray-500">Psychiatrist & Advocate</span>
+        <h1>Dr. Aninda Sidhana</h1>
+        <span>Psychiatrist &amp; Advocate</span>
       </a>
     </div>
 
-    <!-- MENU -->
-    <ul class="hidden md:flex items-center gap-8 font-medium text-gray-700">
-
-      <li>
-        <a href="./index.html"
-           class="relative text-blue-600 after:absolute after:-bottom-1 after:left-0 after:w-full after:h-[2px] after:bg-blue-600">
-          Home
-        </a>
-      </li>
-
-      <li>
-        <a href="./contributions.html" class="hover:text-blue-600 transition">
-          Contributions
-        </a>
-      </li>
-
-      <li>
-        <a href="./services.html" class="hover:text-blue-600 transition">
-          Services
-        </a>
-      </li>
-
-      <li>
-        <a href="./contact.html" class="hover:text-blue-600 transition">
-          Contact
-        </a>
-      </li>
-
+    <ul class="nav-links">
+      <li><a href="./index.html" class="active">Home</a></li>
+      <li><a href="./contributions.html">Contributions</a></li>
+      <li><a href="./services.html">Services</a></li>
+      <li><a href="./contact.html" class="nav-cta">Contact</a></li>
     </ul>
 
-    <!-- MOBILE BUTTON -->
-    <button onclick="toggleMenu()" class="md:hidden text-2xl">☰</button>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
-
-  <!-- MOBILE MENU -->
-  <div id="mobileMenu"
-       class="hidden flex-col bg-white border-t px-6 py-4 md:hidden space-y-3 text-gray-700">
-
-    <a href="./index.html" class="block hover:text-blue-600">Home</a>
-    <a href="./contributions.html" class="block hover:text-blue-600">Contributions</a>
-    <a href="./services.html" class="block hover:text-blue-600">Services</a>
-    <a href="./contact.html" class="block hover:text-blue-600">Contact</a>
-
-  </div>
+  <nav class="mobile-menu" id="mobileMenu">
+    <a href="./index.html">Home</a>
+    <a href="./contributions.html">Contributions</a>
+    <a href="./services.html">Services</a>
+    <a href="./contact.html">Contact</a>
+  </nav>
 </header>
 
-    <!-- ================= HERO ================= -->
-    <section
-      class="relative bg-gradient-to-br from-blue-50 via-white to-blue-100 overflow-hidden"
-    >
-      <!-- Glow Effects -->
-      <div
-        class="absolute -top-32 -left-32 w-[450px] h-[450px] bg-blue-400 opacity-20 rounded-full blur-3xl"
-      ></div>
-      <div
-        class="absolute bottom-0 right-0 w-[300px] h-[300px] bg-indigo-400 opacity-20 rounded-full blur-3xl"
-      ></div>
+<!-- ═══════════════════ HERO ═══════════════════ -->
+<section class="hero">
+  <div class="hero-blob-1"></div>
+  <div class="hero-blob-2"></div>
 
-      <div
-        class="max-w-7xl mx-auto flex flex-col md:flex-row items-center px-6 py-24 gap-16 relative z-10"
-      >
-        <!-- TEXT -->
-        <div class="max-w-xl">
-          <!-- Badge -->
-          <span
-            class="inline-block mb-4 px-4 py-1 text-sm bg-blue-100 text-blue-700 rounded-full font-medium"
-          >
-            Gold Award Nominee • Mental Health & Gender Justice Advocate
-          </span>
+  <div class="hero-inner">
+    <!-- Text -->
+    <div class="fade-up">
+      <div class="hero-badge">
+      <span class="hero-badge-dot">
+        <i class="fas fa-trophy"></i>
+      </span>
+      Gold Award Nominee &nbsp;·&nbsp; Mental Health &amp; Gender Justice Advocate
+    </div>
 
-          <h1 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
-            Dr. Aninda Sidhana <br />
-            <span class="text-blue-600">Healing with Dignity & Impact</span>
-          </h1>
+      <h1>
+        Dr. Aninda Sidhana<br>
+        <em>Healing with Dignity</em><br>
+        &amp; Impact
+      </h1>
 
-          <p class="mb-8 text-gray-600 text-lg leading-relaxed">
-            Psychiatrist, Psychosexual Medicine Specialist, and
-            Survivor-Advocate transforming mental health, gender justice, and
-            trauma care through survivor-led innovation, clinical excellence,
-            and social impact.
-          </p>
+      <p class="hero-desc">
+        Psychiatrist, Psychosexual Medicine Specialist, and Survivor-Advocate transforming mental health, gender justice, and trauma care through survivor-led innovation and clinical excellence.
+      </p>
 
-          <!-- BUTTONS -->
-          <div class="flex gap-4 mb-10">
-            <a href="/contact.html"
-              ><button class="bg-blue-600 text-white px-7 py-3 rounded-xl">
-                Conatct
-              </button></a
-            >
+      <div class="hero-btns">
+        <a href="./contact.html" class="btn-primary">Get in Touch</a>
+        <a href="./contributions.html" class="btn-outline">View Contributions</a>
+      </div>
 
-            <a href="/contributions.html"
-              ><button class="border-2 border-blue-600 px-7 py-3 rounded-xl">
-                Contributions
-              </button>
-            </a>
-          </div>
-
-          <!-- PREMIUM STATS -->
-          <div
-            class="backdrop-blur-xl bg-white/70 border border-white/40 p-6 rounded-2xl shadow-lg flex gap-10 w-fit"
-          >
-            <div>
-              <h2 class="text-blue-600 text-2xl font-bold">10+</h2>
-              <p class="text-sm text-gray-500">Years Clinical Experience</p>
-            </div>
-
-            <div>
-              <h2 class="text-blue-600 text-2xl font-bold">500+</h2>
-              <p class="text-sm text-gray-500">Survivors Supported</p>
-            </div>
-
-            <div>
-              <h2 class="text-blue-600 text-2xl font-bold">50K+</h2>
-              <p class="text-sm text-gray-500">Lives Impacted</p>
-            </div>
-          </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-num">10+</div>
+          <div class="stat-label">Years Experience</div>
         </div>
-
-        <!-- IMAGE SECTION -->
-        <div class="relative group">
-          <!-- Main Image -->
-          <img
-            src="images/Aninda.png"
-            class="w-[380px] rounded-3xl shadow-2xl transition duration-500 group-hover:scale-105"
-          />
-
-          <!-- Floating Info Card -->
-          <div
-            class="absolute -bottom-8 -left-8 bg-white/90 backdrop-blur-md p-4 rounded-xl shadow-xl flex items-center gap-3"
-          >
-            <img
-              src="images/Aninda.jpg"
-              class="w-12 h-12 rounded-full object-cover"
-            />
-            <div>
-              <h4 class="font-semibold text-sm">Dr. Aninda Sidhana</h4>
-              <p class="text-xs text-gray-500">Psychiatrist & Advocate</p>
-            </div>
-          </div>
-
-          <!-- Achievement Badge -->
-          <div
-            class="absolute -top-6 -right-6 bg-blue-600 text-white px-4 py-2 rounded-xl shadow-lg text-xs font-semibold"
-          >
-            Women of Substance Award 2025
-          </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-num">500+</div>
+          <div class="stat-label">Survivors Supported</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-num">50K+</div>
+          <div class="stat-label">Lives Impacted</div>
         </div>
       </div>
-    </section>
+    </div>
 
-    <!-- ================= ABOUT ================= -->
-    <section class="bg-white py-24 px-6 relative overflow-hidden">
-      <!-- Background Glow -->
-      <div
-        class="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-100 rounded-full blur-3xl opacity-40"
-      ></div>
-
-      <div class="max-w-6xl mx-auto relative z-10">
-        <!-- SECTION TITLE -->
-        <div class="mb-16 text-center">
-          <h2 class="text-4xl md:text-5xl font-bold mb-4">
-            About Dr. Aninda Sidhana
-          </h2>
-          <p class="text-gray-500 text-lg max-w-3xl mx-auto">
-            A transformative leader in mental health, gender justice, and
-            survivor-led healing systems in India.
-          </p>
-        </div>
-
-        <!-- BIO -->
-        <div class="mb-16">
-          <h3 class="text-2xl font-semibold mb-4 text-blue-600">
-            Professional Biography
-          </h3>
-
-          <p class="text-gray-700 leading-relaxed mb-4">
-            Dr. Aninda Sidhana is a distinguished psychiatrist, psychosexual
-            medicine specialist, educator, and survivor-advocate whose work
-            bridges clinical excellence with deep social impact. With over a
-            decade of experience, she has redefined how mental health and gender
-            justice intersect, creating survivor-centered systems of care rooted
-            in dignity, empathy, and innovation.
-          </p>
-
-          <p class="text-gray-700 leading-relaxed mb-4">
-            Born into a family of psychiatrists, she developed an early
-            understanding of psychological well-being and care systems. She
-            completed her MBBS from Padmashree Dr. D.Y. Patil Medical College,
-            followed by an MD in Psychiatry from Sri Balaji Vidyapeeth,
-            Puducherry, and further specialized in psychosexual medicine through
-            a fellowship at JSS Medical College, Mysore.
-          </p>
-
-          <p class="text-gray-700 leading-relaxed">
-            Her career spans clinical psychiatry, academic leadership, and
-            advocacy, with key roles in institutions such as IHBAS Delhi,
-            Santosh University, and Dr. S.S. Tantia M.C.H. & Research Centre.
-            Through her work, she has consistently focused on women's mental
-            health, trauma recovery, and breaking societal taboos around sexual
-            wellness.
-          </p>
-        </div>
-
-        <!-- CONTRIBUTIONS GRID -->
-        <div class="grid md:grid-cols-2 gap-10">
-          <!-- CARD 1 -->
-          <div
-            class="bg-blue-50 p-6 rounded-2xl shadow-sm hover:shadow-lg transition"
-          >
-            <h4 class="text-xl font-semibold mb-3 text-blue-700">
-              The Dignity Dialogues
-            </h4>
-            <p class="text-gray-600">
-              A pioneering survivor-led initiative founded in 2025, reimagining
-              mental health and gender justice through storytelling, listening
-              circles, and trauma-integrated care systems. It has directly
-              supported 500+ survivors and trained 200+ professionals.
-            </p>
-          </div>
-
-          <!-- CARD 2 -->
-          <div
-            class="bg-blue-50 p-6 rounded-2xl shadow-sm hover:shadow-lg transition"
-          >
-            <h4 class="text-xl font-semibold mb-3 text-blue-700">
-              Aawaz Initiative
-            </h4>
-            <p class="text-gray-600">
-              A safe haven for survivors of gender-based violence, designed to
-              provide counseling, support systems, and advocacy platforms that
-              empower individuals to reclaim their voice and identity.
-            </p>
-          </div>
-
-          <!-- CARD 3 -->
-          <div
-            class="bg-blue-50 p-6 rounded-2xl shadow-sm hover:shadow-lg transition"
-          >
-            <h4 class="text-xl font-semibold mb-3 text-blue-700">
-              Clinical Expertise
-            </h4>
-            <p class="text-gray-600">
-              Specializing in psychosexual medicine, trauma care, addictions,
-              and marital therapy, Dr. Sidhana addresses complex emotional and
-              sexual health challenges with an integrated, stigma-free approach.
-            </p>
-          </div>
-
-          <!-- CARD 4 -->
-          <div
-            class="bg-blue-50 p-6 rounded-2xl shadow-sm hover:shadow-lg transition"
-          >
-            <h4 class="text-xl font-semibold mb-3 text-blue-700">
-              Academic Leadership
-            </h4>
-            <p class="text-gray-600">
-              As Assistant Professor and Guest Faculty, she mentors future
-              mental health professionals, integrating trauma-informed care,
-              empathy, and real-world application into education systems.
-            </p>
-          </div>
-
-          <!-- CARD 5 -->
-          <div
-            class="bg-blue-50 p-6 rounded-2xl shadow-sm hover:shadow-lg transition"
-          >
-            <h4 class="text-xl font-semibold mb-3 text-blue-700">
-              Advocacy & Media
-            </h4>
-            <p class="text-gray-600">
-              Through podcasts, media features, and public platforms, she drives
-              conversations on trauma, gender justice, and emotional well-being,
-              reaching over 50,000 individuals globally.
-            </p>
-          </div>
-
-          <!-- CARD 6 -->
-          <div
-            class="bg-blue-50 p-6 rounded-2xl shadow-sm hover:shadow-lg transition"
-          >
-            <h4 class="text-xl font-semibold mb-3 text-blue-700">
-              Policy & Social Impact
-            </h4>
-            <p class="text-gray-600">
-              Contributing to national and global mental health policies, she
-              advocates for survivor-led frameworks, influencing institutional
-              protocols and gender justice systems.
-            </p>
-          </div>
-        </div>
-
-        <!-- LONG IMPACT TEXT -->
-        <div class="mt-16">
-          <h3 class="text-2xl font-semibold mb-4 text-blue-600">
-            Impact & Vision
-          </h3>
-
-          <p class="text-gray-700 leading-relaxed mb-4">
-            Dr. Sidhana’s work has impacted thousands of lives through direct
-            clinical care, survivor support programs, and large-scale digital
-            outreach. Her initiatives emphasize measurable outcomes such as
-            improved well-being, reduced trauma distress, and strengthened
-            community support systems.
-          </p>
-
-          <p class="text-gray-700 leading-relaxed mb-4">
-            Her approach combines evidence-based clinical practice with lived
-            experience, making her work both deeply empathetic and structurally
-            transformative. She believes that healing is not just individual,
-            but collective—requiring systemic change, policy reform, and
-            inclusive dialogue.
-          </p>
-
-          <p class="text-gray-700 leading-relaxed">
-            With a vision to build sustainable, survivor-centered ecosystems,
-            Dr. Aninda Sidhana continues to lead innovations that redefine
-            mental health care, empower marginalized voices, and shape the
-            future of gender justice in India and beyond.
-          </p>
-        </div>
+    <!-- Image -->
+    <div class="hero-image-wrap fade-up delay-2">
+      <div class="hero-img-frame">
+        <img src="images/Aninda.png" alt="Dr. Aninda Sidhana">
+        <div class="hero-img-overlay"></div>
       </div>
-    </section>
-    <!-- ================= METRICS SECTION ================= -->
-    <section
-      class="bg-gradient-to-br from-blue-600 to-indigo-700 text-white py-24 px-6 relative overflow-hidden"
-    >
-      <!-- Glow Effects -->
-      <div
-        class="absolute top-0 left-0 w-[400px] h-[400px] bg-white opacity-10 rounded-full blur-3xl"
-      ></div>
-      <div
-        class="absolute bottom-0 right-0 w-[300px] h-[300px] bg-white opacity-10 rounded-full blur-3xl"
-      ></div>
 
-      <div class="max-w-7xl mx-auto relative z-10">
-        <!-- TITLE -->
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold mb-4">Measurable Impact</h2>
-          <p class="text-blue-100 text-lg max-w-3xl mx-auto">
-            Driving meaningful change through clinical excellence, survivor-led
-            innovation, and large-scale advocacy.
-          </p>
-        </div>
-
-        <!-- MAIN STATS GRID -->
-        <div class="grid md:grid-cols-4 gap-8 mb-16">
-          <!-- CARD -->
-          <div
-            class="bg-white/10 backdrop-blur-lg p-8 rounded-2xl text-center shadow-lg hover:scale-105 transition"
-          >
-            <h3 class="text-4xl font-bold mb-2">500+</h3>
-            <p class="text-blue-100">Survivors Supported</p>
-          </div>
-
-          <div
-            class="bg-white/10 backdrop-blur-lg p-8 rounded-2xl text-center shadow-lg hover:scale-105 transition"
-          >
-            <h3 class="text-4xl font-bold mb-2">200+</h3>
-            <p class="text-blue-100">Professionals Trained</p>
-          </div>
-
-          <div
-            class="bg-white/10 backdrop-blur-lg p-8 rounded-2xl text-center shadow-lg hover:scale-105 transition"
-          >
-            <h3 class="text-4xl font-bold mb-2">50K+</h3>
-            <p class="text-blue-100">People Reached</p>
-          </div>
-
-          <div
-            class="bg-white/10 backdrop-blur-lg p-8 rounded-2xl text-center shadow-lg hover:scale-105 transition"
-          >
-            <h3 class="text-4xl font-bold mb-2">10+</h3>
-            <p class="text-blue-100">Years Experience</p>
-          </div>
-        </div>
-
-        <!-- DETAILED IMPACT -->
-        <div class="grid md:grid-cols-2 gap-10">
-          <!-- LEFT SIDE -->
-          <div class="bg-white/10 backdrop-blur-lg p-8 rounded-2xl shadow-lg">
-            <h3 class="text-2xl font-semibold mb-4">Program Impact</h3>
-
-            <ul class="space-y-3 text-blue-100">
-              <li>✔ 500+ survivors supported through The Dignity Dialogues</li>
-              <li>✔ 200+ professionals trained in trauma-informed care</li>
-              <li>
-                ✔ 1,000+ individuals engaged through workshops & listening
-                circles
-              </li>
-              <li>✔ Healing Justice Toolkit developed for systemic change</li>
-            </ul>
-          </div>
-
-          <!-- RIGHT SIDE -->
-          <div class="bg-white/10 backdrop-blur-lg p-8 rounded-2xl shadow-lg">
-            <h3 class="text-2xl font-semibold mb-4">
-              Clinical & Academic Reach
-            </h3>
-
-            <ul class="space-y-3 text-blue-100">
-              <li>✔ 300+ patients treated annually</li>
-              <li>✔ 100+ students mentored in psychosexual medicine</li>
-              <li>✔ 20+ workshops & webinars conducted</li>
-              <li>✔ 2,000+ participants trained in mental health programs</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- MEDIA + POLICY -->
-        <div class="grid md:grid-cols-2 gap-10 mt-10">
-          <div class="bg-white/10 backdrop-blur-lg p-8 rounded-2xl shadow-lg">
-            <h3 class="text-2xl font-semibold mb-4">Media & Advocacy Reach</h3>
-
-            <ul class="space-y-3 text-blue-100">
-              <li>✔ 50,000+ audience reached via podcasts & media</li>
-              <li>✔ Featured in 10+ major platforms & interviews</li>
-              <li>✔ Digital campaigns with high engagement</li>
-            </ul>
-          </div>
-
-          <div class="bg-white/10 backdrop-blur-lg p-8 rounded-2xl shadow-lg">
-            <h3 class="text-2xl font-semibold mb-4">
-              Policy & Leadership Impact
-            </h3>
-
-            <ul class="space-y-3 text-blue-100">
-              <li>✔ Active contributor to GBV policy workshops</li>
-              <li>✔ Leadership roles in national psychiatric bodies</li>
-              <li>✔ Advocate for survivor-led policy frameworks</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- BOTTOM STATEMENT -->
-        <div class="mt-16 text-center max-w-3xl mx-auto">
-          <p class="text-blue-100 text-lg leading-relaxed">
-            Dr. Aninda Sidhana’s impact extends beyond numbers—her work has
-            transformed lives, influenced systems, and reshaped how mental
-            health and gender justice are approached across communities and
-            institutions.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= AWARDS ================= -->
-    <section class="bg-white py-24 px-6 relative overflow-hidden">
-      <!-- Glow -->
-      <div
-        class="absolute top-0 left-0 w-[400px] h-[400px] bg-yellow-100 opacity-40 rounded-full blur-3xl"
-      ></div>
-
-      <div class="max-w-6xl mx-auto relative z-10">
-        <!-- TITLE -->
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold mb-4">
-            Awards & Recognitions
-          </h2>
-          <p class="text-gray-500 text-lg max-w-3xl mx-auto">
-            Honoring a journey defined by resilience, leadership, and
-            transformative impact in mental health and gender justice.
-          </p>
-        </div>
-
-        <!-- AWARDS GRID -->
-        <div class="grid md:grid-cols-2 gap-10">
-          <!-- CARD 1 -->
-          <div
-            class="bg-gradient-to-br from-yellow-50 to-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition border border-yellow-100"
-          >
-            <div class="flex items-center gap-4 mb-4">
-              <div class="bg-yellow-400 text-white p-3 rounded-xl text-xl">
-                🏆
-              </div>
-              <h3 class="text-xl font-semibold">
-                Women of Substance Award (2025)
-              </h3>
-            </div>
-            <p class="text-gray-600">
-              Recognized for championing gender equality, mental health
-              awareness, and empowering women through survivor-led initiatives.
-            </p>
-          </div>
-
-          <!-- CARD 2 -->
-          <div
-            class="bg-gradient-to-br from-yellow-50 to-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition border border-yellow-100"
-          >
-            <div class="flex items-center gap-4 mb-4">
-              <div class="bg-yellow-400 text-white p-3 rounded-xl text-xl">
-                🏆
-              </div>
-              <h3 class="text-xl font-semibold">
-                Women Resilience Award (2024)
-              </h3>
-            </div>
-            <p class="text-gray-600">
-              Awarded by the Indian Psychiatric Society for outstanding
-              leadership in mental health advocacy and survivor empowerment.
-            </p>
-          </div>
-
-          <!-- CARD 3 -->
-          <div
-            class="bg-gradient-to-br from-yellow-50 to-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition border border-yellow-100"
-          >
-            <div class="flex items-center gap-4 mb-4">
-              <div class="bg-yellow-400 text-white p-3 rounded-xl text-xl">
-                🏆
-              </div>
-              <h3 class="text-xl font-semibold">
-                Women Superachiever Award (2025)
-              </h3>
-            </div>
-            <p class="text-gray-600">
-              Honored for innovation and impactful contributions in mental
-              health care, advocacy, and social transformation.
-            </p>
-          </div>
-
-          <!-- CARD 4 -->
-          <div
-            class="bg-gradient-to-br from-yellow-50 to-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition border border-yellow-100"
-          >
-            <div class="flex items-center gap-4 mb-4">
-              <div class="bg-yellow-400 text-white p-3 rounded-xl text-xl">
-                🏆
-              </div>
-              <h3 class="text-xl font-semibold">
-                Dr. N.N. Wig Oration Award (2025)
-              </h3>
-            </div>
-            <p class="text-gray-600">
-              Recognized for advancing holistic mental health care and
-              challenging stigma through research, advocacy, and public
-              engagement.
-            </p>
-          </div>
-        </div>
-
-        <!-- TESTIMONIAL STYLE QUOTE -->
-        <div
-          class="mt-20 bg-gradient-to-r from-blue-600 to-indigo-700 text-white p-10 rounded-3xl shadow-xl text-center"
-        >
-          <p class="text-xl italic mb-4">
-            “Dr. Sidhana is redefining mental health advocacy by combining
-            clinical expertise with lived experience and an unwavering
-            commitment to justice.”
-          </p>
-
-          <h4 class="font-semibold text-lg">— Media & Public Recognition</h4>
-        </div>
-
-        <!-- IMPACT STATEMENT -->
-        <div class="mt-12 text-center max-w-3xl mx-auto">
-          <p class="text-gray-600 text-lg leading-relaxed">
-            These recognitions reflect not only professional excellence but also
-            the profound societal impact of Dr. Aninda Sidhana’s
-            work—transforming lives, influencing systems, and redefining the
-            future of mental health and gender justice.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= TESTIMONIAL ================= -->
-    <section
-      class="bg-gradient-to-br from-gray-50 to-white py-24 px-6 relative overflow-hidden"
-    >
-      <!-- Glow -->
-      <div
-        class="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-100 opacity-40 rounded-full blur-3xl"
-      ></div>
-
-      <div class="max-w-6xl mx-auto relative z-10">
-        <!-- TITLE -->
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold mb-4">Voices of Impact</h2>
-          <p class="text-gray-500 text-lg max-w-3xl mx-auto">
-            Reflections from professionals, survivors, and global platforms
-            highlighting the transformative impact of Dr. Aninda Sidhana’s work.
-          </p>
-        </div>
-
-        <!-- TESTIMONIAL GRID -->
-        <div class="grid md:grid-cols-2 gap-10">
-          <!-- PROFESSIONAL TESTIMONIAL -->
-          <div
-            class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-2xl transition"
-          >
-            <p class="text-gray-700 italic mb-6 leading-relaxed">
-              “Dr. Sidhana’s work is a masterclass in integrating clinical
-              excellence with human empathy. Her approach to trauma-informed
-              care is reshaping psychiatric practice across India.”
-            </p>
-
-            <div>
-              <h4 class="font-semibold text-lg">Dr. Roop Sidana</h4>
-              <p class="text-sm text-gray-500">
-                Clinical Director & Mental Health Advocate
-              </p>
-            </div>
-          </div>
-
-          <!-- PROFESSIONAL BODY -->
-          <div
-            class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-2xl transition"
-          >
-            <p class="text-gray-700 italic mb-6 leading-relaxed">
-              “Her leadership in advancing psychosexual medicine and training
-              professionals has elevated the standards of mental health
-              education and advocacy.”
-            </p>
-
-            <div>
-              <h4 class="font-semibold text-lg">
-                Indian Association of Private Psychiatry
-              </h4>
-              <p class="text-sm text-gray-500">Professional Body</p>
-            </div>
-          </div>
-
-          <!-- SURVIVOR TESTIMONIAL -->
-          <div
-            class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-2xl transition"
-          >
-            <p class="text-gray-700 italic mb-6 leading-relaxed">
-              “The Dignity Dialogues gave me a voice when I felt invisible.
-              Through her listening circles, I found strength, dignity, and the
-              courage to rebuild my life.”
-            </p>
-
-            <div>
-              <h4 class="font-semibold text-lg">Survivor Participant</h4>
-              <p class="text-sm text-gray-500">Rajasthan Listening Circle</p>
-            </div>
-          </div>
-
-          <!-- WORKSHOP PARTICIPANT -->
-          <div
-            class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-2xl transition"
-          >
-            <p class="text-gray-700 italic mb-6 leading-relaxed">
-              “Her workshops taught me that healing goes beyond therapy—it lies
-              in storytelling, community, and self-acceptance.”
-            </p>
-
-            <div>
-              <h4 class="font-semibold text-lg">Workshop Participant</h4>
-              <p class="text-sm text-gray-500">Mental Health Program</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- MEDIA TESTIMONIALS -->
-        <div class="mt-16 grid md:grid-cols-2 gap-10">
-          <div
-            class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white p-8 rounded-2xl shadow-xl"
-          >
-            <p class="text-lg italic mb-4">
-              “Her journey is not just about survival—it is about building
-              systems where every individual can heal, thrive, and reclaim
-              dignity.”
-            </p>
-            <h4 class="font-semibold">— The Better India</h4>
-          </div>
-
-          <div
-            class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white p-8 rounded-2xl shadow-xl"
-          >
-            <p class="text-lg italic mb-4">
-              “She is redefining mental health advocacy by merging lived
-              experience with professional excellence and a deep commitment to
-              justice.”
-            </p>
-            <h4 class="font-semibold">— AboutHer Show</h4>
-          </div>
-        </div>
-
-        <!-- FINAL IMPACT STATEMENT -->
-        <div class="mt-20 text-center max-w-3xl mx-auto">
-          <p class="text-gray-600 text-lg leading-relaxed">
-            These voices reflect the profound and lasting impact of Dr. Aninda
-            Sidhana’s work—empowering survivors, inspiring professionals, and
-            influencing global conversations around mental health, dignity, and
-            gender justice.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= CONCLUSION / CTA SECTION ================= -->
-    <section
-      class="bg-gradient-to-br from-blue-700 via-indigo-800 to-blue-900 text-white py-28 px-6 relative overflow-hidden"
-    >
-      <!-- Glow Effects -->
-      <div
-        class="absolute top-0 left-0 w-[400px] h-[400px] bg-white opacity-10 rounded-full blur-3xl"
-      ></div>
-      <div
-        class="absolute bottom-0 right-0 w-[300px] h-[300px] bg-white opacity-10 rounded-full blur-3xl"
-      ></div>
-
-      <div class="max-w-5xl mx-auto text-center relative z-10">
-        <!-- TITLE -->
-        <h2 class="text-4xl md:text-5xl font-bold mb-8 leading-tight">
-          A Legacy of Healing, Dignity & Transformation
-        </h2>
-
-        <!-- MAIN CONTENT -->
-        <p class="text-lg md:text-xl text-blue-100 leading-relaxed mb-6">
-          Dr. Aninda Sidhana’s life work represents a rare convergence of
-          clinical excellence, lived experience, and transformative social
-          impact. Her journey—from psychiatrist to survivor-advocate—has
-          redefined how mental health, gender justice, and trauma care are
-          understood and practiced across India.
-        </p>
-
-        <p class="text-lg md:text-xl text-blue-100 leading-relaxed mb-6">
-          Through initiatives such as The Dignity Dialogues and her continued
-          contributions to clinical care, education, and policy advocacy, she
-          has empowered hundreds of survivors, trained professionals, and
-          influenced systems that shape the future of mental health.
-        </p>
-
-        <p class="text-lg md:text-xl text-blue-100 leading-relaxed mb-10">
-          Her work goes beyond impact metrics—it restores dignity, amplifies
-          unheard voices, and builds sustainable ecosystems of healing. She is
-          not only addressing gaps in mental health care but redefining its very
-          foundation through empathy, inclusion, and survivor-led innovation.
-        </p>
-
-        <!-- HIGHLIGHT BOX -->
-        <div
-          class="bg-white/10 backdrop-blur-lg p-8 rounded-2xl shadow-xl mb-10"
-        >
-          <h3 class="text-2xl font-semibold mb-4 text-white">
-            Why She Stands Out
-          </h3>
-
-          <ul class="space-y-3 text-blue-100 text-left max-w-2xl mx-auto">
-            <li>
-              <span class="text-white font-bold mr-2">✔</span>
-              Pioneer of survivor-led, trauma-informed care systems
-            </li>
-
-            <li>
-              <span class="text-white font-bold mr-2">✔</span>
-              Strong measurable impact across clinical, social, and digital
-              platforms
-            </li>
-
-            <li>
-              <span class="text-white font-bold mr-2">✔</span>
-              Recognized leader in mental health and gender justice advocacy
-            </li>
-
-            <li>
-              <span class="text-white font-bold mr-2">✔</span>
-              Influencing policy, education, and public discourse
-            </li>
-
-            <li>
-              <span class="text-white font-bold mr-2">✔</span>
-              Building sustainable and scalable models for future generations
-            </li>
-          </ul>
-        </div>
-
-        <!-- FINAL STRONG STATEMENT -->
-        <p class="text-xl md:text-2xl font-semibold mb-10 leading-relaxed">
-          Dr. Aninda Sidhana is not just a practitioner—she is a movement
-          driving change, healing communities, and shaping a more compassionate
-          and equitable future.
-        </p>
-
-        <!-- CTA BUTTON -->
+      <div class="hero-card-bottom">
+        <img src="images/Aninda.jpg" alt="Dr. Aninda Sidhana" class="hero-card-avatar">
         <div>
-          <button
-            class="bg-white text-blue-700 px-10 py-4 rounded-xl font-semibold shadow-lg hover:shadow-2xl hover:-translate-y-1 transition duration-300"
-          >
-            Recognize Her Impact
-          </button>
+          <div class="hero-card-name">Dr. Aninda Sidhana</div>
+          <div class="hero-card-role">Psychiatrist &amp; Advocate</div>
         </div>
       </div>
-    </section>
 
-    <!-- ================= FOOTER ================= -->
-<footer class="bg-gray-900 text-gray-300 pt-16 pb-8 px-6">
-      <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-10">
-        <!-- BRAND -->
-        <div>
-          <h3 class="text-2xl font-bold text-white mb-4">Dr. Aninda Sidhana</h3>
-          <p class="text-gray-400 leading-relaxed">
-            Psychiatrist, Psychosexual Medicine Specialist, and
-            Survivor-Advocate dedicated to transforming mental health, gender
-            justice, and trauma care through dignity, empathy, and innovation.
-          </p>
+      <div class="hero-award-badge">Women of Substance Award 2025</div>
+
+      <div class="hero-dots">
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ ABOUT ═══════════════════ -->
+<section class="about">
+  <div class="about-inner">
+    <div class="about-header">
+      <span class="section-tag">About</span>
+      <h2 class="section-title">About Dr. Aninda Sidhana</h2>
+      <p class="section-desc">A transformative leader in mental health, gender justice, and survivor-led healing systems in India.</p>
+    </div>
+
+    <div class="bio-grid">
+      <div class="bio-text">
+        <h3>Professional Biography</h3>
+        <p>Dr. Aninda Sidhana is a distinguished psychiatrist, psychosexual medicine specialist, educator, and survivor-advocate whose work bridges clinical excellence with deep social impact. With over a decade of experience, she has redefined how mental health and gender justice intersect.</p>
+        <p>Born into a family of psychiatrists, she completed her MBBS from Padmashree Dr. D.Y. Patil Medical College, followed by an MD in Psychiatry from Sri Balaji Vidyapeeth, and a fellowship in psychosexual medicine at JSS Medical College, Mysore.</p>
+        <p>Her career spans clinical psychiatry, academic leadership, and advocacy at IHBAS Delhi, Santosh University, and Dr. S.S. Tantia M.C.H. & Research Centre, consistently focusing on women's mental health, trauma recovery, and breaking taboos around sexual wellness.</p>
+      </div>
+
+      <div class="bio-highlights">
+        <div class="bio-highlight-item">
+          <div class="bio-highlight-icon">
+            <i class="fas fa-brain"></i>
+          </div>
+          <div>
+            <div class="bio-highlight-title">Clinical Expertise</div>
+            <div class="bio-highlight-desc">Psychosexual medicine, trauma care, addictions, and marital therapy with a stigma-free integrated approach.</div>
+          </div>
         </div>
-
-        <!-- QUICK LINKS -->
-        <div>
-          <h4 class="text-white font-semibold mb-4">Quick Links</h4>
-          <ul class="space-y-2">
-            <li><a href="./contact.html" class="hover:text-white transition">Conatct</a></li>
-            <li><a href="./index.html" class="hover:text-white transition">Home</a></li>
-            <li><a href="./contributions.html" class="hover:text-white transition">Contributions</a></li>
-            <li>
-              <a href="./services.html" class="hover:text-white transition">Services</a>
-            </li>
-          </ul>
+        <div class="bio-highlight-item">
+          <div class="bio-highlight-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <div>
+            <div class="bio-highlight-title">Academic Leadership</div>
+            <div class="bio-highlight-desc">Assistant Professor mentoring future professionals with trauma-informed, real-world education frameworks.</div>
+          </div>
         </div>
-
-        <!-- CONTRIBUTIONS -->
-        <div>
-          <h4 class="text-white font-semibold mb-4">Key Contributions</h4>
-          <ul class="space-y-2 text-gray-400">
-            <li>The Dignity Dialogues</li>
-            <li>Aawaz Initiative</li>
-            <li>Psychosexual Medicine</li>
-            <li>Trauma-Informed Care</li>
-          </ul>
+        <div class="bio-highlight-item">
+          <div class="bio-highlight-icon">
+            <i class="fas fa-microphone"></i>
+          </div>
+          <div>
+            <div class="bio-highlight-title">Media & Advocacy</div>
+            <div class="bio-highlight-desc">Driving conversations on trauma and gender justice through podcasts and public platforms, reaching 50,000+ globally.</div>
+          </div>
         </div>
-
-        <!-- CONTACT / SOCIAL -->
-        <div>
-          <h4 class="text-white font-semibold mb-4">Connect</h4>
-
-          <p class="text-gray-400 mb-4">
-            For collaborations, speaking engagements, or professional inquiries.
-          </p>
-
-          <!-- SOCIAL ICONS -->
-          <div class="flex gap-4">
-            <a
-              href="#"
-              class="bg-gray-800 p-3 rounded-lg hover:bg-blue-600 transition"
-            >
-              <!-- LinkedIn -->
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="w-5 h-5 fill-current text-white"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M4.98 3.5C4.98 4.88 3.87 6 2.49 6 1.12 6 0 4.88 0 3.5 0 2.12 1.12 1 2.49 1c1.38 0 2.49 1.12 2.49 2.5zM0 8h5v16H0V8zm7.5 0H12v2.5h.06c.63-1.2 2.18-2.5 4.49-2.5 4.8 0 5.69 3.16 5.69 7.27V24h-5v-7.5c0-1.79-.03-4.09-2.5-4.09-2.5 0-2.88 1.95-2.88 3.97V24h-5V8z"
-                />
-              </svg>
-            </a>
-
-            <a
-              href="#"
-              class="bg-gray-800 p-3 rounded-lg hover:bg-pink-600 transition"
-            >
-              <!-- Instagram -->
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="w-5 h-5 fill-current text-white"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M7.75 2h8.5C19.99 2 22 4.01 22 6.75v8.5C22 19.99 19.99 22 16.25 22h-8.5C4.01 22 2 19.99 2 16.25v-8.5C2 4.01 4.01 2 7.75 2zm0 2C5.68 4 4 5.68 4 7.75v8.5C4 18.32 5.68 20 7.75 20h8.5c2.07 0 3.75-1.68 3.75-3.75v-8.5C20 5.68 18.32 4 16.25 4h-8.5zm4.25 3a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6zm5.25-.88a1.12 1.12 0 110 2.25 1.12 1.12 0 010-2.25z"
-                />
-              </svg>
-            </a>
-
-            <a
-              href="#"
-              class="bg-gray-800 p-3 rounded-lg hover:bg-blue-400 transition"
-            >
-              <!-- Twitter -->
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="w-5 h-5 fill-current text-white"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M24 4.56c-.88.39-1.83.65-2.82.77a4.93 4.93 0 002.16-2.72 9.86 9.86 0 01-3.13 1.2 4.92 4.92 0 00-8.38 4.48A13.94 13.94 0 011.67 3.15a4.92 4.92 0 001.52 6.57 4.9 4.9 0 01-2.23-.62v.06a4.93 4.93 0 003.95 4.83 4.93 4.93 0 01-2.22.08 4.93 4.93 0 004.6 3.42A9.87 9.87 0 010 19.54a13.94 13.94 0 007.55 2.21c9.06 0 14.01-7.5 14.01-14.01 0-.21 0-.42-.02-.63A10.03 10.03 0 0024 4.56z"
-                />
-              </svg>
-            </a>
+        <div class="bio-highlight-item">
+          <div class="bio-highlight-icon">
+            <i class="fas fa-balance-scale"></i>
+          </div>
+          <div>
+            <div class="bio-highlight-title">Policy & Social Impact</div>
+            <div class="bio-highlight-desc">Contributing to national mental health policies and advocating for survivor-led frameworks and gender justice systems.</div>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- DIVIDER -->
-      <div class="border-t border-gray-700 mt-12 pt-6 text-center">
-        <p class="text-gray-500 text-sm">
-          © 2026 Dr. Aninda Sidhana. All rights reserved. | Designed with
-          purpose & impact.
-        </p>
+    <div class="contributions-grid">
+      <div class="contrib-card">
+        <div class="contrib-num">01</div>
+        <div class="contrib-title">The Dignity Dialogues</div>
+        <div class="contrib-desc">A pioneering survivor-led initiative founded in 2025, reimagining mental health through storytelling, listening circles, and trauma-integrated care. Directly supported 500+ survivors and trained 200+ professionals.</div>
       </div>
-    </footer>
+      <div class="contrib-card">
+        <div class="contrib-num">02</div>
+        <div class="contrib-title">Aawaz Initiative</div>
+        <div class="contrib-desc">A safe haven for survivors of gender-based violence, providing counseling, support systems, and advocacy platforms that empower individuals to reclaim their voice and identity.</div>
+      </div>
+      <div class="contrib-card">
+        <div class="contrib-num">03</div>
+        <div class="contrib-title">Clinical Excellence</div>
+        <div class="contrib-desc">Specializing in psychosexual medicine and complex emotional health challenges, addressing the full spectrum of mental wellness with an empathetic, evidence-based approach.</div>
+      </div>
+      <div class="contrib-card">
+        <div class="contrib-num">04</div>
+        <div class="contrib-title">Trauma-Informed Care</div>
+        <div class="contrib-desc">Developing frameworks that integrate clinical practice with lived experience, creating both deeply empathetic and structurally transformative healing systems.</div>
+      </div>
+      <div class="contrib-card">
+        <div class="contrib-num">05</div>
+        <div class="contrib-title">Impact Vision</div>
+        <div class="contrib-desc">Building sustainable, survivor-centered ecosystems that redefine mental health care, empower marginalized voices, and shape the future of gender justice in India and beyond.</div>
+      </div>
+      <div class="contrib-card">
+        <div class="contrib-num">06</div>
+        <div class="contrib-title">Community Systems</div>
+        <div class="contrib-desc">Believing healing is collective—requiring systemic change, policy reform, and inclusive dialogue. Creating measurable outcomes: improved well-being and strengthened community support.</div>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- ═══════════════════ METRICS ═══════════════════ -->
+<section class="metrics">
+  <div class="metrics-inner">
+    <div class="metrics-header">
+      <span class="section-tag">Impact</span>
+      <h2 class="section-title">Measurable Impact</h2>
+      <p class="section-desc">Driving meaningful change through clinical excellence, survivor-led innovation, and large-scale advocacy.</p>
+    </div>
 
-    <!-- ================= JS ================= -->
-    <script>
-      function toggleMenu() {
-        document.getElementById("mobileMenu").classList.toggle("hidden");
+    <div class="metrics-top">
+      <div class="metric-card">
+        <div class="metric-num">500+</div>
+        <div class="metric-label">Survivors Supported</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-num">200+</div>
+        <div class="metric-label">Professionals Trained</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-num">50K+</div>
+        <div class="metric-label">People Reached</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-num">10+</div>
+        <div class="metric-label">Years Experience</div>
+      </div>
+    </div>
+
+    <div class="metrics-detail">
+      <div class="metric-detail-card">
+        <h3>Program Impact</h3>
+        <ul>
+          <li>500+ survivors supported through The Dignity Dialogues</li>
+          <li>200+ professionals trained in trauma-informed care</li>
+          <li>1,000+ individuals engaged through workshops &amp; listening circles</li>
+          <li>Healing Justice Toolkit developed for systemic change</li>
+        </ul>
+      </div>
+      <div class="metric-detail-card">
+        <h3>Clinical &amp; Academic Reach</h3>
+        <ul>
+          <li>300+ patients treated annually</li>
+          <li>100+ students mentored in psychosexual medicine</li>
+          <li>20+ workshops &amp; webinars conducted</li>
+          <li>2,000+ participants trained in mental health programs</li>
+        </ul>
+      </div>
+      <div class="metric-detail-card">
+        <h3>Media &amp; Advocacy Reach</h3>
+        <ul>
+          <li>50,000+ audience reached via podcasts &amp; media</li>
+          <li>Featured in 10+ major platforms &amp; interviews</li>
+          <li>Digital campaigns with high engagement rates</li>
+        </ul>
+      </div>
+      <div class="metric-detail-card">
+        <h3>Policy &amp; Leadership Impact</h3>
+        <ul>
+          <li>Active contributor to GBV policy workshops</li>
+          <li>Leadership roles in national psychiatric bodies</li>
+          <li>Advocate for survivor-led policy frameworks</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ AWARDS ═══════════════════ -->
+<section class="awards">
+  <div class="awards-inner">
+    <div class="awards-header">
+      <span class="section-tag">Recognition</span>
+      <h2 class="section-title">Awards &amp; Recognitions</h2>
+      <p class="section-desc">Honoring a journey defined by resilience, leadership, and transformative impact in mental health and gender justice.</p>
+    </div>
+
+    <div class="awards-grid">
+  
+  <div class="award-card">
+    <div class="award-icon">
+      <i class="fas fa-trophy"></i>
+    </div>
+    <div>
+      <div class="award-year">2025</div>
+      <div class="award-title">Women of Substance Award</div>
+      <div class="award-desc">
+        Recognized for championing gender equality, mental health awareness, and empowering women through survivor-led initiatives.
+      </div>
+    </div>
+  </div>
+
+  <div class="award-card">
+    <div class="award-icon">
+      <i class="fas fa-medal"></i>
+    </div>
+    <div>
+      <div class="award-year">2024</div>
+      <div class="award-title">Women Resilience Award</div>
+      <div class="award-desc">
+        Awarded by the Indian Psychiatric Society for outstanding leadership in mental health advocacy and survivor empowerment.
+      </div>
+    </div>
+  </div>
+
+  <div class="award-card">
+    <div class="award-icon">
+      <i class="fas fa-star"></i>
+    </div>
+    <div>
+      <div class="award-year">2025</div>
+      <div class="award-title">Women Superachiever Award</div>
+      <div class="award-desc">
+        Honored for innovation and impactful contributions in mental health care, advocacy, and social transformation.
+      </div>
+    </div>
+  </div>
+
+  <div class="award-card">
+    <div class="award-icon">
+      <i class="fas fa-award"></i>
+    </div>
+    <div>
+      <div class="award-year">2025</div>
+      <div class="award-title">Dr. N.N. Wig Oration Award</div>
+      <div class="award-desc">
+        Recognized for advancing holistic mental health care and challenging stigma through research, advocacy, and public engagement.
+      </div>
+    </div>
+  </div>
+
+</div>
+
+    <div class="award-quote">
+      <p>"Dr. Sidhana is redefining mental health advocacy by combining clinical expertise with lived experience and an unwavering commitment to justice."</p>
+      <cite>— Media &amp; Public Recognition</cite>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ TESTIMONIALS ═══════════════════ -->
+<section class="testimonials">
+  <div class="testimonials-inner">
+    
+    <div class="testimonials-header">
+      <span class="section-tag">Testimonials</span>
+      <h2 class="section-title">Voices of Impact</h2>
+      <p class="section-desc">
+        Reflections from professionals, survivors, and global platforms highlighting the transformative impact of Dr. Aninda Sidhana's work.
+      </p>
+    </div>
+
+    <div class="testi-grid">
+
+      <!-- CARD 1 -->
+      <div class="testi-card">
+        <div class="quote-icon">
+          <i class="fas fa-quote-left"></i>
+        </div>
+        <p class="testi-text">
+          "Dr. Sidhana's work is a masterclass in integrating clinical excellence with human empathy. Her approach to trauma-informed care is reshaping psychiatric practice across India."
+        </p>
+        <div>
+          <div class="testi-author-name">Dr. Roop Sidana</div>
+          <div class="testi-author-role">Clinical Director & Mental Health Advocate</div>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="testi-card">
+        <div class="quote-icon">
+          <i class="fas fa-quote-left"></i>
+        </div>
+        <p class="testi-text">
+          "Her leadership in advancing psychosexual medicine and training professionals has elevated the standards of mental health education and advocacy throughout the field."
+        </p>
+        <div>
+          <div class="testi-author-name">Indian Association of Private Psychiatry</div>
+          <div class="testi-author-role">Professional Body</div>
+        </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="testi-card">
+        <div class="quote-icon">
+          <i class="fas fa-quote-left"></i>
+        </div>
+        <p class="testi-text">
+          "The Dignity Dialogues gave me a voice when I felt invisible. Through her listening circles, I found strength, dignity, and the courage to rebuild my life."
+        </p>
+        <div>
+          <div class="testi-author-name">Survivor Participant</div>
+          <div class="testi-author-role">Rajasthan Listening Circle</div>
+        </div>
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="testi-card">
+        <div class="quote-icon">
+          <i class="fas fa-quote-left"></i>
+        </div>
+        <p class="testi-text">
+          "Her workshops taught me that healing goes beyond therapy—it lies in storytelling, community, and self-acceptance. A truly life-changing experience."
+        </p>
+        <div>
+          <div class="testi-author-name">Workshop Participant</div>
+          <div class="testi-author-role">Mental Health Program</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- MEDIA -->
+    <div class="testi-media">
+
+      <div class="testi-media-card">
+        <div class="quote-icon light">
+          <i class="fas fa-quote-left"></i>
+        </div>
+        <p>
+          "Her journey is not just about survival—it is about building systems where every individual can heal, thrive, and reclaim dignity."
+        </p>
+        <cite>— The Better India</cite>
+      </div>
+
+      <div class="testi-media-card">
+        <div class="quote-icon light">
+          <i class="fas fa-quote-left"></i>
+        </div>
+        <p>
+          "She is redefining mental health advocacy by merging lived experience with professional excellence and a deep commitment to justice."
+        </p>
+        <cite>— AboutHer Show</cite>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════ CTA ═══════════════════ -->
+<section class="cta">
+  <div class="cta-inner">
+    <span class="section-tag">Legacy</span>
+    <h2 class="section-title">A Legacy of Healing, Dignity &amp; Transformation</h2>
+    <p class="section-desc">Dr. Aninda Sidhana's work represents a rare convergence of clinical excellence, lived experience, and transformative social impact—reshaping how mental health and gender justice are understood across India.</p>
+
+    <div class="cta-highlights">
+      <h3>Why She Stands Apart</h3>
+      <div class="cta-highlights-list">
+        <div class="cta-hl-item">Pioneer of survivor-led, trauma-informed care systems</div>
+        <div class="cta-hl-item">Measurable impact across clinical, social &amp; digital platforms</div>
+        <div class="cta-hl-item">Recognized leader in mental health &amp; gender justice</div>
+        <div class="cta-hl-item">Influencing policy, education, and public discourse</div>
+        <div class="cta-hl-item">Building sustainable, scalable models for future generations</div>
+        <div class="cta-hl-item">Bridging lived experience with professional excellence</div>
+      </div>
+    </div>
+
+    <a href="./contact.html" class="btn-primary" style="font-size:15px; padding:15px 36px;">Recognize Her Impact</a>
+  </div>
+</section>
+
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>Dr. Aninda Sidhana</h3>
+      <p>Psychiatrist, Psychosexual Medicine Specialist, and Survivor-Advocate dedicated to transforming mental health, gender justice, and trauma care through dignity, empathy, and innovation.</p>
+      <div class="footer-social">
+        <a href="#" class="social-btn" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.49 6 1.12 6 0 4.88 0 3.5 0 2.12 1.12 1 2.49 1c1.38 0 2.49 1.12 2.49 2.5zM0 8h5v16H0V8zm7.5 0H12v2.5h.06c.63-1.2 2.18-2.5 4.49-2.5 4.8 0 5.69 3.16 5.69 7.27V24h-5v-7.5c0-1.79-.03-4.09-2.5-4.09-2.5 0-2.88 1.95-2.88 3.97V24h-5V8z"/></svg>
+        </a>
+        <a href="#" class="social-btn" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M7.75 2h8.5C19.99 2 22 4.01 22 6.75v8.5C22 19.99 19.99 22 16.25 22h-8.5C4.01 22 2 19.99 2 16.25v-8.5C2 4.01 4.01 2 7.75 2zm0 2C5.68 4 4 5.68 4 7.75v8.5C4 18.32 5.68 20 7.75 20h8.5c2.07 0 3.75-1.68 3.75-3.75v-8.5C20 5.68 18.32 4 16.25 4h-8.5zm4.25 3a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6zm5.25-.88a1.12 1.12 0 110 2.25 1.12 1.12 0 010-2.25z"/></svg>
+        </a>
+        <a href="#" class="social-btn" aria-label="Twitter">
+          <svg viewBox="0 0 24 24"><path d="M24 4.56c-.88.39-1.83.65-2.82.77a4.93 4.93 0 002.16-2.72 9.86 9.86 0 01-3.13 1.2 4.92 4.92 0 00-8.38 4.48A13.94 13.94 0 011.67 3.15a4.92 4.92 0 001.52 6.57 4.9 4.9 0 01-2.23-.62v.06a4.93 4.93 0 003.95 4.83 4.93 4.93 0 01-2.22.08 4.93 4.93 0 004.6 3.42A9.87 9.87 0 010 19.54a13.94 13.94 0 007.55 2.21c9.06 0 14.01-7.5 14.01-14.01 0-.21 0-.42-.02-.63A10.03 10.03 0 0024 4.56z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./contributions.html">Contributions</a></li>
+        <li><a href="./services.html">Services</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Key Work</h4>
+      <ul>
+        <li><span>The Dignity Dialogues</span></li>
+        <li><span>Aawaz Initiative</span></li>
+        <li><span>Psychosexual Medicine</span></li>
+        <li><span>Trauma-Informed Care</span></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <p style="font-size:13px; line-height:1.7; margin-bottom:8px;">For collaborations, speaking engagements, or professional inquiries.</p>
+      <a href="./contact.html" class="btn-outline" style="display:inline-block; font-size:13px; padding:9px 18px; color:rgba(255,255,255,0.7); border-color:rgba(255,255,255,0.2);">Get in Touch</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Dr. Aninda Sidhana. All rights reserved.</p>
+    <p>Designed with purpose &amp; impact.</p>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+
+  // Intersection Observer for scroll-triggered animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(el => {
+      if (el.isIntersecting) {
+        el.target.style.opacity = '1';
+        el.target.style.transform = 'translateY(0)';
       }
-    </script>
-  </body>
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.contrib-card, .metric-card, .award-card, .testi-card, .bio-highlight-item, .metric-detail-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.55s ease, transform 0.55s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
 </html>

@@ -1,803 +1,957 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Doctor</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Aninda Sidhana | Contributions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
+    :root {
+      --cream: #FAFAF7;
+      --white: #FFFFFF;
+      --navy: #0F2040;
+      --blue: #1A4B8C;
+      --blue-mid: #2563EB;
+      --blue-light: #EEF3FB;
+      --blue-pale: #F5F8FF;
+      --gold: #C8922A;
+      --gold-light: #FDF6E8;
+      --text: #1A1A2E;
+      --text-muted: #5A6478;
+      --text-light: #8A95A8;
+      --border: #E5E9F2;
+      --shadow-sm: 0 2px 12px rgba(15,32,64,0.06);
+      --shadow-md: 0 8px 32px rgba(15,32,64,0.10);
+      --shadow-lg: 0 20px 60px rgba(15,32,64,0.14);
+      --radius: 16px;
+      --radius-lg: 24px;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
 
-  <body class="bg-blue-50 text-gray-800">
-    <!-- ================= NAVBAR ================= -->
-    <header class="sticky top-0 z-50 bg-white/70 backdrop-blur-xl border-b border-gray-200">
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
 
-    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+    /* ─── NAVBAR ─── */
+    .navbar {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(250,250,247,0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      padding: 0 24px; height: 72px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo a { text-decoration: none; }
+    .nav-logo h1 {
+      font-family: var(--font-display);
+      font-size: clamp(18px, 2vw, 22px);
+      font-weight: 700; color: var(--navy); letter-spacing: -0.02em;
+    }
+    .nav-logo span {
+      display: block; font-size: 11px; color: var(--text-muted);
+      font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 1px;
+    }
+    .nav-links { display: flex; list-style: none; gap: 36px; align-items: center; }
+    .nav-links a {
+      font-size: 14px; font-weight: 500; color: var(--text-muted);
+      text-decoration: none; letter-spacing: 0.02em; transition: color 0.2s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -4px; left: 0;
+      width: 0; height: 2px; background: var(--blue-mid);
+      transition: width 0.25s ease; border-radius: 2px;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--navy); }
+    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+    .nav-cta {
+      background: var(--navy); color: #fff !important;
+      padding: 9px 22px; border-radius: 8px; font-weight: 500 !important;
+    }
+    .nav-cta::after { display: none !important; }
+    .nav-cta:hover { background: var(--blue) !important; }
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; padding: 6px; background: none; border: none;
+    }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--navy); border-radius: 2px; }
+    .mobile-menu {
+      display: none; flex-direction: column;
+      background: var(--white); border-top: 1px solid var(--border);
+      padding: 16px 24px 24px; gap: 4px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      display: block; padding: 12px 0; color: var(--text);
+      text-decoration: none; font-weight: 500; font-size: 15px;
+      border-bottom: 1px solid var(--border);
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
 
-        <!-- LOGO -->
-        <div class="flex flex-col leading-tight">
-            <a href="./index.html">
-                <h1 class="text-xl md:text-2xl font-bold text-blue-600">
-                Dr. Aninda Sidhana
-            </h1>
-            <span class="text-xs text-gray-500">
-                Psychiatrist & Advocate
-            </span>
-            </a>
-        </div>
+    /* ─── PAGE HERO ─── */
+    .page-hero {
+      background: linear-gradient(135deg, #F0F5FF 0%, var(--white) 60%, #FDF9F0 100%);
+      padding: clamp(48px, 7vw, 100px) 24px clamp(48px, 6vw, 80px);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(37,99,235,0.07) 0%, transparent 70%);
+      top: -200px; left: -100px;
+      pointer-events: none;
+    }
+    .page-hero::after {
+      content: '';
+      position: absolute;
+      width: 350px; height: 350px;
+      background: radial-gradient(circle, rgba(200,146,42,0.06) 0%, transparent 70%);
+      bottom: -100px; right: -50px;
+      pointer-events: none;
+    }
+    .page-hero-inner { max-width: 800px; margin: 0 auto; position: relative; z-index: 1; }
+    .section-tag {
+      display: inline-block; font-size: 11px; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--blue-mid); background: var(--blue-light);
+      padding: 5px 14px; border-radius: 40px; margin-bottom: 20px;
+    }
+    .page-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 5vw, 58px);
+      font-weight: 700; color: var(--navy);
+      letter-spacing: -0.03em; line-height: 1.12; margin-bottom: 18px;
+    }
+    .page-hero p {
+      font-size: clamp(15px, 1.4vw, 17px);
+      color: var(--text-muted); line-height: 1.75; max-width: 600px; margin: 0 auto;
+    }
 
-        <!-- MENU -->
-        <ul class="hidden md:flex items-center gap-8 font-medium text-gray-700">
+    /* ─── MAIN LAYOUT ─── */
+    .page-body {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: clamp(48px, 6vw, 80px) 24px;
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 56px;
+      align-items: start;
+    }
 
-            <li>
-                <a href="./index.html" class="hover:text-blue-600 transition">
-                    Home
-                </a>
-            </li>
+    /* ─── SIDEBAR / TOC ─── */
+    .sidebar {
+      position: sticky;
+      top: 96px;
+    }
+    .toc-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+    .toc-title {
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-light); margin-bottom: 16px;
+    }
+    .toc-list { list-style: none; }
+    .toc-list li { margin-bottom: 4px; }
+    .toc-list a {
+      display: block; padding: 8px 12px;
+      font-size: 13px; color: var(--text-muted);
+      text-decoration: none; border-radius: 8px;
+      transition: all 0.2s; line-height: 1.4;
+    }
+    .toc-list a:hover { background: var(--blue-light); color: var(--navy); }
+    .toc-list a.active { background: var(--blue-light); color: var(--blue-mid); font-weight: 600; }
 
-            <li>
-                <a href="./contributions.html" class="relative text-blue-600 after:absolute after:-bottom-1 after:left-0 after:w-full after:h-[2px] after:bg-blue-600">
-                    Contributions
-                </a>
-            </li>
+    /* ─── CONTENT ─── */
+    .content { min-width: 0; }
 
-            <li>
-                <a href="./services.html" class="hover:text-blue-600 transition">
-                    Services
-                </a>
-            </li>
+    .content-section { margin-bottom: 64px; }
+    .content-section:last-child { margin-bottom: 0; }
 
-            <li>
-                <a href="./contact.html" class="hover:text-blue-600 transition">
-                    Contact
-                </a>
-            </li>
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-heading-icon {
+      width: 40px; height: 40px;
+      background: var(--blue-light);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; flex-shrink: 0;
+    }
+    .section-heading-icon i {
+      font-size: 20px;
+      color: #2563eb;
+    }
+    .section-heading h2 {
+      font-family: var(--font-display);
+      font-size: clamp(20px, 2.2vw, 28px);
+      font-weight: 700; color: var(--navy);
+      letter-spacing: -0.02em; line-height: 1.2;
+    }
 
-            <!-- CTA BUTTON -->
-            <!-- <li>
-                <button class="bg-blue-600 text-white px-5 py-2 rounded-lg shadow hover:shadow-lg hover:-translate-y-0.5 transition">
-                    Book Now
-                </button>
-            </li> -->
+    .prose p {
+      font-size: 15px; color: var(--text-muted);
+      line-height: 1.85; margin-bottom: 16px;
+    }
+    .prose p:last-child { margin-bottom: 0; }
 
-        </ul>
+    /* Bio roles list */
+    .roles-list {
+      list-style: none;
+      margin: 20px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .roles-list li {
+      display: flex; gap: 12px; align-items: flex-start;
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 18px;
+      font-size: 14px; color: var(--text-muted);
+    }
+    .roles-list li::before {
+      content: '→';
+      color: var(--blue-mid); flex-shrink: 0; margin-top: 1px;
+    }
 
-        <!-- MOBILE BUTTON -->
-        <button onclick="toggleMenu()" class="md:hidden text-2xl">
-            ☰
-        </button>
+    /* ─── INITIATIVE CARDS ─── */
+    .initiative-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      margin-bottom: 24px;
+      position: relative;
+      overflow: hidden;
+      transition: box-shadow 0.3s;
+    }
+    .initiative-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; bottom: 0;
+      width: 4px;
+      background: linear-gradient(180deg, var(--blue-mid), var(--navy));
+    }
+    .initiative-card:hover { box-shadow: var(--shadow-md); }
 
+    .initiative-tag {
+      display: inline-block;
+      font-size: 10px; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--blue-mid); background: var(--blue-light);
+      padding: 4px 10px; border-radius: 20px; margin-bottom: 12px;
+    }
+    .initiative-title {
+      font-family: var(--font-display);
+      font-size: clamp(18px, 2vw, 24px);
+      font-weight: 700; color: var(--navy);
+      letter-spacing: -0.02em; margin-bottom: 14px;
+    }
+    .initiative-desc {
+      font-size: 14.5px; color: var(--text-muted);
+      line-height: 1.8; margin-bottom: 20px;
+    }
+
+    .initiative-list {
+      list-style: none;
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .initiative-list li {
+      display: flex; gap: 12px; align-items: flex-start;
+      font-size: 14px; color: var(--text-muted); line-height: 1.6;
+    }
+    .initiative-list-bullet {
+      width: 20px; height: 20px;
+      background: var(--blue-light);
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 1px;
+      font-size: 10px; color: var(--blue-mid); font-weight: 700;
+    }
+    .initiative-list strong { color: var(--navy); }
+
+    /* ─── KEY-VALUE TABLE (Partnerships / Programs / Publications) ─── */
+    .kv-grid {
+      display: flex; flex-direction: column; gap: 14px;
+      margin-bottom: 20px;
+    }
+    .kv-row {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 16px;
+      align-items: start;
+      padding: 16px 20px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      transition: box-shadow 0.2s;
+    }
+    .kv-row:hover { box-shadow: var(--shadow-sm); }
+    .kv-key {
+      font-size: 13.5px; font-weight: 600; color: var(--navy);
+      line-height: 1.4;
+    }
+    .kv-val {
+      font-size: 13.5px; color: var(--text-muted); line-height: 1.6;
+    }
+
+    /* ─── BULLET LISTS ─── */
+    .bullet-list {
+      list-style: none; display: flex; flex-direction: column; gap: 10px;
+    }
+    .bullet-list li {
+      display: flex; gap: 10px; align-items: flex-start;
+      font-size: 14.5px; color: var(--text-muted); line-height: 1.65;
+    }
+    .bullet-list li::before {
+      content: '→'; color: var(--blue-mid); flex-shrink: 0; margin-top: 1px;
+    }
+
+    /* ─── TIMELINE TABLE ─── */
+    .timeline-section {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    .timeline-section table { width: 100%; border-collapse: collapse; }
+    .timeline-section thead tr {
+      background: var(--navy);
+    }
+    .timeline-section thead th {
+      padding: 16px 20px;
+      text-align: left;
+      font-size: 12px; font-weight: 600;
+      color: rgba(255,255,255,0.7);
+      letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .timeline-section tbody tr {
+      border-top: 1px solid var(--border);
+      transition: background 0.2s;
+    }
+    .timeline-section tbody tr:hover { background: var(--blue-pale); }
+    .timeline-section tbody td {
+      padding: 16px 20px;
+      font-size: 13.5px; color: var(--text-muted);
+      vertical-align: top; line-height: 1.5;
+    }
+    .timeline-section tbody td:first-child {
+      font-weight: 600; color: var(--navy); white-space: nowrap;
+      font-family: var(--font-display); font-size: 15px;
+    }
+    .timeline-section tbody td:nth-child(2) { font-weight: 500; color: var(--text); }
+
+    .table-wrap { overflow-x: auto; }
+
+    .timeline-note {
+      padding: 16px 20px;
+      background: var(--blue-pale);
+      border-top: 1px solid var(--border);
+      font-size: 13px; color: var(--text-muted);
+    }
+
+    /* ─── CERTIFICATIONS ─── */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    .cert-item {
+      display: flex; gap: 12px; align-items: flex-start;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 18px;
+      transition: all 0.2s;
+    }
+    .cert-item:hover { box-shadow: var(--shadow-sm); transform: translateY(-1px); }
+    .cert-icon {
+      width: 32px; height: 32px;
+      background: var(--gold-light);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 15px; flex-shrink: 0;
+    }
+    .cert-text { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+    .cert-text strong { display: block; color: var(--navy); font-size: 13.5px; margin-bottom: 2px; }
+
+    .cert-icon i {
+      font-size: 20px;
+      color: #2563eb;
+    }
+    /* ─── FOOTER ─── */
+    .footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.6);
+      padding: 64px 24px 32px;
+    }
+    .footer-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.8fr 1fr 1fr 1fr;
+      gap: 48px; margin-bottom: 48px;
+    }
+    .footer-brand h3 {
+      font-family: var(--font-display);
+      font-size: 22px; font-weight: 700; color: #fff; margin-bottom: 12px;
+    }
+    .footer-brand p { font-size: 13.5px; line-height: 1.7; }
+    .footer-col h4 {
+      font-size: 12px; font-weight: 600;
+      color: rgba(255,255,255,0.4); text-transform: uppercase;
+      letter-spacing: 0.12em; margin-bottom: 20px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 10px; }
+    .footer-col a {
+      color: rgba(255,255,255,0.6); text-decoration: none;
+      font-size: 14px; transition: color 0.2s;
+    }
+    .footer-col a:hover { color: #fff; }
+    .footer-social { display: flex; gap: 10px; margin-top: 16px; }
+    .social-btn {
+      width: 38px; height: 38px;
+      background: rgba(255,255,255,0.07);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.25s;
+      color: rgba(255,255,255,0.6); text-decoration: none;
+    }
+    .social-btn:hover { background: var(--blue-mid); color: #fff; }
+    .social-btn svg { width: 16px; height: 16px; fill: currentColor; }
+    .footer-bottom {
+      max-width: 1200px; margin: 0 auto;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 12px;
+    }
+    .footer-bottom p { font-size: 12.5px; color: rgba(255,255,255,0.3); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1024px) {
+      .page-body { grid-template-columns: 1fr; gap: 0; }
+      .sidebar { position: static; margin-bottom: 40px; }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .footer-brand { grid-column: 1 / -1; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .kv-row { grid-template-columns: 1fr; gap: 6px; }
+      .cert-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .toc-card { display: none; }
+    }
+    @media (max-width: 480px) {
+      .timeline-section thead th:nth-child(3),
+      .timeline-section thead th:nth-child(4),
+      .timeline-section tbody td:nth-child(3),
+      .timeline-section tbody td:nth-child(4) { display: none; }
+    }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up { animation: fadeUp 0.6s ease forwards; }
+    .delay-1 { animation-delay: 0.1s; }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════ NAVBAR ═══════════════════ -->
+<header class="navbar">
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <a href="./index.html">
+        <h1>Dr. Aninda Sidhana</h1>
+        <span>Psychiatrist &amp; Advocate</span>
+      </a>
     </div>
-
-    <!-- MOBILE MENU -->
-    <div id="mobileMenu" class="hidden flex-col bg-white border-t px-6 py-4 md:hidden space-y-3 text-gray-700">
-
-        <a href="./index.html" class="block hover:text-blue-600">Home</a>
-        <a href="./contributions.html" class="block hover:text-blue-600">Contributions</a>
-        <a href="./services.html" class="block hover:text-blue-600">Services</a>
-        <a href="./contact.html" class="block hover:text-blue-600">Contact</a>
-
-        <!-- MOBILE CTA -->
-        <!-- <button class="bg-blue-600 text-white px-5 py-2 rounded-lg mt-3">
-            Book Now
-        </button> -->
-
-    </div>
+    <ul class="nav-links">
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="./contributions.html" class="active">Contributions</a></li>
+      <li><a href="./services.html">Services</a></li>
+      <li><a href="./contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-menu" id="mobileMenu">
+    <a href="./index.html">Home</a>
+    <a href="./contributions.html">Contributions</a>
+    <a href="./services.html">Services</a>
+    <a href="./contact.html">Contact</a>
+  </nav>
 </header>
 
-    <!-- ================= HERO ================= -->
-    <div class="max-w-6xl mx-auto py-16 bg-white">
-      <!-- TITLE -->
-      <h1 class="text-4xl font-bold mb-10 text-center">Major Contributions</h1>
+<!-- ═══════════════════ PAGE HERO ═══════════════════ -->
+<section class="page-hero">
+  <div class="page-hero-inner fade-up">
+    <span class="section-tag">Contributions</span>
+    <h1>Major Contributions &amp;<br>Professional Timeline</h1>
+    <p>A decade of clinical excellence, survivor-led innovation, academic leadership, and transformative advocacy across mental health and gender justice.</p>
+  </div>
+</section>
 
-      <!-- BIO -->
-      <section class="px-6 max-w-6xl mx-auto">
-        <h2
-          class="text-2xl md:text-3xl font-semibold mb-6 text-blue-700 border-l-4 border-blue-600 pl-3"
-        >
-          Comprehensive Biography and Professional Timeline
-        </h2>
+<!-- ═══════════════════ BODY ═══════════════════ -->
+<div class="page-body">
 
-        <p class="mb-5 leading-relaxed text-gray-700 text-[15px] md:text-base">
-          Dr. Aninda Sidhana’s career is rooted in a deep personal and familial
-          connection to mental health. Born into a family of psychiatrists, she
-          was exposed early to the complexities of psychological well-being and
-          the nuances of care. Her academic journey began with an MBBS from
-          Padmashree Dr. D. Y. Patil Medical College, followed by an MD in
-          Psychiatry from Sri Balajai Vidyapeeth Mahatma Gandhi Medical College,
-          Puducherry. She further specialized with a Fellowship in Psychosexual
-          Medicine from JSS Medical College, Mysore.
-        </p>
+  <!-- SIDEBAR TOC -->
+  <aside class="sidebar">
+    <div class="toc-card">
+      <div class="toc-title">On This Page</div>
+      <ul class="toc-list">
+        <li><a href="#biography" class="active">Biography</a></li>
+        <li><a href="#initiatives">Key Initiatives</a></li>
+        <li><a href="#partnerships">Partnerships &amp; Advisory</a></li>
+        <li><a href="#programs">Programs &amp; Workshops</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#policy">Policy &amp; Bodies</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#timeline">Timeline</a></li>
+      </ul>
+    </div>
+  </aside>
 
-        <p class="mb-5 leading-relaxed text-gray-700 text-[15px] md:text-base">
-          Her professional trajectory spans over a decade, encompassing roles in
-          general hospital psychiatry, tertiary neuropsychiatry centers, and
-          academic institutions. Notably, she has served as:
-        </p>
+  <!-- MAIN CONTENT -->
+  <main class="content">
 
-        <ul
-          class="list-disc pl-6 space-y-3 text-gray-700 text-[15px] md:text-base"
-        >
+    <!-- ── BIOGRAPHY ── -->
+    <section class="content-section" id="biography">
+      <div class="section-heading">
+        <div class="section-heading-icon">
+          <i class="fas fa-user"></i>
+        </div>
+        <h2>Comprehensive Biography &amp; Professional Timeline</h2>
+      </div>
+      <div class="prose">
+        <p>Dr. Aninda Sidhana's career is rooted in a deep personal and familial connection to mental health. Born into a family of psychiatrists, she was exposed early to the complexities of psychological well-being and the nuances of care. Her academic journey began with an MBBS from Padmashree Dr. D. Y. Patil Medical College, followed by an MD in Psychiatry from Sri Balaji Vidyapeeth Mahatma Gandhi Medical College, Puducherry, and a Fellowship in Psychosexual Medicine from JSS Medical College, Mysore.</p>
+        <p>Her professional trajectory spans over a decade, encompassing roles in general hospital psychiatry, tertiary neuropsychiatric centers, and academic institutions:</p>
+      </div>
+      <ul class="roles-list">
+        <li>Assistant Professor at Dr. S.S. Tantia M.C.H. &amp; Research Centre (2024–present)</li>
+        <li>Guest Faculty for the Fellowship &amp; Certificate Course in Psychosexual Medicine at JSS Medical College, Mysore (2024–present)</li>
+        <li>Consultant Psychiatrist at Tekchand Sidana Memorial Hospital (2024–present)</li>
+        <li>Assistant Professor at Santosh University, Ghaziabad (2017–2018)</li>
+        <li>Senior Resident at the Institute of Human Behaviour and Allied Sciences (IHBAS), Delhi (2013–2016)</li>
+      </ul>
+      <div class="prose">
+        <p>Her clinical expertise encompasses stress management, addictions, marital therapy, and the management of severe and chronic mental illnesses. Her unique focus on women's mental and sexual health—informed by both clinical training and lived experience—has positioned her as a leading voice in breaking taboos and advancing inclusive care.</p>
+      </div>
+    </section>
+
+    <!-- ── INITIATIVES ── -->
+    <section class="content-section" id="initiatives">
+      <div class="section-heading">
+        <div class="section-heading-icon">
+          <i class="fas fa-seedling"></i>
+        </div>
+        <h2>Key Initiatives &amp; Contributions</h2>
+      </div>
+
+      <!-- Dignity Dialogues -->
+      <div class="initiative-card">
+        <div class="initiative-tag">Founded 2025</div>
+        <div class="initiative-title">The Dignity Dialogues</div>
+        <p class="initiative-desc">A survivor-led initiative that reimagines mental health and gender justice through poetic storytelling, trauma-integrated care, and media collaborations. The program centers lived experience, building healing systems rooted in dignity, agency, and collective transformation.</p>
+        <ul class="initiative-list">
           <li>
-            Assistant Professor at Dr. S.S. Tantia M.C.H. & Research Centre
-            (2024-present)
+            <span class="initiative-list-bullet">01</span>
+            <div><strong>Healing Justice Toolkit:</strong> Co-created with survivors, providing trauma-integrated care strategies for individuals, educators, and policymakers.</div>
           </li>
           <li>
-            Guest Faculty for the Fellowship & Certificate Course in
-            Psychosexual Medicine at JSS Medical College, Mysore (2024-present)
+            <span class="initiative-list-bullet">02</span>
+            <div><strong>Listening Circles:</strong> Facilitated across Rajasthan, gathering survivor insights to inform systemic change and foster community healing.</div>
           </li>
           <li>
-            Consultant Psychiatrist at Tekchand Sidana Memorial Hospital
-            (2024-present)
+            <span class="initiative-list-bullet">03</span>
+            <div><strong>Media Collaborations:</strong> Partnerships with The Better India and AboutHer Show, ensuring ethical representation and amplifying survivor voices.</div>
           </li>
           <li>
-            Assistant Professor at Santosh University, Ghaziabad (2017-2018)
-          </li>
-          <li>
-            Senior Resident at the Institute of Human Behaviour and Allied
-            Sciences (IHBAS), Delhi (2013-2016)
+            <span class="initiative-list-bullet">04</span>
+            <div><strong>Impact Dashboard:</strong> Tracks emotional resonance, reach, and survivor-led transformation, institutionalizing dignity and agency as pillars of gender justice.</div>
           </li>
         </ul>
-
-        <p class="mt-6 leading-relaxed text-gray-700 text-[15px] md:text-base">
-          Her clinical expertise encompasses stress management, addictions,
-          marital therapy, and the management of severe and chronic mental
-          illnesses. Dr. Sidhana’s unique focus on women’s mental and sexual
-          health, informed by both clinical training and lived experience, has
-          positioned her as a leading voice in breaking taboos and advancing
-          inclusive care.
-        </p>
-      </section>
-
-      <!-- INITIATIVES -->
-      <section class="bg-white px-6">
-        <div class="max-w-6xl py-14 mx-auto">
-          <!-- TITLE -->
-          <h2
-            class="text-3xl md:text-4xl font-bold mb-12 text-center text-gray-900 tracking-tight"
-          >
-            Key Initiatives and Contributions
-          </h2>
-
-          <!-- DIGNITY DIALOGUES -->
-          <h3
-            class="text-xl md:text-2xl font-semibold text-blue-700 mb-5 border-l-4 border-blue-600 pl-3"
-          >
-            The Dignity Dialogues
-          </h3>
-
-          <p
-            class="text-gray-700 leading-relaxed mb-5 text-[15px] md:text-base"
-          >
-            Founded in 2025, The Dignity Dialogues is a survivor-led initiative
-            that reimagines mental health and gender justice through poetic
-            storytelling, trauma-integrated care, and media collaborations. The
-            program centers lived experience, building healing systems rooted in
-            dignity, agency, and collective transformation.
-          </p>
-
-          <p class="text-gray-800 font-medium mb-3">
-            Its core components include:
-          </p>
-
-          <ul
-            class="list-disc pl-6 space-y-3 text-gray-700 mb-6 text-[15px] md:text-base"
-          >
-            <li>
-              <strong>Healing Justice Toolkit:</strong> Co-created with
-              survivors, this resource provides trauma-integrated care
-              strategies for individuals, educators, and policymakers.
-            </li>
-            <li>
-              <strong>Listening Circles:</strong> Facilitated across Rajasthan,
-              these circles gather survivor insights to inform systemic change
-              and foster community healing.
-            </li>
-            <li>
-              <strong>Media Collaborations:</strong> Partnerships with platforms
-              like The Better India and AboutHer Show ensure ethical
-              representation and amplify survivor voices.
-            </li>
-            <li>
-              <strong>Impact Dashboard:</strong> Tracks emotional resonance,
-              reach, and survivor-led transformation, institutionalizing dignity
-              and agency as pillars of gender justice.
-            </li>
-          </ul>
-
-          <p
-            class="text-gray-700 leading-relaxed mb-12 text-[15px] md:text-base"
-          >
-            The Dignity Dialogues has directly impacted over 500 survivors
-            through listening circles and toolkit access, and more than 200
-            mental health professionals via workshops. Indirectly, its digital
-            campaigns and coalition networks have reached thousands across India
-            and globally.
-          </p>
-
-          <!-- AAWAZ -->
-          <h3
-            class="text-xl md:text-2xl font-semibold text-blue-700 mb-5 border-l-4 border-blue-600 pl-3"
-          >
-            Aawaz: Safe Haven for Survivors
-          </h3>
-
-          <p
-            class="text-gray-700 leading-relaxed mb-12 text-[15px] md:text-base"
-          >
-            Aawaz, meaning “voice,” is Dr. Sidhana’s forthcoming initiative
-            designed as a sanctuary for survivors of GBV. It will offer
-            counseling, support groups, and advocacy programs, aiming to provide
-            holistic care and empower survivors to reclaim their narratives. The
-            program’s design is informed by Dr. Sidhana’s personal journey and
-            her commitment to breaking the silence around trauma and recovery.
-          </p>
-
-          <!-- INVISIBLE SCARS -->
-          <h3
-            class="text-xl md:text-2xl font-semibold text-blue-700 mb-5 border-l-4 border-blue-600 pl-3"
-          >
-            Invisible Scars Foundation
-          </h3>
-
-          <p
-            class="text-gray-700 leading-relaxed mb-12 text-[15px] md:text-base"
-          >
-            As a psychiatrist with the Invisible Scars Foundation, Dr. Sidhana
-            has contributed to the development of trauma-informed care models,
-            survivor support systems, and public education campaigns. The
-            foundation’s work integrates clinical expertise with advocacy,
-            focusing on the invisible wounds of emotional and psychological
-            abuse.
-          </p>
-
-          <!-- CLINICAL -->
-          <h3
-            class="text-xl md:text-2xl font-semibold text-blue-700 mb-5 border-l-4 border-blue-600 pl-3"
-          >
-            Clinical Practice and Psychosexual Medicine
-          </h3>
-
-          <p
-            class="text-gray-700 leading-relaxed mb-12 text-[15px] md:text-base"
-          >
-            Dr. Sidhana’s clinical work is distinguished by her specialization
-            in psychosexual medicine—a field often neglected in mainstream
-            mental health discourse. She addresses issues such as sexual
-            dissatisfaction, trauma, and shame, particularly among women,
-            advocating for integrated treatment that encompasses both physical
-            and emotional health. Her practice emphasizes the inseparability of
-            sexual and mental wellness, challenging societal taboos and
-            promoting comprehensive sex education for women.
-          </p>
-
-          <!-- ACADEMIC -->
-          <h3
-            class="text-xl md:text-2xl font-semibold text-blue-700 mb-5 border-l-4 border-blue-600 pl-3"
-          >
-            Academic Roles and Teaching Contributions
-          </h3>
-
-          <p
-            class="text-gray-700 leading-relaxed mb-12 text-[15px] md:text-base"
-          >
-            As Assistant Professor at Dr. S.S. Tantia M.C.H. & Research Centre
-            and Guest Faculty at JSS Medical College, Dr. Sidhana has shaped the
-            next generation of mental health professionals. She mentors students
-            in psychosexual medicine, delivers lectures on trauma-informed care,
-            and develops curricula that integrate clinical rigor with empathy
-            and inclusivity. Her teaching philosophy centers on empowering
-            students to address the unique realities of women’s mental health,
-            GBV, and sexual wellness.
-          </p>
-
-          <!-- ADVOCACY -->
-          <h3
-            class="text-xl md:text-2xl font-semibold text-blue-700 mb-5 border-l-4 border-blue-600 pl-3"
-          >
-            Advocacy, Public Engagement, and Media
-          </h3>
-
-          <p
-            class="text-gray-700 leading-relaxed mb-5 text-[15px] md:text-base"
-          >
-            Dr. Sidhana’s advocacy extends beyond the clinic and classroom. As a
-            survivor of GBV, she brings a deeply personal perspective to public
-            discourse, using her platform to break the silence around trauma,
-            sexuality, and emotional recovery.
-          </p>
-
-          <ul
-            class="list-disc pl-6 space-y-3 text-gray-700 mb-12 text-[15px] md:text-base"
-          >
-            <li>Redefining masculinity and engaging men in GBV prevention</li>
-            <li>The intersection of sexual and mental health</li>
-            <li>The power of lived experience in shaping care models</li>
-            <li>Systemic barriers to women’s mental health</li>
-            <li>Self-care for caregivers and professionals</li>
-          </ul>
-
-          <!-- PARTNERSHIPS -->
-          <h3
-            class="text-xl md:text-2xl font-semibold text-blue-700 mb-6 border-l-4 border-blue-600 pl-3"
-          >
-            Partnerships and Advisory Roles
-          </h3>
-
-          <div class="space-y-5 mb-10 text-[15px] md:text-base">
-            <div class="flex flex-col md:flex-row gap-2 md:gap-4">
-              <span class="font-semibold text-gray-900 md:w-48">HealCycle</span>
-              <p class="text-gray-700">
-                Medical Advisor guiding digital tools for women’s mental and
-                reproductive health.
-              </p>
-            </div>
-
-            <div class="flex flex-col md:flex-row gap-2 md:gap-4">
-              <span class="font-semibold text-gray-900 md:w-48">
-                Finding Order in Disorder Foundation
-              </span>
-              <p class="text-gray-700">
-                Advisory Board Member contributing to trauma recovery research.
-              </p>
-            </div>
-
-            <div class="flex flex-col md:flex-row gap-2 md:gap-4">
-              <span class="font-semibold text-gray-900 md:w-48">
-                Global Goodwill Ambassadors Foundation (GGAF)
-              </span>
-              <p class="text-gray-700">
-                Goodwill Ambassador advancing Sustainable Development Goals
-                (SDGs).
-              </p>
-            </div>
-
-            <div class="flex flex-col md:flex-row gap-2 md:gap-4">
-              <span class="font-semibold text-gray-900 md:w-48">
-                Indian Psychiatry Society
-              </span>
-              <p class="text-gray-700">
-                Assistant Honorary General Secretary leading advocacy, CME, and
-                research.
-              </p>
-            </div>
-          </div>
-
-          <p
-            class="text-gray-700 leading-relaxed mb-14 text-[15px] md:text-base"
-          >
-            These partnerships amplify her impact, enabling cross-sectoral
-            innovation and the scaling of best practices.
-          </p>
-          <!-- PROGRAMS -->
-          <h3
-            class="text-xl md:text-2xl font-semibold text-blue-700 mb-6 border-l-4 border-blue-600 pl-3"
-          >
-            Programs, Workshops, and Trainings
-          </h3>
-
-          <p
-            class="text-gray-700 mb-4 leading-relaxed text-[15px] md:text-base"
-          >
-            Dr. Sidhana has designed and led a wide array of programs,
-            including:
-          </p>
-
-          <div class="space-y-5 mb-12 text-[15px] md:text-base">
-            <div class="flex flex-col md:flex-row gap-2 md:gap-4">
-              <span class="font-semibold text-gray-900 md:w-48">
-                Listening Circles
-              </span>
-              <p class="text-gray-700">
-                Safe spaces for survivors to share experiences and inform
-                systemic change.
-              </p>
-            </div>
-
-            <div class="flex flex-col md:flex-row gap-2 md:gap-4">
-              <span class="font-semibold text-gray-900 md:w-48">
-                Professional Workshops
-              </span>
-              <p class="text-gray-700">
-                Training over 200 mental health practitioners and educators in
-                trauma-informed care, psychosexual medicine, and
-                survivor-centered approaches
-              </p>
-            </div>
-
-            <div class="flex flex-col md:flex-row gap-2 md:gap-4">
-              <span class="font-semibold text-gray-900 md:w-48">
-                Public Webinars
-              </span>
-              <p class="text-gray-700">
-                Sessions on suicide prevention, emotional intelligence, and
-                self-care, reaching thousands through digital platforms.
-              </p>
-            </div>
-
-            <div class="flex flex-col md:flex-row gap-2 md:gap-4">
-              <span class="font-semibold text-gray-900 md:w-48">
-                Policy Workshops
-              </span>
-              <p class="text-gray-700">
-                Engaging stakeholders in GBV policy reform and the integration
-                of mental health into public health systems.
-              </p>
-            </div>
-          </div>
-
-          <!-- PUBLICATIONS -->
-          <h3
-            class="text-xl md:text-2xl font-semibold text-blue-700 mb-6 border-l-4 border-blue-600 pl-3"
-          >
-            Publications, Blogs, and Thought Leadership
-          </h3>
-
-          <p
-            class="text-gray-700 mb-5 leading-relaxed text-[15px] md:text-base"
-          >
-            A prolific writer, Dr. Sidhana contributes articles and blogs to
-            platforms such as Medium, MyndStories, and her own website. Her
-            writings address women’s empowerment, trauma recovery, sexual
-            justice, and the healing power of storytelling. Notable publications
-            include:
-          </p>
-
-          <div class="space-y-5 mb-12 text-[15px] md:text-base">
-            <div class="flex flex-col md:flex-row gap-2 md:gap-4">
-              <span class="font-semibold text-gray-900 md:w-48">
-                The Healing Power of Pen
-              </span>
-              <p class="text-gray-700">
-                Focused on journaling as a therapeutic tool for healing.
-              </p>
-            </div>
-
-            <div class="flex flex-col md:flex-row gap-2 md:gap-4">
-              <span class="font-semibold text-gray-900 md:w-48">
-                Sexual Justice
-              </span>
-              <p class="text-gray-700">
-                Advocates for comprehensive sex education and awareness.
-              </p>
-            </div>
-
-            <div class="flex flex-col md:flex-row gap-2 md:gap-4">
-              <span class="font-semibold text-gray-900 md:w-48">
-                Beyond the Rankings
-              </span>
-              <p class="text-gray-700">
-                Reclaiming the Pulse of Gender Progress”-a policy reflection on
-                survivor-centered metrics[2][8].
-              </p>
-            </div>
-          </div>
-
-          <p
-            class="text-gray-700 leading-relaxed mb-12 text-[15px] md:text-base"
-          >
-            Her thought leadership bridges clinical expertise with advocacy,
-            influencing both public opinion and policy frameworks.
-          </p>
-
-          <!-- POLICY -->
-          <h3
-            class="text-xl md:text-2xl font-semibold text-blue-700 mb-6 border-l-4 border-blue-600 pl-3"
-          >
-            Policy Influence and Professional Bodies
-          </h3>
-
-          <p class="text-gray-700 mb-4 text-[15px] md:text-base">
-            Policy Influence and Professional Bodies
-          </p>
-
-          <div class="space-y-4 mb-12 text-[15px] md:text-base">
-            <ul class="list-disc pl-6 space-y-2 text-gray-700">
-              <li>
-                Serving as a speaker for GBV policy-making at The Empowering
-                Middle East
-              </li>
-              <li>
-                Membership in the International Association of Women’s Mental
-                Health
-              </li>
-              <li>
-                Leadership in the Indian Association of Private Psychiatry’s
-                Sexual Disorders Committee
-              </li>
-            </ul>
-
-            <p class="text-gray-700 leading-relaxed">
-              She advocates for trauma-informed, survivor-led policy design,
-              emphasizing the need for metrics and systems that honor care,
-              courage, and contribution[7] .
-            </p>
-          </div>
-
-          <!-- CERTIFICATIONS -->
-          <h3
-            class="text-xl md:text-2xl font-semibold text-blue-700 mb-6 border-l-4 border-blue-600 pl-3"
-          >
-            Training and Certifications
-          </h3>
-
-          <p class="text-gray-700 mb-4 text-[15px] md:text-base">
-            Dr. Sidhana’s commitment to professional excellence is reflected in
-            her extensive certifications:
-          </p>
-
-          <div class="space-y-4 text-[15px] md:text-base">
-            <ul class="list-disc pl-6 space-y-2 text-gray-700">
-              <li>Certified Cognitive-Behavioral Therapist (Beck Institute)</li>
-              <li>
-                Domestic Violence Prevention Certification (Muktha Foundation)
-              </li>
-              <li>Yoga & Mental Health (World Psychiatric Association)</li>
-              <li>
-                Mental Health Ambassador (National Network of Depression
-                Centers-India Foundation)
-              </li>
-              <li>World Association for Sexual Health Speaker</li>
-            </ul>
-          </div>
-
-          <p
-            class="pt-4 text-gray-700 leading-relaxed text-[15px] md:text-base"
-          >
-            These credentials underpin her clinical practice and inform her
-            training programs for professionals and community members[9] .
-          </p>
+        <div class="prose" style="margin-top:18px;">
+          <p style="margin-bottom:0;">The Dignity Dialogues has directly impacted over 500 survivors through listening circles and toolkit access, and more than 200 mental health professionals via workshops. Its digital campaigns and coalition networks have reached thousands across India and globally.</p>
         </div>
+      </div>
 
-        <div class="max-w-6xl mx-auto py-14 md:pt-6">
-          <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">
-            Timeline of Major Roles and Initiatives
-          </h2>
+      <!-- Aawaz -->
+      <div class="initiative-card">
+        <div class="initiative-tag">Forthcoming Initiative</div>
+        <div class="initiative-title">Aawaz: Safe Haven for Survivors</div>
+        <p class="initiative-desc">Aawaz, meaning "voice," is designed as a sanctuary for survivors of gender-based violence. It will offer counseling, support groups, and advocacy programs, providing holistic care and empowering survivors to reclaim their narratives. The program's design is informed by Dr. Sidhana's personal journey and her commitment to breaking the silence around trauma and recovery.</p>
+      </div>
 
-          <div class="overflow-x-auto rounded-xl shadow border">
-            <table class="w-full text-sm md:text-base border-collapse">
-              <!-- HEADER -->
-              <thead class="bg-blue-600 text-white">
-                <tr>
-                  <th class="p-4 text-left">Year(s)</th>
-                  <th class="p-4 text-left">Role / Initiative</th>
-                  <th class="p-4 text-left">Organization / Platform</th>
-                  <th class="p-4 text-left">Key Contributions</th>
-                </tr>
-              </thead>
+      <!-- Invisible Scars -->
+      <div class="initiative-card">
+        <div class="initiative-tag">Collaborative Role</div>
+        <div class="initiative-title">Invisible Scars Foundation</div>
+        <p class="initiative-desc">As a psychiatrist with the Invisible Scars Foundation, Dr. Sidhana has contributed to the development of trauma-informed care models, survivor support systems, and public education campaigns. The foundation's work integrates clinical expertise with advocacy, focusing on the invisible wounds of emotional and psychological abuse.</p>
+      </div>
 
-              <!-- BODY -->
-              <tbody class="bg-white text-gray-700">
-                <tr class="border-t">
-                  <td class="p-4">2013–2016</td>
-                  <td class="p-4">Senior Resident</td>
-                  <td class="p-4">IHBAS, Delhi</td>
-                  <td class="p-4">Clinical psychiatry, early advocacy</td>
-                </tr>
+      <!-- Clinical -->
+      <div class="initiative-card">
+        <div class="initiative-tag">Clinical Specialization</div>
+        <div class="initiative-title">Clinical Practice &amp; Psychosexual Medicine</div>
+        <p class="initiative-desc">Dr. Sidhana's clinical work is distinguished by her specialization in psychosexual medicine—a field often neglected in mainstream mental health discourse. She addresses sexual dissatisfaction, trauma, and shame, particularly among women, advocating for integrated treatment encompassing both physical and emotional health. Her practice challenges societal taboos and promotes comprehensive sexual wellness education.</p>
+      </div>
 
-                <tr class="border-t">
-                  <td class="p-4">2017–2018</td>
-                  <td class="p-4">Assistant Professor</td>
-                  <td class="p-4">Santosh University, Ghaziabad</td>
-                  <td class="p-4">Academic teaching, curriculum development</td>
-                </tr>
+      <!-- Academic -->
+      <div class="initiative-card">
+        <div class="initiative-tag">Academic Leadership</div>
+        <div class="initiative-title">Academic Roles &amp; Teaching Contributions</div>
+        <p class="initiative-desc">As Assistant Professor at Dr. S.S. Tantia M.C.H. &amp; Research Centre and Guest Faculty at JSS Medical College, Dr. Sidhana shapes the next generation of mental health professionals. She mentors students in psychosexual medicine, delivers lectures on trauma-informed care, and develops curricula that integrate clinical rigor with empathy and inclusivity. Her teaching centers on empowering students to address women's mental health, GBV, and sexual wellness.</p>
+      </div>
 
-                <tr class="border-t">
-                  <td class="p-4">2022–2023</td>
-                  <td class="p-4">Consultant Psychiatrist</td>
-                  <td class="p-4">Allo Health</td>
-                  <td class="p-4">Psychosexual medicine, digital health</td>
-                </tr>
+      <!-- Advocacy -->
+      <div class="initiative-card">
+        <div class="initiative-tag">Public Advocacy</div>
+        <div class="initiative-title">Advocacy, Public Engagement &amp; Media</div>
+        <div class="prose"><p>As a survivor of GBV, Dr. Sidhana brings a deeply personal perspective to public discourse, using her platform to break the silence around trauma, sexuality, and emotional recovery. Her key advocacy themes include:</p></div>
+        <ul class="initiative-list" style="margin-top:14px;">
+          <li><span class="initiative-list-bullet">→</span><div>Redefining masculinity and engaging men in GBV prevention</div></li>
+          <li><span class="initiative-list-bullet">→</span><div>The intersection of sexual and mental health</div></li>
+          <li><span class="initiative-list-bullet">→</span><div>The power of lived experience in shaping care models</div></li>
+          <li><span class="initiative-list-bullet">→</span><div>Systemic barriers to women's mental health</div></li>
+          <li><span class="initiative-list-bullet">→</span><div>Self-care for caregivers and professionals</div></li>
+        </ul>
+      </div>
+    </section>
 
-                <tr class="border-t">
-                  <td class="p-4">2024–present</td>
-                  <td class="p-4">Assistant Professor</td>
-                  <td class="p-4">Dr. S.S. Tantia M.C.H. & Research Centre</td>
-                  <td class="p-4">Academic leadership, mentoring</td>
-                </tr>
-
-                <tr class="border-t">
-                  <td class="p-4">2024–present</td>
-                  <td class="p-4">Guest Faculty (Psychosexual Medicine)</td>
-                  <td class="p-4">JSS Medical College, Mysore</td>
-                  <td class="p-4">Fellowship/certificate course faculty</td>
-                </tr>
-
-                <tr class="border-t">
-                  <td class="p-4">2024–present</td>
-                  <td class="p-4">Consultant Psychiatrist</td>
-                  <td class="p-4">Tekchand Sidana Memorial Hospital</td>
-                  <td class="p-4">Clinical practice, trauma-informed care</td>
-                </tr>
-
-                <tr class="border-t">
-                  <td class="p-4">2025–present</td>
-                  <td class="p-4">Founder</td>
-                  <td class="p-4">The Dignity Dialogues</td>
-                  <td class="p-4">Survivor-led healing justice initiative</td>
-                </tr>
-
-                <tr class="border-t">
-                  <td class="p-4">2025–present</td>
-                  <td class="p-4">Board Advisor</td>
-                  <td class="p-4">
-                    HealCycle, Finding Order in Disorder Foundation
-                  </td>
-                  <td class="p-4">Digital health, trauma recovery</td>
-                </tr>
-
-                <tr class="border-t">
-                  <td class="p-4">2025–present</td>
-                  <td class="p-4">Goodwill Ambassador</td>
-                  <td class="p-4">
-                    Global Goodwill Ambassadors Foundation (GGAF)
-                  </td>
-                  <td class="p-4">SDG advocacy, gender equality</td>
-                </tr>
-
-                <tr class="border-t">
-                  <td class="p-4">2025–present</td>
-                  <td class="p-4">Assistant Hon. General Secretary</td>
-                  <td class="p-4">Indian Psychiatry Society</td>
-                  <td class="p-4">Mental health advocacy, CME, research</td>
-                </tr>
-
-                <tr class="border-t">
-                  <td class="p-4">2025–present</td>
-                  <td class="p-4">Convener, Sexual Disorders Committee</td>
-                  <td class="p-4">Indian Association of Private Psychiatry</td>
-                  <td class="p-4">Policy, training, advocacy</td>
-                </tr>
-
-                <tr class="border-t">
-                  <td class="p-4">2025–present</td>
-                  <td class="p-4">Program Mentor</td>
-                  <td class="p-4">High Fidelity CBT</td>
-                  <td class="p-4">Professional training, supervision</td>
-                </tr>
-
-                <tr class="border-t">
-                  <td class="p-4">2025–present</td>
-                  <td class="p-4">Freelance Writer</td>
-                  <td class="p-4">Medium, MyndStories, personal blog</td>
-                  <td class="p-4">Thought leadership, survivor advocacy</td>
-                </tr>
-
-                <tr class="border-t">
-                  <td class="p-4">2025–present</td>
-                  <td class="p-4">Media Contributor</td>
-                  <td class="p-4">
-                    The Better India, HealCycle, AboutHer Show
-                  </td>
-                  <td class="p-4">Public engagement, storytelling</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <!-- DESCRIPTION -->
-          <p class="mt-6 text-gray-600 text-sm md:text-base leading-relaxed">
-            This timeline illustrates the breadth and progression of Dr.
-            Sidhana’s roles, highlighting her sustained commitment to clinical
-            excellence, academic leadership, survivor advocacy, and social
-            innovation.
-          </p>
-        </div>
-      </section>
+    <!-- ── PARTNERSHIPS ── -->
+    <section class="content-section" id="partnerships">
+      <div class="section-heading">
+       <div class="section-heading-icon">
+      <i class="fas fa-handshake"></i>
     </div>
-
-    <!-- ================= FOOTER ================= -->
-<footer class="bg-gray-900 text-gray-300 pt-16 pb-8 px-6">
-      <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-10">
-        <!-- BRAND -->
-        <div>
-          <h3 class="text-2xl font-bold text-white mb-4">Dr. Aninda Sidhana</h3>
-          <p class="text-gray-400 leading-relaxed">
-            Psychiatrist, Psychosexual Medicine Specialist, and
-            Survivor-Advocate dedicated to transforming mental health, gender
-            justice, and trauma care through dignity, empathy, and innovation.
-          </p>
+        <h2>Partnerships &amp; Advisory Roles</h2>
+      </div>
+      <div class="kv-grid">
+        <div class="kv-row">
+          <div class="kv-key">HealCycle</div>
+          <div class="kv-val">Medical Advisor guiding digital tools for women's mental and reproductive health.</div>
         </div>
-
-        <!-- QUICK LINKS -->
-        <div>
-          <h4 class="text-white font-semibold mb-4">Quick Links</h4>
-          <ul class="space-y-2">
-            <li><a href="./contact.html" class="hover:text-white transition">Conatct</a></li>
-            <li><a href="./index.html" class="hover:text-white transition">Home</a></li>
-            <li><a href="./contributions.html" class="hover:text-white transition">Contributions</a></li>
-            <li>
-              <a href="./services.html" class="hover:text-white transition">Services</a>
-            </li>
-          </ul>
+        <div class="kv-row">
+          <div class="kv-key">Finding Order in Disorder Foundation</div>
+          <div class="kv-val">Advisory Board Member contributing to trauma recovery research and support systems.</div>
         </div>
-
-        <!-- CONTRIBUTIONS -->
-        <div>
-          <h4 class="text-white font-semibold mb-4">Key Contributions</h4>
-          <ul class="space-y-2 text-gray-400">
-            <li>The Dignity Dialogues</li>
-            <li>Aawaz Initiative</li>
-            <li>Psychosexual Medicine</li>
-            <li>Trauma-Informed Care</li>
-          </ul>
+        <div class="kv-row">
+          <div class="kv-key">Global Goodwill Ambassadors Foundation (GGAF)</div>
+          <div class="kv-val">Goodwill Ambassador advancing Sustainable Development Goals (SDGs) with a focus on gender equity.</div>
         </div>
+        <div class="kv-row">
+          <div class="kv-key">Indian Psychiatry Society</div>
+          <div class="kv-val">Assistant Honorary General Secretary leading advocacy, CME programs, and mental health research.</div>
+        </div>
+      </div>
+      <div class="prose">
+        <p>These partnerships amplify her impact, enabling cross-sectoral innovation and the scaling of best practices across clinical, digital, and policy domains.</p>
+      </div>
+    </section>
 
-        <!-- CONTACT / SOCIAL -->
-        <div>
-          <h4 class="text-white font-semibold mb-4">Connect</h4>
+    <!-- ── PROGRAMS ── -->
+    <section class="content-section" id="programs">
+      <div class="section-heading">
+      <div class="section-heading-icon">
+        <i class="fas fa-clipboard-list"></i>
+      </div>
+      <h2>Programs, Workshops &amp; Trainings</h2>
+    </div>
+      <div class="kv-grid">
+        <div class="kv-row">
+          <div class="kv-key">Listening Circles</div>
+          <div class="kv-val">Safe spaces for survivors to share experiences and inform systemic change across Rajasthan and beyond.</div>
+        </div>
+        <div class="kv-row">
+          <div class="kv-key">Professional Workshops</div>
+          <div class="kv-val">Training 200+ mental health practitioners and educators in trauma-informed care, psychosexual medicine, and survivor-centered approaches.</div>
+        </div>
+        <div class="kv-row">
+          <div class="kv-key">Public Webinars</div>
+          <div class="kv-val">Sessions on suicide prevention, emotional intelligence, and self-care, reaching thousands through digital platforms.</div>
+        </div>
+        <div class="kv-row">
+          <div class="kv-key">Policy Workshops</div>
+          <div class="kv-val">Engaging stakeholders in GBV policy reform and the integration of mental health into public health systems.</div>
+        </div>
+      </div>
+    </section>
 
-          <p class="text-gray-400 mb-4">
-            For collaborations, speaking engagements, or professional inquiries.
-          </p>
+    <!-- ── PUBLICATIONS ── -->
+    <section class="content-section" id="publications">
+      <div class="section-heading">
+      <div class="section-heading-icon">
+        <i class="fas fa-pen-nib"></i>
+      </div>
+      <h2>Publications, Blogs &amp; Thought Leadership</h2>
+    </div>
+      <div class="prose"><p>A prolific writer, Dr. Sidhana contributes articles and blogs to platforms such as Medium, MyndStories, and her own website. Her writings address women's empowerment, trauma recovery, sexual justice, and the healing power of storytelling. Notable publications include:</p></div>
+      <div class="kv-grid" style="margin-top:20px;">
+        <div class="kv-row">
+          <div class="kv-key">The Healing Power of Pen</div>
+          <div class="kv-val">Focused on journaling as a therapeutic tool, exploring how written expression facilitates emotional recovery and healing.</div>
+        </div>
+        <div class="kv-row">
+          <div class="kv-key">Sexual Justice</div>
+          <div class="kv-val">Advocates for comprehensive sex education and awareness, challenging stigma and promoting informed, dignified sexual wellness.</div>
+        </div>
+        <div class="kv-row">
+          <div class="kv-key">Beyond the Rankings</div>
+          <div class="kv-val">"Reclaiming the Pulse of Gender Progress" — a policy reflection on survivor-centered metrics and the limitations of conventional gender equality indices.</div>
+        </div>
+      </div>
+      <div class="prose">
+        <p>Her thought leadership bridges clinical expertise with advocacy, influencing both public opinion and policy frameworks at national and international levels.</p>
+      </div>
+    </section>
 
-          <!-- SOCIAL ICONS -->
-          <div class="flex gap-4">
-            <a
-              href="#"
-              class="bg-gray-800 p-3 rounded-lg hover:bg-blue-600 transition"
-            >
-              <!-- LinkedIn -->
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="w-5 h-5 fill-current text-white"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M4.98 3.5C4.98 4.88 3.87 6 2.49 6 1.12 6 0 4.88 0 3.5 0 2.12 1.12 1 2.49 1c1.38 0 2.49 1.12 2.49 2.5zM0 8h5v16H0V8zm7.5 0H12v2.5h.06c.63-1.2 2.18-2.5 4.49-2.5 4.8 0 5.69 3.16 5.69 7.27V24h-5v-7.5c0-1.79-.03-4.09-2.5-4.09-2.5 0-2.88 1.95-2.88 3.97V24h-5V8z"
-                />
-              </svg>
-            </a>
+    <!-- ── POLICY ── -->
+    <section class="content-section" id="policy">
+      <div class="section-heading">
+      <div class="section-heading-icon">
+        <i class="fas fa-scale-balanced"></i>
+      </div>
+      <h2>Policy Influence &amp; Professional Bodies</h2>
+    </div>
+      <ul class="bullet-list" style="margin-bottom:20px;">
+        <li>Speaker for GBV policy-making at The Empowering Middle East forum</li>
+        <li>Membership in the International Association of Women's Mental Health</li>
+        <li>Leadership in the Indian Association of Private Psychiatry's Sexual Disorders Committee</li>
+      </ul>
+      <div class="prose">
+        <p>She advocates for trauma-informed, survivor-led policy design, emphasizing the need for metrics and systems that honor care, courage, and contribution—moving beyond quantitative benchmarks to capture lived experience and systemic transformation.</p>
+      </div>
+    </section>
 
-            <a
-              href="#"
-              class="bg-gray-800 p-3 rounded-lg hover:bg-pink-600 transition"
-            >
-              <!-- Instagram -->
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="w-5 h-5 fill-current text-white"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M7.75 2h8.5C19.99 2 22 4.01 22 6.75v8.5C22 19.99 19.99 22 16.25 22h-8.5C4.01 22 2 19.99 2 16.25v-8.5C2 4.01 4.01 2 7.75 2zm0 2C5.68 4 4 5.68 4 7.75v8.5C4 18.32 5.68 20 7.75 20h8.5c2.07 0 3.75-1.68 3.75-3.75v-8.5C20 5.68 18.32 4 16.25 4h-8.5zm4.25 3a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6zm5.25-.88a1.12 1.12 0 110 2.25 1.12 1.12 0 010-2.25z"
-                />
-              </svg>
-            </a>
+    <!-- ── CERTIFICATIONS ── -->
+    <section class="content-section" id="certifications">
+      <div class="section-heading">
+      <div class="section-heading-icon">
+        <i class="fas fa-graduation-cap"></i>
+      </div>
+      <h2>Training &amp; Certifications</h2>
+    </div>
+      <div class="prose"><p style="margin-bottom:20px;">Dr. Sidhana's commitment to professional excellence is reflected in her extensive certifications, which underpin her clinical practice and training programs:</p></div>
+      <div class="cert-grid">
 
-            <a
-              href="#"
-              class="bg-gray-800 p-3 rounded-lg hover:bg-blue-400 transition"
-            >
-              <!-- Twitter -->
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="w-5 h-5 fill-current text-white"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M24 4.56c-.88.39-1.83.65-2.82.77a4.93 4.93 0 002.16-2.72 9.86 9.86 0 01-3.13 1.2 4.92 4.92 0 00-8.38 4.48A13.94 13.94 0 011.67 3.15a4.92 4.92 0 001.52 6.57 4.9 4.9 0 01-2.23-.62v.06a4.93 4.93 0 003.95 4.83 4.93 4.93 0 01-2.22.08 4.93 4.93 0 004.6 3.42A9.87 9.87 0 010 19.54a13.94 13.94 0 007.55 2.21c9.06 0 14.01-7.5 14.01-14.01 0-.21 0-.42-.02-.63A10.03 10.03 0 0024 4.56z"
-                />
-              </svg>
-            </a>
-          </div>
+      <div class="cert-item">
+        <div class="cert-icon">
+          <i class="fas fa-brain"></i>
+        </div>
+        <div class="cert-text">
+          <strong>Certified Cognitive-Behavioral Therapist</strong>
+          Beck Institute — evidence-based CBT framework
         </div>
       </div>
 
-      <!-- DIVIDER -->
-      <div class="border-t border-gray-700 mt-12 pt-6 text-center">
-        <p class="text-gray-500 text-sm">
-          © 2026 Dr. Aninda Sidhana. All rights reserved. | Designed with
-          purpose & impact.
-        </p>
+      <div class="cert-item">
+        <div class="cert-icon">
+          <i class="fas fa-shield-heart"></i>
+        </div>
+        <div class="cert-text">
+          <strong>Domestic Violence Prevention</strong>
+          Muktha Foundation — advocacy &amp; survivor support
+        </div>
       </div>
-    </footer>
 
+      <div class="cert-item">
+        <div class="cert-icon">
+          <i class="fas fa-spa"></i>
+        </div>
+        <div class="cert-text">
+          <strong>Yoga &amp; Mental Health</strong>
+          World Psychiatric Association — integrative wellness
+        </div>
+      </div>
 
-    <script>
-      function toggleMenu() {
-        document.getElementById("mobileMenu")?.classList.toggle("hidden");
+      <div class="cert-item">
+        <div class="cert-icon">
+          <i class="fas fa-ribbon"></i>
+        </div>
+        <div class="cert-text">
+          <strong>Mental Health Ambassador</strong>
+          National Network of Depression Centers — India Foundation
+        </div>
+      </div>
+
+      <div class="cert-item">
+        <div class="cert-icon">
+          <i class="fas fa-globe"></i>
+        </div>
+        <div class="cert-text">
+          <strong>World Association for Sexual Health</strong>
+          Certified Speaker — sexual health advocacy
+        </div>
+      </div>
+
+    </div>
+    </section>
+
+    <!-- ── TIMELINE ── -->
+    <section class="content-section" id="timeline">
+      <div class="section-heading">
+      <div class="section-heading-icon">
+        <i class="fas fa-calendar-days"></i>
+      </div>
+      <h2>Timeline of Major Roles &amp; Initiatives</h2>
+    </div>
+      <div class="timeline-section">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Year(s)</th>
+                <th>Role / Initiative</th>
+                <th>Organization / Platform</th>
+                <th>Key Contributions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>2013–2016</td><td>Senior Resident</td><td>IHBAS, Delhi</td><td>Clinical psychiatry, early advocacy</td></tr>
+              <tr><td>2017–2018</td><td>Assistant Professor</td><td>Santosh University, Ghaziabad</td><td>Academic teaching, curriculum development</td></tr>
+              <tr><td>2022–2023</td><td>Consultant Psychiatrist</td><td>Allo Health</td><td>Psychosexual medicine, digital health</td></tr>
+              <tr><td>2024–present</td><td>Assistant Professor</td><td>Dr. S.S. Tantia M.C.H. &amp; Research Centre</td><td>Academic leadership, mentoring</td></tr>
+              <tr><td>2024–present</td><td>Guest Faculty</td><td>JSS Medical College, Mysore</td><td>Fellowship / certificate course faculty</td></tr>
+              <tr><td>2024–present</td><td>Consultant Psychiatrist</td><td>Tekchand Sidana Memorial Hospital</td><td>Clinical practice, trauma-informed care</td></tr>
+              <tr><td>2025–present</td><td>Founder</td><td>The Dignity Dialogues</td><td>Survivor-led healing justice initiative</td></tr>
+              <tr><td>2025–present</td><td>Board Advisor</td><td>HealCycle, Finding Order in Disorder Foundation</td><td>Digital health, trauma recovery</td></tr>
+              <tr><td>2025–present</td><td>Goodwill Ambassador</td><td>Global Goodwill Ambassadors Foundation</td><td>SDG advocacy, gender equality</td></tr>
+              <tr><td>2025–present</td><td>Asst. Hon. General Secretary</td><td>Indian Psychiatry Society</td><td>Mental health advocacy, CME, research</td></tr>
+              <tr><td>2025–present</td><td>Convener, Sexual Disorders Committee</td><td>Indian Association of Private Psychiatry</td><td>Policy, training, advocacy</td></tr>
+              <tr><td>2025–present</td><td>Program Mentor</td><td>High Fidelity CBT</td><td>Professional training, supervision</td></tr>
+              <tr><td>2025–present</td><td>Freelance Writer</td><td>Medium, MyndStories, personal blog</td><td>Thought leadership, survivor advocacy</td></tr>
+              <tr><td>2025–present</td><td>Media Contributor</td><td>The Better India, HealCycle, AboutHer Show</td><td>Public engagement, storytelling</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="timeline-note">This timeline illustrates the breadth and progression of Dr. Sidhana's roles, reflecting her sustained commitment to clinical excellence, academic leadership, survivor advocacy, and social innovation.</div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>Dr. Aninda Sidhana</h3>
+      <p>Psychiatrist, Psychosexual Medicine Specialist, and Survivor-Advocate dedicated to transforming mental health, gender justice, and trauma care through dignity, empathy, and innovation.</p>
+      <div class="footer-social">
+        <a href="#" class="social-btn" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.49 6 1.12 6 0 4.88 0 3.5 0 2.12 1.12 1 2.49 1c1.38 0 2.49 1.12 2.49 2.5zM0 8h5v16H0V8zm7.5 0H12v2.5h.06c.63-1.2 2.18-2.5 4.49-2.5 4.8 0 5.69 3.16 5.69 7.27V24h-5v-7.5c0-1.79-.03-4.09-2.5-4.09-2.5 0-2.88 1.95-2.88 3.97V24h-5V8z"/></svg>
+        </a>
+        <a href="#" class="social-btn" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M7.75 2h8.5C19.99 2 22 4.01 22 6.75v8.5C22 19.99 19.99 22 16.25 22h-8.5C4.01 22 2 19.99 2 16.25v-8.5C2 4.01 4.01 2 7.75 2zm0 2C5.68 4 4 5.68 4 7.75v8.5C4 18.32 5.68 20 7.75 20h8.5c2.07 0 3.75-1.68 3.75-3.75v-8.5C20 5.68 18.32 4 16.25 4h-8.5zm4.25 3a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6zm5.25-.88a1.12 1.12 0 110 2.25 1.12 1.12 0 010-2.25z"/></svg>
+        </a>
+        <a href="#" class="social-btn" aria-label="Twitter">
+          <svg viewBox="0 0 24 24"><path d="M24 4.56c-.88.39-1.83.65-2.82.77a4.93 4.93 0 002.16-2.72 9.86 9.86 0 01-3.13 1.2 4.92 4.92 0 00-8.38 4.48A13.94 13.94 0 011.67 3.15a4.92 4.92 0 001.52 6.57 4.9 4.9 0 01-2.23-.62v.06a4.93 4.93 0 003.95 4.83 4.93 4.93 0 01-2.22.08 4.93 4.93 0 004.6 3.42A9.87 9.87 0 010 19.54a13.94 13.94 0 007.55 2.21c9.06 0 14.01-7.5 14.01-14.01 0-.21 0-.42-.02-.63A10.03 10.03 0 0024 4.56z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./contributions.html">Contributions</a></li>
+        <li><a href="./services.html">Services</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Key Work</h4>
+      <ul>
+        <li><span style="color:rgba(255,255,255,0.5)">The Dignity Dialogues</span></li>
+        <li><span style="color:rgba(255,255,255,0.5)">Aawaz Initiative</span></li>
+        <li><span style="color:rgba(255,255,255,0.5)">Psychosexual Medicine</span></li>
+        <li><span style="color:rgba(255,255,255,0.5)">Trauma-Informed Care</span></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <p style="font-size:13px; line-height:1.7; margin-bottom:14px;">For collaborations, speaking engagements, or professional inquiries.</p>
+      <a href="./contact.html" style="display:inline-block; font-size:13px; padding:9px 18px; color:rgba(255,255,255,0.7); border:1.5px solid rgba(255,255,255,0.2); border-radius:8px; text-decoration:none; transition:all 0.2s;">Get in Touch</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Dr. Aninda Sidhana. All rights reserved.</p>
+    <p>Designed with purpose &amp; impact.</p>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+
+  // TOC active state on scroll
+  const sections = document.querySelectorAll('.content-section');
+  const tocLinks = document.querySelectorAll('.toc-list a');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        tocLinks.forEach(l => l.classList.remove('active'));
+        const link = document.querySelector(`.toc-list a[href="#${entry.target.id}"]`);
+        if (link) link.classList.add('active');
       }
-    </script>
-  </body>
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+
+  sections.forEach(s => observer.observe(s));
+
+  // Scroll-in animations
+  const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(el => {
+      if (el.isIntersecting) {
+        el.target.style.opacity = '1';
+        el.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.initiative-card, .kv-row, .cert-item, .roles-list li, .bullet-list li').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(16px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    fadeObserver.observe(el);
+  });
+</script>
+</body>
 </html>
